@@ -1,0 +1,9 @@
+{
+  "scenario": "fani_2019",
+  "timeline_span_hours": "T-12h to T+48h (61 hourly steps)",
+  "peak_substations_offline": 3,
+  "peak_hospitals_at_risk": 2,
+  "peak_roads_blocked": 4,
+  "road_network_optimization": "Trunk, primary, and secondary arterial roads only; simplified & cached (Amendment 7)",
+  "physics_coupling": "Surge bathtub threshold 0.5m + Holland wind 120 km/h triggers substation tripping"
+}

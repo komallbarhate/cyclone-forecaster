@@ -1,0 +1,2413 @@
+[
+  {
+    "hour": -12,
+    "phase": "Pre-Landfall Alert",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": -11,
+    "phase": "Pre-Landfall Alert",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": -10,
+    "phase": "Pre-Landfall Alert",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": -9,
+    "phase": "Pre-Landfall Alert",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": -8,
+    "phase": "Pre-Landfall Alert",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": -7,
+    "phase": "Pre-Landfall Alert",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": -6,
+    "phase": "Pre-Landfall Alert",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": -5,
+    "phase": "Pre-Landfall Alert",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": -4,
+    "phase": "Landfall & Peak Impact",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": -3,
+    "phase": "Landfall & Peak Impact",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": -2,
+    "phase": "Landfall & Peak Impact",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 2,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 18
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "gen_remaining_hours": 8
+      }
+    ],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": -1,
+    "phase": "Landfall & Peak Impact",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 2,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 17
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "gen_remaining_hours": 7
+      }
+    ],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 0,
+    "phase": "Landfall & Peak Impact",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 2,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 16
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "gen_remaining_hours": 6
+      }
+    ],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 1,
+    "phase": "Landfall & Peak Impact",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 2,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 15
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "gen_remaining_hours": 5
+      }
+    ],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 2,
+    "phase": "Landfall & Peak Impact",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 2,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 14
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "gen_remaining_hours": 4
+      }
+    ],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 3,
+    "phase": "Landfall & Peak Impact",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 2,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 13
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "gen_remaining_hours": 3
+      }
+    ],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 4,
+    "phase": "Landfall & Peak Impact",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 2,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 12
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "gen_remaining_hours": 2
+      }
+    ],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 5,
+    "phase": "Landfall & Peak Impact",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 2,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 11
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "gen_remaining_hours": 1
+      }
+    ],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 6,
+    "phase": "Landfall & Peak Impact",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 2,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 10
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "gen_remaining_hours": 0
+      }
+    ],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 7,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 1,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 9
+      }
+    ],
+    "hospitals_critically_failed_count": 1,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 8,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 1,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 8
+      }
+    ],
+    "hospitals_critically_failed_count": 1,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 9,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 1,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 7
+      }
+    ],
+    "hospitals_critically_failed_count": 1,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 10,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 1,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 6
+      }
+    ],
+    "hospitals_critically_failed_count": 1,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 11,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 1,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 5
+      }
+    ],
+    "hospitals_critically_failed_count": 1,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 12,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 1,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 4
+      }
+    ],
+    "hospitals_critically_failed_count": 1,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 13,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 1,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 3
+      }
+    ],
+    "hospitals_critically_failed_count": 1,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 14,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 1,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 2
+      }
+    ],
+    "hospitals_critically_failed_count": 1,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 15,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 1,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 1
+      }
+    ],
+    "hospitals_critically_failed_count": 1,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 16,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 1,
+    "hospitals_on_generator": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "gen_remaining_hours": 0
+      }
+    ],
+    "hospitals_critically_failed_count": 1,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 17,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 18,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 19,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 20,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 4,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 21,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 2,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 22,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 2,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 23,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 2,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 24,
+    "phase": "Post-Landfall Crisis Window",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 2,
+    "isolated_shelters_count": 6,
+    "isolated_shelters": [
+      {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "district": "Puri",
+        "capacity": 1500
+      },
+      {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 2000
+      },
+      {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "district": "Puri",
+        "capacity": 1200
+      },
+      {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "district": "Puri",
+        "capacity": 1800
+      },
+      {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000
+      },
+      {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200
+      }
+    ]
+  },
+  {
+    "hour": 25,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 2,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 26,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 2,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 27,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 2,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 28,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 2,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 29,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 2,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 30,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 2,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 31,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 32,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 33,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 34,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 35,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 3,
+    "substations_offline_ids": [
+      "sub_puri_132kv",
+      "sub_brahmagiri_33kv",
+      "sub_konark_33kv"
+    ],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 2,
+    "hospitals_critically_failed": [
+      {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      },
+      {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "district": "Puri",
+        "failure_mode": "Generator Fuel Exhausted / Complete Blackout"
+      }
+    ],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 36,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 37,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 38,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 39,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 40,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 41,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 42,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 43,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 44,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 45,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 46,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 47,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  },
+  {
+    "hour": 48,
+    "phase": "Restoration & Recovery",
+    "substations_offline_count": 0,
+    "substations_offline_ids": [],
+    "hospitals_on_generator_count": 0,
+    "hospitals_on_generator": [],
+    "hospitals_critically_failed_count": 0,
+    "hospitals_critically_failed": [],
+    "arterial_roads_impassable_count": 0,
+    "isolated_shelters_count": 0,
+    "isolated_shelters": []
+  }
+]

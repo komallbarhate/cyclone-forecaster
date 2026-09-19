@@ -1,0 +1,9 @@
+{
+  "scenario": "fani_2019",
+  "population_source": "WorldPop 2019 / GHSL (Global Human Settlement Layer) adjusted to Census of India (2019 projection)",
+  "population_year": 2019,
+  "infrastructure_source": "OpenStreetMap + Verified District Disaster Management Authority Catalogs",
+  "total_exposed_population": 7993355,
+  "substations_compromised": 3,
+  "hospitals_at_risk": 2
+}
