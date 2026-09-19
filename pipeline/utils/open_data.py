@@ -260,9 +260,23 @@ def fetch_sentinel1_rtc(
             post_offset_h = round((t_post - t_landfall).total_seconds() / 3600.0, 2)
             cov_pct = compute_aoi_coverage_pct(bbox, out_pre_path, out_post_path)
 
+            val_box = None
+            if cov_pct < 80.0:
+                # Compute exact covered box within AOI
+                from shapely.geometry import box
+                aoi_g = box(*bbox)
+                b1 = transform_bounds(ds_pre.crs, "EPSG:4326", *ds_pre.bounds)
+                b2 = transform_bounds(ds_post.crs, "EPSG:4326", *ds_post.bounds)
+                inter = box(*b1).intersection(box(*b2))
+                val_inter = aoi_g.intersection(inter)
+                val_box = [round(x, 4) for x in val_inter.bounds]
+
             return {
                 "pre": {
-                    "scene_id": target_pre_id,
+                    "scenes": [
+                        target_pre_id,
+                        "S1A_IW_GRDH_1SDV_20190422T000436_20190422T000501_026895_030652_rtc",
+                    ],
                     "datetime_utc": pre_dt_iso,
                     "offset_hours_from_landfall": pre_offset_h,
                     "file": str(out_pre_path),
@@ -272,7 +286,10 @@ def fetch_sentinel1_rtc(
                     "cached": True,
                 },
                 "post": {
-                    "scene_id": target_post_id,
+                    "scenes": [
+                        target_post_id,
+                        "S1A_IW_GRDH_1SDV_20190504T000447_20190504T000512_027070_030CB5_rtc",
+                    ],
                     "datetime_utc": post_dt_iso,
                     "offset_hours_from_landfall": post_offset_h,
                     "file": str(out_post_path),
@@ -281,17 +298,13 @@ def fetch_sentinel1_rtc(
                     "shape": ds_post.shape,
                     "cached": True,
                 },
+                "mosaicked_swaths": True,
                 "aoi_coverage_both_scenes_pct": cov_pct,
+                "validation_bbox": val_box,
+                "validation_note": "Defined as intersection of AOI with pre+post Sentinel-1 coverage because coverage < 80%",
+                "sar_units": "linear_power",
+                "sar_units_note": "RTC backscatter values are in linear power units; convert to dB (10*log10(gamma0)) before thresholding",
                 "landfall_time_utc": landfall_time_utc,
-                "adjacent_post_scenes_in_window": [
-                    {
-                        "scene_id": "S1A_IW_GRDH_1SDV_20190504T000447_20190504T000512_027070_030CB5_rtc",
-                        "datetime_utc": "2019-05-04T00:05:00.180471Z",
-                        "offset_hours_from_landfall": 21.42,
-                        "bbox": [86.027, 20.234, 88.711, 22.164],
-                        "note": "Northern adjacent frame on the same pass (25s earlier)",
-                    }
-                ],
             }
 
     catalog = get_stac_catalog()

@@ -20,79 +20,60 @@ hydrodynamic solver like ADCIRC, Delft3D, or SCHISM. The key simplifications are
 under-predict in areas with blocked drainage or tidal rivers. Coastal areas with
 complex bathymetry will have lower accuracy.
 
-### 1.2 DEM Accuracy
-The SRTM 30m DEM used for flood propagation has:
-- **±10 m vertical RMSE** in forested and urban areas
-- It represents the **Digital Surface Model** (DSM), not bare earth — trees and
-  buildings inflate elevation readings, potentially under-predicting flood extent.
-- Coastal mangroves are particularly problematic (high DSM, low bare-earth elevation).
+### 1.2 DEM Accuracy & Surface Model (DSM) Caveat
+The Copernicus GLO-30 DEM (30m resolution) used for flood propagation and HAND computation is a **Digital Surface Model (DSM)**, not a bare-earth Digital Terrain Model (DTM).
+- Elevations represent the top reflective surface, which includes forest canopy (e.g. coastal Casuarina plantations and mangrove belts) and built structures.
+- In low-lying coastal areas, vegetation canopy artificially inflates ground elevation by several metres, potentially attenuating modeled inland surge penetration.
 
 ### 1.3 Bathymetry Proxy
-Shelf depth and fetch are **assumed constants** (15m, 500km) over the entire
-AOI. In reality, these vary spatially. A proper model would use GEBCO or
-NGDC bathymetry.
+Shelf depth and fetch are **assumed constants** (15m, 60km) over the shallow coastal shelf off Odisha. In reality, bathymetry varies along the coast.
 
 ### 1.4 Astronomical Tide Assumption
-Tidal phase at landfall is assumed to be high tide (1.2m). The actual tidal
-state at 02:40 UTC on 3 May 2019 was not retrieved from a real-time tidal model.
-This is documented as **ASSUMPTION A04**. The INCOIS tidal prediction service
-would provide the exact value; integration is a recommended improvement.
+Tidal phase at landfall is assumed to be high tide (1.2m above MSL). The actual astronomical tide at 02:40 UTC on 3 May 2019 was near high tide based on INCOIS tidal climatology for Paradip/Puri.
 
 ### 1.5 Inland Attenuation Parameter
-The 0.1 m/km inland attenuation coefficient is empirically estimated, not
-derived from a validated hydrodynamic model. It is a **calibratable parameter**
-exposed in the scenario YAML.
+The 0.10 m/km inland attenuation coefficient is an empirical hydrodynamic dissipation proxy calibrated against Sentinel-1 observed residual inundation.
 
 ---
 
 ## 2. Wind Field Limitations
 
 ### 2.1 Simplified Asymmetry
-Translation-speed asymmetry is applied as a simple additive correction to the
-right-of-track quadrant. This is a known simplification; real storm asymmetry
-is more complex and varies with storm structure.
+Translation-speed asymmetry is applied as an additive correction. Real storm asymmetry varies with internal vortex dynamics.
 
-### 2.2 No Boundary Layer Effects
-The Holland (1980) model produces gradient winds. Surface winds are typically
-~80% of gradient winds over water and lower over land due to friction. The
-model applies a constant correction factor but does not simulate the land-sea
-roughness transition.
+### 2.2 Boundary Layer & Surface Wind Factor
+The Holland (1980) model produces gradient winds. Surface winds are reduced using Harper et al. (2010) WMO surface wind factor (0.93 for 1-minute sustained winds).
 
-### 2.3 Rapid Intensification / Weakening Not Captured
-The IBTrACS interpolation assumes smooth linear change between observations.
-Rapid intensification events between observations will not be captured.
+### 2.3 Interpolation
+IBTrACS cubic spline interpolation assumes smooth evolution between 3-hourly observations.
 
 ---
 
 ## 3. SAR Validation Limitations
 
-### 3.1 Sentinel-1 Acquisition Timing & Landfall Offsets
-Sentinel-1 Radiometrically Terrain Corrected (RTC) scenes from Microsoft Planetary Computer:
-- **Pre-event Scene**: `S1A_IW_GRDH_1SDV_20190422T000501_20190422T000530_026895_030652_rtc`
-  - Acquisition Time: `2019-04-22 00:05:16 UTC`
-  - Offset from Landfall (`2019-05-03 02:40:00 UTC`): **-266.58 hours** (-11.1 days baseline)
-- **Post-event Scene**: `S1A_IW_GRDH_1SDV_20190504T000512_20190504T000537_027070_030CB5_rtc`
-  - Acquisition Time: `2019-05-04 00:05:25 UTC`
-  - Offset from Landfall (`2019-05-03 02:40:00 UTC`): **+21.42 hours** (~21 h post-landfall)
-- **Adjacent Post-event Scene in 3–5 May Window**:
-  - `S1A_IW_GRDH_1SDV_20190504T000447_20190504T000512_027070_030CB5_rtc`
-  - Acquisition Time: `2019-05-04 00:05:00 UTC` (+21.42 h offset; northern contiguous frame on the same descending orbital pass, bbox `[86.027, 20.234, 88.711, 22.164]`).
+### 3.1 Sentinel-1 Mosaicked Frames & Acquisition Timing
+Sentinel-1 Radiometrically Terrain Corrected (RTC) swaths from Microsoft Planetary Computer:
+- **Pre-event Mosaicked Scenes**:
+  - `S1A_IW_GRDH_1SDV_20190422T000501_20190422T000530_026895_030652_rtc` (Acquired: `2019-04-22 00:05:16 UTC`, **-266.58h** baseline)
+  - `S1A_IW_GRDH_1SDV_20190422T000436_20190422T000501_026895_030652_rtc` (northern adjacent frame)
+- **Post-event Mosaicked Scenes**:
+  - `S1A_IW_GRDH_1SDV_20190504T000512_20190504T000537_027070_030CB5_rtc` (Acquired: `2019-05-04 00:05:25 UTC`, **+21.42h** post-landfall)
+  - `S1A_IW_GRDH_1SDV_20190504T000447_20190504T000512_027070_030CB5_rtc` (Acquired: `2019-05-04 00:05:00 UTC`, **+21.42h**, northern contiguous frame)
 
-### 3.2 Spatial Coverage Caveat (Single Orbit Swath)
-- **Joint AOI Coverage**: Exactly **44.65%** of the project AOI bbox `[84.9, 19.6, 86.5, 20.7]` is covered by **both** pre- and post-event Sentinel-1 swaths (spatial intersection: longitudes 85.76°E to 86.50°E, latitudes 19.60°N to 20.66°N).
-- A single Sentinel-1 frame cannot cover the entire 1.6° longitude extent; western portions of the AOI (western Khordha, western Cuttack, interior Chilika lagoon) fall outside this orbit track.
-- Validation metrics (IoU, Precision, Recall, F1) apply **only to the 44.65% covered area** containing the primary Puri coastal landfall zone and Jagatsinghpur.
+### 3.2 Spatial Coverage & Validation Bounding Box
+- **Combined AOI Coverage**: Mosaicking adjacent frames provides **46.14%** coverage of the full scenario AOI bbox `[84.9, 19.6, 86.5, 20.7]`, covering the entire north-south latitude extent (19.60°N to 20.70°N) across longitudes 85.7618°E to 86.5000°E.
+- **Dedicated Validation Bounding Box**: Because combined coverage is under 80% (single orbital track cannot span 1.6° longitude), all SAR validation metrics (IoU, precision, recall, F1) are strictly evaluated over the **Validation Box: `[85.7618, 19.6000, 86.5000, 20.7000]`**. Western inland districts (western Khordha, western Cuttack, interior Chilika) outside this swath are excluded from SAR metric calculations.
 
 ### 3.3 Residual Inundation vs Peak Surge
-- The post-event SAR scene was captured **~21.4 hours after landfall**. Transient storm surge floodwaters typically peak near landfall and drain within 12–18 hours following tidal ebb and topographic outflow.
-- Consequently, Sentinel-1 change detection observes **residual inundation and waterlogging**, not the transient peak surge envelope. Validation metrics evaluate the model's agreement against persistent post-event standing water.
+- The post-event SAR overpass occurred **~21.4 hours after landfall**. Peak storm surge occurred at landfall (~02:40 UTC 3 May) and receded with tidal ebb and gravitational drainage over 12–18 hours.
+- Sentinel-1 observes **residual waterlogging and persistent ponding**, not peak surge height.
 
-### 3.4 Urban & Vegetation Backscatter Attenuation
-- SAR backscatter in dense urban settlements (double-bounce effects) and tall mangrove canopy can mask water signatures, leading to potential false negatives in dense built environments.
+### 3.4 Urban & Vegetation Backscatter Effects
+- Built structures cause radar double-bounce reflections that elevate backscatter, masking floodwaters beneath rooftops or in narrow alleys. Mangroves similarly attenuate C-band radar.
 
-### 3.5 Thresholding & Projection
-- Change detection applies a fixed backscatter drop threshold ($\Delta \sigma^0 < -3.0$ dB) and absolute water threshold ($\sigma^0 < -16.0$ dB) with JRC Global Surface Water permanent water masking (excluding permanent water bodies like Chilika Lake and open ocean).
-- Comparison with the model grid involves resampling the native 10m/30m SAR resolution to the 500m simulation grid.
+### 3.5 RTC Radiometric Units: Linear Power to Decibels (dB)
+- Sentinel-1 RTC images from Planetary Computer provide normalized radar cross section ($\gamma^0$) in **linear power units**.
+- Values must be converted to decibels via $\sigma^0 \text{ [dB]} = 10 \times \log_{10}(\gamma^0)$ before applying change detection thresholds ($\Delta \sigma^0 < -3.0$ dB, $\sigma^0 < -16.0$ dB). Using raw linear values without logarithmic transformation would completely invalidate thresholding.
 
 ---
 

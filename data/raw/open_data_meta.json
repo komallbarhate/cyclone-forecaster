@@ -30,11 +30,14 @@
     },
     "sentinel1": {
       "pre": {
-        "scene_id": "S1A_IW_GRDH_1SDV_20190422T000501_20190422T000530_026895_030652_rtc",
+        "scenes": [
+          "S1A_IW_GRDH_1SDV_20190422T000501_20190422T000530_026895_030652_rtc",
+          "S1A_IW_GRDH_1SDV_20190422T000436_20190422T000501_026895_030652_rtc"
+        ],
         "datetime_utc": "2019-04-22T00:05:15.804386Z",
         "offset_hours_from_landfall": -266.58,
         "file": "C:\\Users\\DELL\\OneDrive\\Desktop\\cyclone impact forecaster\\data\\raw\\s1_rtc_vv_pre.tif",
-        "size_mb": 29.09,
+        "size_mb": 42.06,
         "crs": "EPSG:32645",
         "shape": [
           4102,
@@ -43,34 +46,33 @@
         "cached": true
       },
       "post": {
-        "scene_id": "S1A_IW_GRDH_1SDV_20190504T000512_20190504T000537_027070_030CB5_rtc",
+        "scenes": [
+          "S1A_IW_GRDH_1SDV_20190504T000512_20190504T000537_027070_030CB5_rtc",
+          "S1A_IW_GRDH_1SDV_20190504T000447_20190504T000512_027070_030CB5_rtc"
+        ],
         "datetime_utc": "2019-05-04T00:05:25.180469Z",
         "offset_hours_from_landfall": 21.42,
         "file": "C:\\Users\\DELL\\OneDrive\\Desktop\\cyclone impact forecaster\\data\\raw\\s1_rtc_vv_post.tif",
-        "size_mb": 27.06,
+        "size_mb": 46.36,
         "crs": "EPSG:32645",
         "shape": [
-          3927,
+          4102,
           2824
         ],
         "cached": true
       },
-      "aoi_coverage_both_scenes_pct": 44.65,
-      "landfall_time_utc": "2019-05-03T02:40:00Z",
-      "adjacent_post_scenes_in_window": [
-        {
-          "scene_id": "S1A_IW_GRDH_1SDV_20190504T000447_20190504T000512_027070_030CB5_rtc",
-          "datetime_utc": "2019-05-04T00:05:00.180471Z",
-          "offset_hours_from_landfall": 21.42,
-          "bbox": [
-            86.027,
-            20.234,
-            88.711,
-            22.164
-          ],
-          "note": "Northern adjacent frame on the same pass (25s earlier)"
-        }
-      ]
+      "mosaicked_swaths": true,
+      "aoi_coverage_both_scenes_pct": 46.14,
+      "validation_bbox": [
+        85.7618,
+        19.6,
+        86.5,
+        20.7
+      ],
+      "validation_note": "Defined as intersection of AOI with pre+post Sentinel-1 coverage because coverage < 80%",
+      "sar_units": "linear_power",
+      "sar_units_note": "RTC backscatter values are in linear power units; convert to dB (10*log10(gamma0)) before thresholding",
+      "landfall_time_utc": "2019-05-03T02:40:00Z"
     },
     "jrc_gsw": {
       "dataset": "JRC Global Surface Water",
