@@ -1,0 +1,1 @@
+{"type": "FeatureCollection", "features": [{"type": "Feature", "geometry": {"type": "Polygon", "coordinates": [[[86.49761, 20.24053], [86.50239, 20.24053], [86.50239, 20.24506], [86.49761, 20.24506], [86.49761, 20.24053]]]}, "properties": {"depth_m": 0.14, "severity": "Minor", "elevation_m": 1.41, "dist_to_coast_km": 13.5, "district": "Kendrapara"}}]}
