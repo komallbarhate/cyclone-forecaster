@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   CycloneShield — Global Styles
+   Control Room Dark Theme
+   ============================================================ */
+
+:root {
+  --cs-bg: #0A0E1A;
+  --cs-surface: #0F1629;
+  --cs-card: #141D35;
+  --cs-border: #1E2D4A;
+  --cs-accent: #38BDF8;
+  --cs-danger: #EF4444;
+  --cs-warning: #F59E0B;
+  --cs-success: #10B981;
+  --cs-text: #E2E8F0;
+  --cs-muted: #64748B;
+  --surge-color: #F97316;
+  --rain-color: #3B82F6;
+  --wind-color: #A855F7;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  background-color: var(--cs-bg);
+  color: var(--cs-text);
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow: hidden;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cs-surface);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cs-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cs-muted);
+}
+
+/* ---- MapLibre overrides ---- */
+.maplibregl-map {
+  font-family: 'Inter', sans-serif !important;
+}
+.maplibregl-ctrl-group {
+  background: var(--cs-card) !important;
+  border: 1px solid var(--cs-border) !important;
+}
+.maplibregl-ctrl-group button {
+  background-color: transparent !important;
+  color: var(--cs-text) !important;
+}
+.maplibregl-ctrl-group button:hover {
+  background-color: var(--cs-border) !important;
+}
+.maplibregl-popup-content {
+  background: var(--cs-card) !important;
+  color: var(--cs-text) !important;
+  border: 1px solid var(--cs-border) !important;
+  border-radius: 8px !important;
+  font-size: 12px;
+  padding: 8px 12px !important;
+}
+.maplibregl-popup-tip {
+  border-top-color: var(--cs-card) !important;
+  border-bottom-color: var(--cs-card) !important;
+}
+
+/* ---- Shared component styles ---- */
+@layer components {
+  .cs-card {
+    @apply bg-cs-card border border-cs-border rounded-lg;
+  }
+
+  .cs-btn {
+    @apply px-3 py-1.5 rounded text-sm font-medium transition-all duration-150
+           border border-cs-border text-cs-text hover:border-cs-accent hover:text-cs-accent
+           active:scale-95 cursor-pointer;
+  }
+
+  .cs-btn-primary {
+    @apply px-4 py-2 rounded text-sm font-semibold transition-all duration-150
+           bg-cs-accent text-cs-bg hover:bg-cs-accent-dim
+           active:scale-95 cursor-pointer;
+  }
+
+  .cs-btn-danger {
+    @apply px-4 py-2 rounded text-sm font-semibold transition-all duration-150
+           bg-cs-danger text-white hover:bg-red-600
+           active:scale-95 cursor-pointer;
+  }
+
+  .cs-badge {
+    @apply inline-flex items-center px-2 py-0.5 rounded-full text-xs font-semibold;
+  }
+
+  .cs-tab {
+    @apply px-3 py-2 text-sm font-medium border-b-2 transition-colors duration-150
+           cursor-pointer select-none;
+  }
+
+  .cs-tab-active {
+    @apply border-cs-accent text-cs-accent;
+  }
+
+  .cs-tab-inactive {
+    @apply border-transparent text-cs-muted hover:text-cs-text hover:border-cs-border;
+  }
+
+  .cs-kpi {
+    @apply flex flex-col gap-0.5 p-3 cs-card;
+  }
+
+  .cs-kpi-value {
+    @apply text-2xl font-bold text-cs-accent font-mono;
+  }
+
+  .cs-kpi-label {
+    @apply text-xs text-cs-muted uppercase tracking-wider;
+  }
+
+  /* Severity badge colours */
+  .severity-1 { @apply bg-blue-900 text-blue-300; }
+  .severity-2 { @apply bg-green-900 text-green-300; }
+  .severity-3 { @apply bg-yellow-900 text-yellow-300; }
+  .severity-4 { @apply bg-orange-900 text-orange-300; }
+  .severity-5 { @apply bg-red-900 text-red-300; }
+
+  /* Pulsing failed asset */
+  .asset-failed {
+    @apply animate-pulse text-cs-danger;
+  }
+
+  /* Layer toggle chip */
+  .layer-chip {
+    @apply flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium
+           border transition-all duration-150 cursor-pointer select-none;
+  }
+  .layer-chip-active {
+    @apply border-cs-accent bg-cs-accent/10 text-cs-accent;
+  }
+  .layer-chip-inactive {
+    @apply border-cs-border bg-transparent text-cs-muted hover:border-cs-muted;
+  }
+}
+
+/* ---- Animations ---- */
+@keyframes slideInRight {
+  from { transform: translateX(20px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes flashDanger {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.animate-slide-in { animation: slideInRight 0.3s ease-out; }
+.animate-fade-in { animation: fadeIn 0.25s ease-out; }
+.animate-flash-danger { animation: flashDanger 1.2s ease-in-out infinite; }
+
+/* ---- Loading skeleton ---- */
+.skeleton {
+  @apply animate-pulse bg-cs-border rounded;
+}
+
+/* ---- Tooltip ---- */
+.cs-tooltip {
+  @apply absolute z-50 px-2 py-1 text-xs text-cs-text bg-cs-card
+         border border-cs-border rounded shadow-lg pointer-events-none
+         whitespace-nowrap;
+}
+
+/* ---- Timeline event row ---- */
+.timeline-event {
+  @apply flex items-start gap-3 py-2 px-3 rounded transition-colors duration-100;
+}
+.timeline-event:hover {
+  @apply bg-cs-surface;
+}
+
+/* ---- Legend ---- */
+.legend-row {
+  @apply flex items-center gap-2 text-xs text-cs-text;
+}
+.legend-swatch {
+  @apply w-4 h-2.5 rounded-sm flex-shrink-0;
+}

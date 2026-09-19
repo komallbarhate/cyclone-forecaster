@@ -1,0 +1,151 @@
+# ============================================================
+# Cyclone Fani 2019 — Scenario Configuration
+# Primary scenario for CycloneShield demo
+# ============================================================
+
+name: "Cyclone Fani 2019"
+basin: "NI"  # North Indian Ocean
+storm_id: "2019153N11090"  # IBTrACS SID for Fani
+imad_name: "FANI"
+
+# Area of Interest (bounding box: [lon_min, lat_min, lon_max, lat_max])
+# Covers Puri, Khordha, Jagatsinghpur, Kendrapara, Cuttack districts, Odisha
+aoi_bbox: [84.9, 19.6, 86.5, 20.7]
+
+# Reference landfall: 3 May 2019, ~0810 IST (~0240 UTC), near Puri
+# Source: IMD Cyclone e-Atlas, NOAA IBTrACS
+landfall:
+  lat: 19.85
+  lon: 85.85
+  time_utc: "2019-05-03T02:40:00Z"
+  time_ist: "2019-05-03T08:10:00Z"
+  vmax_kmh: 175  # 1-min sustained; IBTrACS / IMD value ~ 175 km/h at landfall
+  mslp_hpa: 932  # minimum SLP at landfall (IMD)
+  rmw_km: 35     # radius of maximum winds (estimated from IMD report; labelled ASSUMPTION)
+  source: "IMD Cyclone e-Atlas 2019; IBTrACS v04r00"
+
+# IBTrACS data source
+ibtracs:
+  url: "https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r00/access/csv/ibtracs.NI.list.v04r00.csv"
+  storm_sid: "2019153N11090"
+
+# Timeline around landfall (hours relative to landfall T=0)
+timeline:
+  start_hours: -24  # T-24h
+  end_hours: 24     # T+24h
+  step_hours: 1     # 1-hour time steps
+
+# Districts in AOI (must match OSM admin_level=5/6 names)
+districts:
+  - "Puri"
+  - "Khordha"
+  - "Jagatsinghpur"
+  - "Kendrapara"
+  - "Cuttack"
+
+# Storm surge model parameters
+surge:
+  # Inverse barometer: 1 hPa pressure drop → ~0.01 m sea level rise
+  inverse_barometer_coeff: 0.01  # m/hPa
+  # Wind setup coefficient (empirical, calibratable)
+  # surge_wind = coeff * U10^2 * fetch / (g * depth)
+  wind_setup_coeff: 0.0003       # dimensionless; ASSUMPTION — calibrated to ~2m max setup
+  # Bathymetry proxy: average shelf depth in Bay of Bengal off Odisha coast
+  shelf_depth_m: 15.0            # m; ASSUMPTION — representative shelf depth
+  # Fetch (distance over water for wind setup) — approximate for Odisha coast
+  fetch_km: 500.0                # km; ASSUMPTION
+  # Astronomical tide at landfall (no free real-time tide model; using documented estimate)
+  # Source: INCOIS tidal predictions; landfall time near high tide
+  tide_height_m: 1.2             # m above MSL; ASSUMPTION — label clearly in UI
+  tide_source: "ASSUMPTION: representative high tide for Odisha coast based on INCOIS climatology"
+  # Bathtub flood propagation
+  inland_attenuation_per_km: 0.1  # m depth loss per km inland; ASSUMPTION; calibratable
+  max_inland_km: 30.0              # maximum inland flood distance
+  vehicle_passable_depth_m: 0.3    # flood depth above which roads are impassable
+  # Thresholds
+  substation_flood_threshold_m: 0.5   # flood depth at which substation fails
+  substation_wind_threshold_kmh: 120  # wind speed at which substation fails
+
+# Rainfall model parameters
+rainfall:
+  # GPM IMERG date window (UTC)
+  imerg_start: "2019-04-30"
+  imerg_end: "2019-05-06"
+  # HAND threshold for flood-prone classification
+  hand_threshold_m: 5.0  # cells with HAND < threshold are flood-prone
+  # Minimum flow accumulation for damage pathways
+  flow_accum_threshold: 1000  # upstream cells
+
+# SAR validation parameters
+sar:
+  # Sentinel-1 scenes for pre/post comparison
+  pre_event_start: "2019-04-25"
+  pre_event_end: "2019-04-30"
+  post_event_start: "2019-05-04"
+  post_event_end: "2019-05-10"
+  # VV backscatter threshold for flood detection (dB)
+  flood_threshold_db: -16.0  # ASSUMPTION: Otsu-computed from image histogram
+  use_otsu: true
+  # Slope mask threshold
+  slope_mask_degrees: 5.0
+
+# Infrastructure thresholds
+infrastructure:
+  generator_backup_hours: 12  # hours hospitals can run on generator; ASSUMPTION
+  critical_road_depth_m: 0.3  # road impassable depth (= vehicle_passable_depth_m)
+  # OSM tags to extract
+  hospitals:
+    amenity: [hospital, clinic, health_post, doctors]
+  shelters:
+    amenity: [school, community_centre]
+    building: [school, civic, public]
+  substations:
+    power: [substation, transformer]
+  roads:
+    highway: [motorway, trunk, primary, secondary, tertiary]
+  power_lines:
+    power: [line, minor_line, cable]
+
+# Parametric insurance tiers (illustrative — labelled assumption in UI)
+# Basis: max wind speed (km/h) and max surge depth (m) per district
+insurance:
+  label: "ILLUSTRATIVE — for demonstration only"
+  tiers:
+    - name: "Tier 1 — Catastrophic"
+      wind_kmh_min: 150
+      surge_m_min: 2.0
+      payout_pct: 100
+    - name: "Tier 2 — Severe"
+      wind_kmh_min: 120
+      surge_m_min: 1.0
+      payout_pct: 60
+    - name: "Tier 3 — Moderate"
+      wind_kmh_min: 90
+      surge_m_min: 0.5
+      payout_pct: 30
+    - name: "No Trigger"
+      wind_kmh_min: 0
+      surge_m_min: 0.0
+      payout_pct: 0
+  # Assumed sum insured per district (₹ crore) — ASSUMPTION
+  sum_insured_cr:
+    Puri: 500
+    Khordha: 800
+    Jagatsinghpur: 400
+    Kendrapara: 350
+    Cuttack: 600
+
+# Grid resolution for raster computations
+grid_resolution_m: 500  # metres (coarse for speed; label in UI)
+
+# Population estimate source (for KPI header)
+population:
+  source: "WorldPop 2019 / GHSL (pre-computed from GEE)"
+  # Fallback district populations from census if GEE unavailable
+  # Source: Census of India 2011 (latest available); labelled ASSUMPTION
+  census_2011:
+    Puri: 1697983
+    Khordha: 2251673
+    Jagatsinghpur: 1136604
+    Kendrapara: 1440664
+    Cuttack: 2624470
