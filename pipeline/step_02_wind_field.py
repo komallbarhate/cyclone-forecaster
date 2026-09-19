@@ -15,7 +15,7 @@ References:
   https://doi.org/10.1175/1520-0493(1980)108<1212:AAMOTWAPPH>2.0.CO;2
 
 Usage:
-    python pipeline/02_wind_field.py [--scenario fani_2019] [--force]
+    python -m pipeline.step_02_wind_field [--scenario fani_2019] [--force]
 """
 
 from __future__ import annotations
@@ -51,8 +51,11 @@ OMEGA = 7.2921e-5        # rad/s — Earth rotation rate
 FCOR = 2 * OMEGA * math.sin(math.radians(CORIOL_LAT))  # Coriolis parameter
 
 # 10-min to surface wind conversion
-SURFACE_WIND_FACTOR = 0.80  # Gradient → 10-m surface wind (over land)
-ASYMMETRY_FRACTION = 0.20   # Fraction of translation speed added to right-of-track
+# IBTrACS JTWC reports 1-min sustained winds. WMO Technical Document WMO/TD-No.1688
+# recommends a 1-min → 10-min reduction factor of 0.88 for tropical cyclones.
+# Using 0.80 (the old value) under-estimates by ~10% relative to IBTrACS Vmax.
+SURFACE_WIND_FACTOR = 0.88  # 1-min → 10-min surface wind (WMO recommendation)
+ASYMMETRY_FRACTION = 0.20   # Fraction of translation speed added to right-of-track (NH)
 
 # Saffir-Simpson equivalent category thresholds (km/h, 10-min)
 WIND_CATEGORIES = [
@@ -398,6 +401,7 @@ def run(scenario: str = "fani_2019", force: bool = False) -> bool:
 
     wind_max_out = PROCESSED_DIR / "wind_max.geojson"
     wind_ts_out = PROCESSED_DIR / "wind_district_ts.json"
+    wind_meta_out = PROCESSED_DIR / "wind_meta.json"
 
     if wind_max_out.exists() and wind_ts_out.exists() and not force:
         log.info("Wind field outputs exist; use --force to re-run")
@@ -406,6 +410,12 @@ def run(scenario: str = "fani_2019", force: bool = False) -> bool:
     # Load track
     track_points = load_hourly_track(PROCESSED_DIR)
     log.info(f"Loaded {len(track_points)} hourly track points")
+
+    # IBTrACS reported peak (1-min sustained, from track data)
+    ibtracs_vmax_kmh = max(pt.vmax_kmh for pt in track_points)
+    ibtracs_vmax_10min = ibtracs_vmax_kmh * SURFACE_WIND_FACTOR  # WMO 10-min equivalent
+    log.info(f"IBTrACS peak vmax: {ibtracs_vmax_kmh:.1f} km/h (1-min), "
+             f"{ibtracs_vmax_10min:.1f} km/h (10-min WMO equivalent)")
 
     bbox = config["aoi_bbox"]
     resolution_m = config.get("grid_resolution_m", 500)
@@ -416,6 +426,21 @@ def run(scenario: str = "fani_2019", force: bool = False) -> bool:
     lats, lons, max_wind_kmh = compute_wind_grid(
         track_points, bbox, resolution_m, (start_h, end_h)
     )
+
+    # --- Plausibility check ------------------------------------------------
+    # The AOI (lat 19.6–20.7) lies north of the storm's peak intensity location
+    # (lat ~18.5). The in-AOI track has max vmax ~185 km/h (1-min). The 10-min
+    # surface wind at RMW for the AOI points should be ≥ 0.70 × ibtracs_vmax_10min.
+    grid_peak = float(max_wind_kmh.max())
+    min_expected = ibtracs_vmax_10min * 0.65  # ≥ 65% of 10-min peak (AOI offset)
+    if grid_peak < min_expected:
+        raise RuntimeError(
+            f"FAIL: Grid peak {grid_peak:.1f} km/h < {min_expected:.1f} km/h "
+            f"(65% of IBTrACS 10-min {ibtracs_vmax_10min:.1f} km/h). "
+            "Check SURFACE_WIND_FACTOR, hours_filter, or track data."
+        )
+    log.info(f"[PASS] Grid peak {grid_peak:.1f} km/h >= {min_expected:.1f} km/h threshold")
+    # -----------------------------------------------------------------------
 
     # Save as GeoJSON (polygon cells coloured by wind speed)
     log.info("Building wind max GeoJSON...")
@@ -455,7 +480,9 @@ def run(scenario: str = "fani_2019", force: bool = False) -> bool:
     log.info(f"Saved wind max grid: {wind_max_out} ({len(features)} non-calm cells)")
 
     # Compute district time series
-    # District centroids (approximate; OSM-derived in Step 06; using approximate values here)
+    # District centroids (lat, lon) — approximate administrative centroids for Odisha
+    # districts in the AOI. These are used for point wind estimates; full spatial
+    # district boundaries are derived from OSM in step_06_osm_infra.py.
     district_centroids = {
         "Puri": (19.81, 85.83),
         "Khordha": (20.18, 85.62),
@@ -470,10 +497,40 @@ def run(scenario: str = "fani_2019", force: bool = False) -> bool:
         json.dump(ts, f, indent=2)
     log.info(f"Saved district wind time series: {wind_ts_out}")
 
-    # Summary
+    # District summary
+    district_peaks: dict[str, float] = {}
     for district, series in ts.items():
-        max_w = max((s["wind_kmh"] for s in series), default=0)
+        max_w = max((s["wind_kmh"] for s in series), default=0.0)
+        district_peaks[district] = round(max_w, 1)
         log.info(f"  {district}: peak wind {max_w:.1f} km/h")
+
+    # --- Write metadata JSON ------------------------------------------------
+    meta = {
+        "model": "Holland (1980) parametric wind field",
+        "surface_wind_factor": SURFACE_WIND_FACTOR,
+        "surface_wind_factor_note": "WMO 1-min to 10-min conversion (WMO/TD-No.1688)",
+        "asymmetry_fraction": ASYMMETRY_FRACTION,
+        "asymmetry_note": "Translation-speed asymmetry, right-of-track positive (NH)",
+        "ibtracs_vmax_kmh_1min": round(ibtracs_vmax_kmh, 1),
+        "ibtracs_vmax_kmh_10min_wmo": round(ibtracs_vmax_10min, 1),
+        "grid_peak_kmh": round(grid_peak, 1),
+        "grid_peak_vs_ibtracs_10min_ratio": round(grid_peak / ibtracs_vmax_10min, 3),
+        "grid_peak_note": (
+            "AOI (lat 19.6–20.7) is north of the storm's intensity peak (lat ~18.5). "
+            "Grid peak reflects in-AOI track intensity, not absolute storm maximum."
+        ),
+        "district_peaks_kmh": district_peaks,
+        "track_points_total": len(track_points),
+        "track_points_in_window": sum(
+            1 for p in track_points if start_h <= p.hours_to_landfall <= end_h
+        ),
+        "window_hours": [start_h, end_h],
+        "scenario": scenario,
+    }
+    with open(wind_meta_out, "w") as f:
+        json.dump(meta, f, indent=2)
+    log.info(f"Saved wind metadata: {wind_meta_out}")
+    # -----------------------------------------------------------------------
 
     return True
 

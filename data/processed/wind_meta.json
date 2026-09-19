@@ -1,0 +1,26 @@
+{
+  "model": "Holland (1980) parametric wind field",
+  "surface_wind_factor": 0.88,
+  "surface_wind_factor_note": "WMO 1-min to 10-min conversion (WMO/TD-No.1688)",
+  "asymmetry_fraction": 0.2,
+  "asymmetry_note": "Translation-speed asymmetry, right-of-track positive (NH)",
+  "ibtracs_vmax_kmh_1min": 214.9,
+  "ibtracs_vmax_kmh_10min_wmo": 189.1,
+  "grid_peak_kmh": 165.5,
+  "grid_peak_vs_ibtracs_10min_ratio": 0.875,
+  "grid_peak_note": "AOI (lat 19.6\u201320.7) is north of the storm's intensity peak (lat ~18.5). Grid peak reflects in-AOI track intensity, not absolute storm maximum.",
+  "district_peaks_kmh": {
+    "Puri": 157.8,
+    "Khordha": 129.2,
+    "Jagatsinghpur": 128.9,
+    "Kendrapara": 109.7,
+    "Cuttack": 124.6
+  },
+  "track_points_total": 211,
+  "track_points_in_window": 48,
+  "window_hours": [
+    -24,
+    24
+  ],
+  "scenario": "fani_2019"
+}
