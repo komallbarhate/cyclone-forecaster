@@ -151,6 +151,24 @@ def point_feature(lat: float, lon: float, properties: dict[str, Any] | None = No
     }
 
 
+def linestring_feature(coordinates: list[list[float]], properties: dict[str, Any] | None = None) -> dict:
+    """Return a GeoJSON LineString Feature. Coordinates are [[lon, lat], ...]."""
+    return {
+        "type": "Feature",
+        "geometry": {"type": "LineString", "coordinates": coordinates},
+        "properties": properties or {},
+    }
+
+
+def polygon_feature(coordinates: list[list[list[float]]], properties: dict[str, Any] | None = None) -> dict:
+    """Return a GeoJSON Polygon Feature."""
+    return {
+        "type": "Feature",
+        "geometry": {"type": "Polygon", "coordinates": coordinates},
+        "properties": properties or {},
+    }
+
+
 def feature_collection(features: list[dict]) -> dict:
     """Return a GeoJSON FeatureCollection."""
     return {"type": "FeatureCollection", "features": features}

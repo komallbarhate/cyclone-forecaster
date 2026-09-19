@@ -23,8 +23,13 @@ from __future__ import annotations
 import argparse
 import json
 import math
+import sys
 from pathlib import Path
 from typing import NamedTuple
+
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 import numpy as np
 import yaml
@@ -415,12 +420,15 @@ def run(scenario: str = "fani_2019", force: bool = False) -> bool:
     # Save as GeoJSON (polygon cells coloured by wind speed)
     log.info("Building wind max GeoJSON...")
     features = []
-    cell_dlat = abs(lats[1, 0] - lats[0, 0]) / 2 if lats.shape[0] > 1 else 0.0025
-    cell_dlon = abs(lons[0, 1] - lons[0, 0]) / 2 if lons.shape[1] > 1 else 0.0025
+    stride = 2
+    raw_dlat = abs(lats[1, 0] - lats[0, 0]) if lats.shape[0] > 1 else 0.005
+    raw_dlon = abs(lons[0, 1] - lons[0, 0]) if lons.shape[1] > 1 else 0.005
+    cell_dlat = raw_dlat * stride / 2
+    cell_dlon = raw_dlon * stride / 2
 
-    for i in range(lats.shape[0]):
-        for j in range(lats.shape[1]):
-            w = max_wind_kmh[i, j]
+    for i in range(0, lats.shape[0], stride):
+        for j in range(0, lats.shape[1], stride):
+            w = float(np.max(max_wind_kmh[i : i + stride, j : j + stride]))
             if w < 20:  # skip calm cells
                 continue
             lat_c, lon_c = float(lats[i, j]), float(lons[i, j])
@@ -436,6 +444,7 @@ def run(scenario: str = "fani_2019", force: bool = False) -> bool:
                 "geometry": {"type": "Polygon", "coordinates": [box]},
                 "properties": {
                     "wind_kmh": round(w, 1),
+                    "vmax_kmh": round(w, 1),
                     "wind_category": wind_category(w),
                 },
             })

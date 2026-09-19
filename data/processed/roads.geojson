@@ -1,0 +1,233 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            85.82,
+            20.26
+          ],
+          [
+            85.845,
+            20.315
+          ],
+          [
+            85.875,
+            20.395
+          ],
+          [
+            85.89,
+            20.46
+          ]
+        ]
+      },
+      "properties": {
+        "id": "road_nh16_bbsr_ctc",
+        "name": "National Highway 16 (Bhubaneswar-Cuttack Expressway)",
+        "highway": "trunk",
+        "ref": "NH-16",
+        "lanes": 6,
+        "source": "Curated / National Highways Authority of India"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            85.835,
+            19.825
+          ],
+          [
+            85.842,
+            19.92
+          ],
+          [
+            85.85,
+            20.08
+          ],
+          [
+            85.84,
+            20.21
+          ],
+          [
+            85.825,
+            20.26
+          ]
+        ]
+      },
+      "properties": {
+        "id": "road_nh316_puri_bbsr",
+        "name": "National Highway 316 (Puri-Bhubaneswar Highway)",
+        "highway": "primary",
+        "ref": "NH-316",
+        "lanes": 4,
+        "source": "Curated / National Highways Authority of India"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            85.89,
+            20.46
+          ],
+          [
+            86.05,
+            20.41
+          ],
+          [
+            86.22,
+            20.35
+          ],
+          [
+            86.45,
+            20.3
+          ],
+          [
+            86.63,
+            20.28
+          ]
+        ]
+      },
+      "properties": {
+        "id": "road_sh12_cuttack_paradip",
+        "name": "State Highway 12 / NH-53 (Cuttack-Paradip Port Highway)",
+        "highway": "primary",
+        "ref": "NH-53 / SH-12",
+        "lanes": 4,
+        "source": "Curated / National Highways Authority of India"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            85.835,
+            19.805
+          ],
+          [
+            85.94,
+            19.84
+          ],
+          [
+            86.02,
+            19.87
+          ],
+          [
+            86.095,
+            19.89
+          ]
+        ]
+      },
+      "properties": {
+        "id": "road_sh60_puri_konark",
+        "name": "Marine Drive Road (Puri to Konark)",
+        "highway": "secondary",
+        "ref": "SH-60",
+        "lanes": 2,
+        "source": "Curated / National Highways Authority of India"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            86.095,
+            19.89
+          ],
+          [
+            86.265,
+            19.982
+          ],
+          [
+            86.445,
+            20.165
+          ],
+          [
+            86.63,
+            20.28
+          ]
+        ]
+      },
+      "properties": {
+        "id": "road_sh43_konark_paradip",
+        "name": "Coastal Arterial (Konark-Astarang-Paradip)",
+        "highway": "secondary",
+        "ref": "SH-43",
+        "lanes": 2,
+        "source": "Curated / National Highways Authority of India"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            85.89,
+            20.46
+          ],
+          [
+            86.15,
+            20.485
+          ],
+          [
+            86.42,
+            20.502
+          ],
+          [
+            86.65,
+            20.55
+          ]
+        ]
+      },
+      "properties": {
+        "id": "road_sh9a_cuttack_kendrapara",
+        "name": "State Highway 9A (Cuttack-Kendrapara-Chandabali)",
+        "highway": "primary",
+        "ref": "SH-9A",
+        "lanes": 2,
+        "source": "Curated / National Highways Authority of India"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            85.82,
+            20.26
+          ],
+          [
+            85.73,
+            20.21
+          ],
+          [
+            85.625,
+            20.18
+          ]
+        ]
+      },
+      "properties": {
+        "id": "road_nh16_south_khordha",
+        "name": "National Highway 16 South (Bhubaneswar to Khordha Town)",
+        "highway": "trunk",
+        "ref": "NH-16",
+        "lanes": 4,
+        "source": "Curated / National Highways Authority of India"
+      }
+    }
+  ]
+}

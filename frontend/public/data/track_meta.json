@@ -1,0 +1,14 @@
+{
+  "storm_sid": "2019116N02090",
+  "storm_name": "FANI",
+  "basin": "NI",
+  "raw_obs_count": 71,
+  "hourly_steps": 211,
+  "start_time_utc": "2019-04-25 18:00:00+00:00",
+  "end_time_utc": "2019-05-04 12:00:00+00:00",
+  "landfall_time_utc": "2019-05-03T02:40:00Z",
+  "peak_vmax_kmh": 213.0,
+  "min_mslp_hpa": 932.0,
+  "data_source": "NOAA IBTrACS v04r00",
+  "citation": "Knapp et al. (2010) BAMS https://doi.org/10.1175/2009BAMS2755.1"
+}

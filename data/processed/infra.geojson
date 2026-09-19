@@ -1,0 +1,675 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.834,
+          19.8245
+        ]
+      },
+      "properties": {
+        "id": "sub_puri_132kv",
+        "name": "Puri 132/33kV Grid Substation",
+        "type": "substation",
+        "district": "Puri",
+        "voltage_kv": 132,
+        "backup_gen": false,
+        "criticality": "high",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.642,
+          19.801
+        ]
+      },
+      "properties": {
+        "id": "sub_brahmagiri_33kv",
+        "name": "Brahmagiri 33/11kV Substation",
+        "type": "substation",
+        "district": "Puri",
+        "voltage_kv": 33,
+        "backup_gen": false,
+        "criticality": "medium",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.096,
+          19.889
+        ]
+      },
+      "properties": {
+        "id": "sub_konark_33kv",
+        "name": "Konark 33/11kV Substation",
+        "type": "substation",
+        "district": "Puri",
+        "voltage_kv": 33,
+        "backup_gen": false,
+        "criticality": "medium",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.821,
+          19.808
+        ]
+      },
+      "properties": {
+        "id": "hosp_puri_dhh",
+        "name": "District Headquarter Hospital (DHH) Puri",
+        "type": "hospital",
+        "district": "Puri",
+        "beds": 350,
+        "has_icu": true,
+        "generator_hours": 18,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.651,
+          19.8035
+        ]
+      },
+      "properties": {
+        "id": "hosp_brahmagiri_chc",
+        "name": "Community Health Centre Brahmagiri",
+        "type": "hospital",
+        "district": "Puri",
+        "beds": 40,
+        "has_icu": false,
+        "generator_hours": 8,
+        "criticality": "high",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.815,
+          19.799
+        ]
+      },
+      "properties": {
+        "id": "shelt_puri_city_1",
+        "name": "Puri Multipurpose Cyclone Shelter 01",
+        "type": "shelter",
+        "district": "Puri",
+        "capacity": 1500,
+        "has_water": true,
+        "criticality": "high",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.435,
+          19.675
+        ]
+      },
+      "properties": {
+        "id": "shelt_satapada",
+        "name": "Satapada Coastal Cyclone Shelter",
+        "type": "shelter",
+        "district": "Puri",
+        "capacity": 2000,
+        "has_water": true,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.112,
+          19.873
+        ]
+      },
+      "properties": {
+        "id": "shelt_chandrabhaga",
+        "name": "Chandrabhaga Cyclone Shelter",
+        "type": "shelter",
+        "district": "Puri",
+        "capacity": 1200,
+        "has_water": true,
+        "criticality": "high",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.265,
+          19.982
+        ]
+      },
+      "properties": {
+        "id": "shelt_astarang",
+        "name": "Astaranga Coastal Shelter",
+        "type": "shelter",
+        "district": "Puri",
+        "capacity": 1800,
+        "has_water": true,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.765,
+          20.352
+        ]
+      },
+      "properties": {
+        "id": "sub_chandaka_400kv",
+        "name": "Chandaka 400/220kV Master Substation",
+        "type": "substation",
+        "district": "Khordha",
+        "voltage_kv": 400,
+        "backup_gen": true,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.845,
+          20.315
+        ]
+      },
+      "properties": {
+        "id": "sub_mancheswar_220kv",
+        "name": "Mancheswar 220/132kV Grid Substation",
+        "type": "substation",
+        "district": "Khordha",
+        "voltage_kv": 220,
+        "backup_gen": false,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.618,
+          20.182
+        ]
+      },
+      "properties": {
+        "id": "sub_khordha_132kv",
+        "name": "Khordha Town 132/33kV Substation",
+        "type": "substation",
+        "district": "Khordha",
+        "voltage_kv": 132,
+        "backup_gen": false,
+        "criticality": "high",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.772,
+          20.231
+        ]
+      },
+      "properties": {
+        "id": "hosp_aiims_bbsr",
+        "name": "AIIMS Bhubaneswar Super-Specialty",
+        "type": "hospital",
+        "district": "Khordha",
+        "beds": 950,
+        "has_icu": true,
+        "generator_hours": 36,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.828,
+          20.264
+        ]
+      },
+      "properties": {
+        "id": "hosp_capital_bbsr",
+        "name": "Capital Hospital Bhubaneswar",
+        "type": "hospital",
+        "district": "Khordha",
+        "beds": 600,
+        "has_icu": true,
+        "generator_hours": 24,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.625,
+          20.191
+        ]
+      },
+      "properties": {
+        "id": "hosp_khordha_dhh",
+        "name": "Khordha District Hospital",
+        "type": "hospital",
+        "district": "Khordha",
+        "beds": 200,
+        "has_icu": true,
+        "generator_hours": 12,
+        "criticality": "high",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.785,
+          20.255
+        ]
+      },
+      "properties": {
+        "id": "shelt_bbsr_khandagiri",
+        "name": "Khandagiri Relief Center",
+        "type": "shelter",
+        "district": "Khordha",
+        "capacity": 2500,
+        "has_water": true,
+        "criticality": "high",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.632,
+          20.281
+        ]
+      },
+      "properties": {
+        "id": "sub_paradip_220kv",
+        "name": "Paradip 220/132kV Port Grid Substation",
+        "type": "substation",
+        "district": "Jagatsinghpur",
+        "voltage_kv": 220,
+        "backup_gen": true,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.172,
+          20.262
+        ]
+      },
+      "properties": {
+        "id": "sub_jagatsinghpur_132kv",
+        "name": "Jagatsinghpur 132/33kV Substation",
+        "type": "substation",
+        "district": "Jagatsinghpur",
+        "voltage_kv": 132,
+        "backup_gen": false,
+        "criticality": "high",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.445,
+          20.165
+        ]
+      },
+      "properties": {
+        "id": "sub_ersama_33kv",
+        "name": "Ersama 33/11kV Coastal Substation",
+        "type": "substation",
+        "district": "Jagatsinghpur",
+        "voltage_kv": 33,
+        "backup_gen": false,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.671,
+          20.292
+        ]
+      },
+      "properties": {
+        "id": "hosp_paradip_port",
+        "name": "Paradip Port Trust Hospital",
+        "type": "hospital",
+        "district": "Jagatsinghpur",
+        "beds": 150,
+        "has_icu": true,
+        "generator_hours": 24,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.168,
+          20.258
+        ]
+      },
+      "properties": {
+        "id": "hosp_jagatsinghpur_dhh",
+        "name": "Jagatsinghpur District Headquarter Hospital",
+        "type": "hospital",
+        "district": "Jagatsinghpur",
+        "beds": 250,
+        "has_icu": true,
+        "generator_hours": 16,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.438,
+          20.171
+        ]
+      },
+      "properties": {
+        "id": "shelt_ersama_central",
+        "name": "Ersama Mega Cyclone Shelter",
+        "type": "shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 3000,
+        "has_water": true,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.645,
+          20.275
+        ]
+      },
+      "properties": {
+        "id": "shelt_paradip_lock",
+        "name": "Paradip Lock Multi-Purpose Shelter",
+        "type": "shelter",
+        "district": "Jagatsinghpur",
+        "capacity": 2200,
+        "has_water": true,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.421,
+          20.502
+        ]
+      },
+      "properties": {
+        "id": "sub_kendrapara_132kv",
+        "name": "Kendrapara 132/33kV Substation",
+        "type": "substation",
+        "district": "Kendrapara",
+        "voltage_kv": 132,
+        "backup_gen": false,
+        "criticality": "high",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.582,
+          20.415
+        ]
+      },
+      "properties": {
+        "id": "sub_mahakalpara_33kv",
+        "name": "Mahakalpara 33/11kV Coastal Substation",
+        "type": "substation",
+        "district": "Kendrapara",
+        "voltage_kv": 33,
+        "backup_gen": false,
+        "criticality": "high",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.415,
+          20.498
+        ]
+      },
+      "properties": {
+        "id": "hosp_kendrapara_dhh",
+        "name": "Kendrapara District Hospital",
+        "type": "hospital",
+        "district": "Kendrapara",
+        "beds": 280,
+        "has_icu": true,
+        "generator_hours": 14,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.721,
+          20.582
+        ]
+      },
+      "properties": {
+        "id": "shelt_rajanagar_shelter",
+        "name": "Rajanagar Coastal Cyclone Shelter",
+        "type": "shelter",
+        "district": "Kendrapara",
+        "capacity": 2000,
+        "has_water": true,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          86.575,
+          20.421
+        ]
+      },
+      "properties": {
+        "id": "shelt_mahakalpara_shelter",
+        "name": "Mahakalpara High School Shelter",
+        "type": "shelter",
+        "district": "Kendrapara",
+        "capacity": 1500,
+        "has_water": true,
+        "criticality": "high",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.832,
+          20.485
+        ]
+      },
+      "properties": {
+        "id": "sub_bidanasi_220kv",
+        "name": "Bidanasi 220/132kV Substation",
+        "type": "substation",
+        "district": "Cuttack",
+        "voltage_kv": 220,
+        "backup_gen": false,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.912,
+          20.535
+        ]
+      },
+      "properties": {
+        "id": "sub_choudwar_220kv",
+        "name": "Choudwar 220/132kV Industrial Substation",
+        "type": "substation",
+        "district": "Cuttack",
+        "voltage_kv": 220,
+        "backup_gen": true,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.892,
+          20.468
+        ]
+      },
+      "properties": {
+        "id": "hosp_scb_medical",
+        "name": "SCB Medical College & Hospital Cuttack",
+        "type": "hospital",
+        "district": "Cuttack",
+        "beds": 2100,
+        "has_icu": true,
+        "generator_hours": 48,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.865,
+          20.459
+        ]
+      },
+      "properties": {
+        "id": "hosp_cuttack_city",
+        "name": "City Hospital Cuttack",
+        "type": "hospital",
+        "district": "Cuttack",
+        "beds": 200,
+        "has_icu": false,
+        "generator_hours": 12,
+        "criticality": "high",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          85.868,
+          20.482
+        ]
+      },
+      "properties": {
+        "id": "shelt_cuttack_barabati",
+        "name": "Barabati Relief Operations Center",
+        "type": "shelter",
+        "district": "Cuttack",
+        "capacity": 3500,
+        "has_water": true,
+        "criticality": "critical",
+        "source": "Curated / OpenStreetMap Verified"
+      }
+    }
+  ]
+}

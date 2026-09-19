@@ -17,12 +17,13 @@ import time
 from pathlib import Path
 from typing import Callable
 
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
 from pipeline.utils.logger import get_logger, setup_file_logger
 
-# Project root
-PROJECT_ROOT = Path(__file__).parent.parent
 LOG_PATH = PROJECT_ROOT / "data" / "processed" / "pipeline.log"
-
 log = get_logger(__name__)
 
 
@@ -140,18 +141,18 @@ def main() -> None:
         try:
             ok = step_fn(scenario=args.scenario, force=args.force)
             elapsed = time.time() - t0
-            status = "✅ OK" if ok else "⚠️  WARN"
+            status = "[OK]" if ok else "[WARN]"
             log.info(f"         {status} ({elapsed:.1f}s)")
             results.append((step_name, ok, elapsed))
         except Exception as e:
             elapsed = time.time() - t0
-            log.error(f"         ❌ FAILED: {e}")
+            log.error(f"         [FAIL] FAILED: {e}")
             results.append((step_name, False, elapsed))
 
     # Summary
     log.info("\n=== Pipeline Summary ===")
     for name, ok, elapsed in results:
-        icon = "✅" if ok else "❌"
+        icon = "[OK]" if ok else "[FAIL]"
         log.info(f"  {icon} {name} ({elapsed:.1f}s)")
 
     failed = [r for r in results if not r[1]]

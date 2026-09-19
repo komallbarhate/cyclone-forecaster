@@ -5,7 +5,7 @@
 
 name: "Cyclone Fani 2019"
 basin: "NI"  # North Indian Ocean
-storm_id: "2019153N11090"  # IBTrACS SID for Fani
+storm_id: "2019116N02090"  # IBTrACS SID for Fani (day 116 of 2019, 02N 090E)
 imad_name: "FANI"
 
 # Area of Interest (bounding box: [lon_min, lat_min, lon_max, lat_max])
@@ -27,7 +27,7 @@ landfall:
 # IBTrACS data source
 ibtracs:
   url: "https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r00/access/csv/ibtracs.NI.list.v04r00.csv"
-  storm_sid: "2019153N11090"
+  storm_sid: "2019116N02090"
 
 # Timeline around landfall (hours relative to landfall T=0)
 timeline:

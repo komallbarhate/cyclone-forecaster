@@ -1,0 +1,14 @@
+{
+  "total_infra": 33,
+  "substations": 13,
+  "hospitals": 10,
+  "shelters": 10,
+  "arterial_roads": 7,
+  "aoi_bbox": [
+    84.9,
+    19.6,
+    86.5,
+    20.7
+  ],
+  "source": "OpenStreetMap + Verified District Admin Catalog"
+}
