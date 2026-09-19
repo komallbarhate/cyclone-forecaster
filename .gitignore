@@ -33,6 +33,7 @@ ENV/
 # Data (raw is never committed; processed small files are committed)
 data/raw/*
 !data/raw/.gitkeep
+!data/raw/open_data_meta.json
 # Large processed files
 data/processed/*.tif
 data/processed/*.nc

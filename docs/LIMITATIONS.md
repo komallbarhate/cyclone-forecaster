@@ -66,36 +66,54 @@ Rapid intensification events between observations will not be captured.
 
 ## 3. SAR Validation Limitations
 
-### 3.1 Temporal Gap
-The post-event SAR image is typically available 4–10 days after landfall, not
-immediately. Standing water that drained before the overpass is not detected.
-This causes systematic under-estimation of observed flood extent.
+### 3.1 Sentinel-1 Acquisition Timing & Landfall Offsets
+Sentinel-1 Radiometrically Terrain Corrected (RTC) scenes from Microsoft Planetary Computer:
+- **Pre-event Scene**: `S1A_IW_GRDH_1SDV_20190422T000501_20190422T000530_026895_030652_rtc`
+  - Acquisition Time: `2019-04-22 00:05:16 UTC`
+  - Offset from Landfall (`2019-05-03 02:40:00 UTC`): **-266.58 hours** (-11.1 days baseline)
+- **Post-event Scene**: `S1A_IW_GRDH_1SDV_20190504T000512_20190504T000537_027070_030CB5_rtc`
+  - Acquisition Time: `2019-05-04 00:05:25 UTC`
+  - Offset from Landfall (`2019-05-03 02:40:00 UTC`): **+21.42 hours** (~21 h post-landfall)
+- **Adjacent Post-event Scene in 3–5 May Window**:
+  - `S1A_IW_GRDH_1SDV_20190504T000447_20190504T000512_027070_030CB5_rtc`
+  - Acquisition Time: `2019-05-04 00:05:00 UTC` (+21.42 h offset; northern contiguous frame on the same descending orbital pass, bbox `[86.027, 20.234, 88.711, 22.164]`).
 
-### 3.2 Urban/Vegetation Effects
-SAR backscatter in urban areas (double-bounce) and dense vegetation can mask
-flood signatures. Flooded buildings may not show reduced backscatter.
+### 3.2 Spatial Coverage Caveat (Single Orbit Swath)
+- **Joint AOI Coverage**: Exactly **44.65%** of the project AOI bbox `[84.9, 19.6, 86.5, 20.7]` is covered by **both** pre- and post-event Sentinel-1 swaths (spatial intersection: longitudes 85.76°E to 86.50°E, latitudes 19.60°N to 20.66°N).
+- A single Sentinel-1 frame cannot cover the entire 1.6° longitude extent; western portions of the AOI (western Khordha, western Cuttack, interior Chilika lagoon) fall outside this orbit track.
+- Validation metrics (IoU, Precision, Recall, F1) apply **only to the 44.65% covered area** containing the primary Puri coastal landfall zone and Jagatsinghpur.
 
-### 3.3 Thresholding
-The Otsu threshold for flood detection is computed from the image histogram.
-In scenes with low flood fraction, Otsu may perform poorly. The threshold is
-configurable and should be validated against known flood polygons.
+### 3.3 Residual Inundation vs Peak Surge
+- The post-event SAR scene was captured **~21.4 hours after landfall**. Transient storm surge floodwaters typically peak near landfall and drain within 12–18 hours following tidal ebb and topographic outflow.
+- Consequently, Sentinel-1 change detection observes **residual inundation and waterlogging**, not the transient peak surge envelope. Validation metrics evaluate the model's agreement against persistent post-event standing water.
 
-### 3.4 Projection and Resolution
-The GEE computation uses a 30m native SAR resolution. Comparison with the
-500m surge model grid involves spatial aggregation that affects metrics.
+### 3.4 Urban & Vegetation Backscatter Attenuation
+- SAR backscatter in dense urban settlements (double-bounce effects) and tall mangrove canopy can mask water signatures, leading to potential false negatives in dense built environments.
+
+### 3.5 Thresholding & Projection
+- Change detection applies a fixed backscatter drop threshold ($\Delta \sigma^0 < -3.0$ dB) and absolute water threshold ($\sigma^0 < -16.0$ dB) with JRC Global Surface Water permanent water masking (excluding permanent water bodies like Chilika Lake and open ocean).
+- Comparison with the model grid involves resampling the native 10m/30m SAR resolution to the 500m simulation grid.
 
 ---
 
-## 4. Rainfall Model Limitations
+## 4. Rainfall & Population Model Limitations
 
-### 4.1 GPM IMERG Resolution
-GPM IMERG has 0.1° (~11km) spatial resolution. Sub-grid rainfall variability
-is not captured, which affects flood-prone area identification.
+### 4.1 CHIRPS Precipitation Resolution
+- Rainfall forcing utilizes CHIRPS v2.0 daily precipitation at **0.05° (~5.5 km)** spatial resolution.
+- Event accumulation is computed across 2–4 May 2019 (`chirps-v2.0.2019.05.02.tif`, `2019.05.03`, `2019.05.04`).
+- Because of the ~5 km grid, local convective rain cells, sub-grid orographic enhancement, and micro-drainage channels cannot be resolved, producing smoothed flood-susceptibility pathways.
 
-### 4.2 HAND Approach
-The HAND (Height Above Nearest Drainage) approach is a static indicator of
-flood susceptibility, not a dynamic flood model. It does not simulate drainage
-capacity, soil infiltration, or antecedent moisture conditions.
+### 4.2 HAND Elevation Approximation
+- HAND (Height Above Nearest Drainage) derived from Copernicus GLO-30 DEM provides a static structural indicator of drainage proximity rather than unsteady hydrodynamic routing. Infiltration capacity and culvert infrastructure are unmodeled.
+
+### 4.3 WorldPop Population Layer Specifications
+- Population exposure is calculated from WorldPop 2019 India unconstrained count raster:
+  - Exact File: `ind_ppp_2019_1km_Aggregated.tif`
+  - Version: `WorldPop Global 2000-2020 1km unconstrained`
+  - Year: `2019`
+  - Spatial Resolution: `30 arc-seconds (~1 km at the equator)`
+  - AOI Total Population: **10,866,029** residents
+- Disaggregation does not capture diurnal commuter shifts or pre-landfall evacuations conducted by the Odisha State Disaster Management Authority (OSDMA).
 
 ---
 

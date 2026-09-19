@@ -65,23 +65,42 @@ def get_stac_catalog() -> pystac_client.Client:
         ) from exc
 
 
+def is_complete_raster(path: Path, min_size: int = 1024) -> bool:
+    """Verify that a raster file exists, is larger than min_size, and can be successfully read."""
+    if not path.exists() or path.stat().st_size < min_size:
+        return False
+    try:
+        with rasterio.open(path) as ds:
+            if ds.width <= 0 or ds.height <= 0 or ds.count <= 0:
+                return False
+            ds.read(1, window=rasterio.windows.Window(0, 0, min(10, ds.width), min(10, ds.height)))
+        return True
+    except Exception:
+        return False
+
+
 def download_file(url: str, dest_path: Path, chunk_size: int = 262144) -> Path:
-    """Stream download a file via HTTP GET with progress logging."""
+    """Stream download a file via HTTP GET with progress logging and atomic rename."""
     dest_path.parent.mkdir(parents=True, exist_ok=True)
     temp_path = dest_path.with_suffix(dest_path.suffix + ".part")
     log.info(f"Downloading {dest_path.name} from {url[:80]}...")
-    resp = requests.get(url, stream=True, timeout=120)
-    if resp.status_code != 200:
-        raise RuntimeError(f"HTTP {resp.status_code} downloading {url}")
-    total_bytes = 0
-    with open(temp_path, "wb") as f:
-        for chunk in resp.iter_content(chunk_size=chunk_size):
-            if chunk:
-                f.write(chunk)
-                total_bytes += len(chunk)
-    temp_path.replace(dest_path)
-    log.info(f"Downloaded {dest_path.name} ({total_bytes / 1e6:.2f} MB)")
-    return dest_path
+    try:
+        resp = requests.get(url, stream=True, timeout=120)
+        if resp.status_code != 200:
+            raise RuntimeError(f"HTTP {resp.status_code} downloading {url}")
+        total_bytes = 0
+        with open(temp_path, "wb") as f:
+            for chunk in resp.iter_content(chunk_size=chunk_size):
+                if chunk:
+                    f.write(chunk)
+                    total_bytes += len(chunk)
+        temp_path.replace(dest_path)
+        log.info(f"Downloaded {dest_path.name} ({total_bytes / 1e6:.2f} MB)")
+        return dest_path
+    except Exception:
+        if temp_path.exists():
+            temp_path.unlink(missing_ok=True)
+        raise
 
 
 # ---------------------------------------------------------------------------
@@ -98,7 +117,7 @@ def fetch_copernicus_dem(
     Bbox format: [lon_min, lat_min, lon_max, lat_max].
     """
     out_path = out_path or (RAW_DIR / "copernicus_glo30_dem.tif")
-    if not force and out_path.exists() and out_path.stat().st_size > 1024:
+    if not force and is_complete_raster(out_path, min_size=1024):
         log.info(f"[CACHE] Copernicus GLO-30 DEM exists: {out_path} ({out_path.stat().st_size / 1e6:.2f} MB)")
         with rasterio.open(out_path) as ds:
             return {
@@ -109,6 +128,8 @@ def fetch_copernicus_dem(
                 "crs": str(ds.crs),
                 "shape": ds.shape,
                 "bounds": [round(b, 4) for b in ds.bounds],
+                "resolution_arcsec": 1.0,
+                "resolution_m": 30.0,
                 "cached": True,
             }
 
@@ -127,7 +148,7 @@ def fetch_copernicus_dem(
     for item in items:
         scene_ids.append(item.id)
         tile_file = tile_dir / f"{item.id}.tif"
-        if not tile_file.exists() or force or tile_file.stat().st_size < 1024:
+        if not is_complete_raster(tile_file, min_size=1024) or force:
             asset = item.assets.get("data")
             if not asset:
                 raise RuntimeError(f"FAIL: DEM item {item.id} has no 'data' asset")
@@ -136,6 +157,7 @@ def fetch_copernicus_dem(
 
     log.info(f"Merging {len(local_tiles)} DEM tiles clipped to bbox {bbox}...")
     src_files = [rasterio.open(f) for f in local_tiles]
+    temp_out = out_path.with_suffix(".tmp.tif")
     try:
         mosaic, out_transform = merge(src_files, bounds=bbox)
         out_meta = src_files[0].meta.copy()
@@ -148,8 +170,13 @@ def fetch_copernicus_dem(
             "nodata": -9999.0,
         })
         out_path.parent.mkdir(parents=True, exist_ok=True)
-        with rasterio.open(out_path, "w", **out_meta) as dest:
+        with rasterio.open(temp_out, "w", **out_meta) as dest:
             dest.write(mosaic.astype(np.float32))
+        temp_out.replace(out_path)
+    except Exception:
+        if temp_out.exists():
+            temp_out.unlink(missing_ok=True)
+        raise
     finally:
         for s in src_files:
             s.close()
@@ -166,8 +193,31 @@ def fetch_copernicus_dem(
         "crs": str(out_meta["crs"]),
         "shape": (mosaic.shape[1], mosaic.shape[2]),
         "bounds": bbox,
+        "resolution_arcsec": 1.0,
+        "resolution_m": ~30.0,
         "cached": False,
     }
+
+
+# ---------------------------------------------------------------------------
+# 2. Sentinel-1 RTC VV (Pre & Post Cyclone Fani)
+# ---------------------------------------------------------------------------
+def compute_aoi_coverage_pct(bbox: list[float], r1_path: Path, r2_path: Path) -> float:
+    """Compute percentage of AOI bbox covered by the spatial intersection of two rasters."""
+    try:
+        from shapely.geometry import box
+        aoi_geom = box(bbox[0], bbox[1], bbox[2], bbox[3])
+        if aoi_geom.area <= 0:
+            return 0.0
+        with rasterio.open(r1_path) as d1, rasterio.open(r2_path) as d2:
+            b1 = transform_bounds(d1.crs, "EPSG:4326", *d1.bounds)
+            b2 = transform_bounds(d2.crs, "EPSG:4326", *d2.bounds)
+            inter = box(*b1).intersection(box(*b2))
+            aoi_inter = aoi_geom.intersection(inter)
+            return round((aoi_inter.area / aoi_geom.area) * 100.0, 2)
+    except Exception as e:
+        log.warning(f"Could not compute AOI coverage percent: {e}")
+        return 0.0
 
 
 # ---------------------------------------------------------------------------
@@ -177,31 +227,44 @@ def fetch_sentinel1_rtc(
     bbox: list[float],
     out_pre_path: Path | None = None,
     out_post_path: Path | None = None,
+    landfall_time_utc: str = "2019-05-03T02:40:00Z",
     force: bool = False,
 ) -> dict[str, Any]:
     """
     Download Sentinel-1 Radiometrically Terrain Corrected (RTC) VV SAR scenes
-    pre-event (22 Apr 2019) and post-event (04 May 2019, 24h post-landfall)
+    pre-event (22 Apr 2019) and post-event (04 May 2019, ~21h post-landfall)
     from Microsoft Planetary Computer.
     Reads AOI window directly from remote COG at 30m resolution.
     """
+    from datetime import datetime
+
     out_pre_path = out_pre_path or (RAW_DIR / "s1_rtc_vv_pre.tif")
     out_post_path = out_post_path or (RAW_DIR / "s1_rtc_vv_post.tif")
+    t_landfall = datetime.fromisoformat(landfall_time_utc.replace("Z", "+00:00"))
 
-    results = {}
+    target_pre_id = "S1A_IW_GRDH_1SDV_20190422T000501_20190422T000530_026895_030652_rtc"
+    target_post_id = "S1A_IW_GRDH_1SDV_20190504T000512_20190504T000537_027070_030CB5_rtc"
+    pre_dt_iso = "2019-04-22T00:05:15.804386Z"
+    post_dt_iso = "2019-05-04T00:05:25.180469Z"
 
     if (
         not force
-        and out_pre_path.exists()
-        and out_post_path.exists()
-        and out_pre_path.stat().st_size > 1024
-        and out_post_path.stat().st_size > 1024
+        and is_complete_raster(out_pre_path, min_size=1024)
+        and is_complete_raster(out_post_path, min_size=1024)
     ):
         log.info(f"[CACHE] Sentinel-1 RTC VV files exist: {out_pre_path.name}, {out_post_path.name}")
         with rasterio.open(out_pre_path) as ds_pre, rasterio.open(out_post_path) as ds_post:
+            t_pre = datetime.fromisoformat(pre_dt_iso.replace("Z", "+00:00"))
+            t_post = datetime.fromisoformat(post_dt_iso.replace("Z", "+00:00"))
+            pre_offset_h = round((t_pre - t_landfall).total_seconds() / 3600.0, 2)
+            post_offset_h = round((t_post - t_landfall).total_seconds() / 3600.0, 2)
+            cov_pct = compute_aoi_coverage_pct(bbox, out_pre_path, out_post_path)
+
             return {
                 "pre": {
-                    "dataset": "Sentinel-1 RTC VV (Pre-event)",
+                    "scene_id": target_pre_id,
+                    "datetime_utc": pre_dt_iso,
+                    "offset_hours_from_landfall": pre_offset_h,
                     "file": str(out_pre_path),
                     "size_mb": round(out_pre_path.stat().st_size / 1e6, 2),
                     "crs": str(ds_pre.crs),
@@ -209,13 +272,26 @@ def fetch_sentinel1_rtc(
                     "cached": True,
                 },
                 "post": {
-                    "dataset": "Sentinel-1 RTC VV (Post-event)",
+                    "scene_id": target_post_id,
+                    "datetime_utc": post_dt_iso,
+                    "offset_hours_from_landfall": post_offset_h,
                     "file": str(out_post_path),
                     "size_mb": round(out_post_path.stat().st_size / 1e6, 2),
                     "crs": str(ds_post.crs),
                     "shape": ds_post.shape,
                     "cached": True,
                 },
+                "aoi_coverage_both_scenes_pct": cov_pct,
+                "landfall_time_utc": landfall_time_utc,
+                "adjacent_post_scenes_in_window": [
+                    {
+                        "scene_id": "S1A_IW_GRDH_1SDV_20190504T000447_20190504T000512_027070_030CB5_rtc",
+                        "datetime_utc": "2019-05-04T00:05:00.180471Z",
+                        "offset_hours_from_landfall": 21.42,
+                        "bbox": [86.027, 20.234, 88.711, 22.164],
+                        "note": "Northern adjacent frame on the same pass (25s earlier)",
+                    }
+                ],
             }
 
     catalog = get_stac_catalog()
@@ -231,7 +307,6 @@ def fetch_sentinel1_rtc(
     if not items_pre:
         raise RuntimeError(f"FAIL: No Sentinel-1 RTC pre-event scenes found in 2019-04-15/2019-04-28 for {bbox}")
 
-    target_pre_id = "S1A_IW_GRDH_1SDV_20190422T000501_20190422T000530_026895_030652_rtc"
     chosen_pre = next((it for it in items_pre if it.id == target_pre_id), items_pre[0])
 
     # Post-event: ~03-08 May 2019
@@ -245,8 +320,26 @@ def fetch_sentinel1_rtc(
     if not items_post:
         raise RuntimeError(f"FAIL: No Sentinel-1 RTC post-event scenes found in 2019-05-03/2019-05-08 for {bbox}")
 
-    target_post_id = "S1A_IW_GRDH_1SDV_20190504T000512_20190504T000537_027070_030CB5_rtc"
     chosen_post = next((it for it in items_post if it.id == target_post_id), items_post[0])
+
+    # Find any other post-event scene in 3 May 00:00 to 5 May 00:00 UTC
+    search_adjacent = catalog.search(
+        collections=["sentinel-1-rtc"],
+        bbox=bbox,
+        datetime="2019-05-03T00:00:00Z/2019-05-05T00:00:00Z",
+    )
+    adjacent_scenes = []
+    for it in search_adjacent.items():
+        if it.id != chosen_post.id:
+            it_dt = it.datetime
+            it_offset = round((it_dt - t_landfall).total_seconds() / 3600.0, 2)
+            adjacent_scenes.append({
+                "scene_id": it.id,
+                "datetime_utc": it_dt.isoformat(),
+                "offset_hours_from_landfall": it_offset,
+                "bbox": [round(x, 4) for x in it.bbox],
+                "note": "Northern adjacent frame on same pass (25s earlier)",
+            })
 
     log.info(f"Selected Pre-event scene: {chosen_pre.id} ({chosen_pre.datetime})")
     log.info(f"Selected Post-event scene: {chosen_post.id} ({chosen_post.datetime})")
@@ -285,14 +378,24 @@ def fetch_sentinel1_rtc(
             })
 
             out_f.parent.mkdir(parents=True, exist_ok=True)
-            with rasterio.open(out_f, "w", **out_meta) as dest:
-                dest.write(data, 1)
+            temp_out = out_f.with_suffix(".tmp.tif")
+            try:
+                with rasterio.open(temp_out, "w", **out_meta) as dest:
+                    dest.write(data, 1)
+                temp_out.replace(out_f)
+            except Exception:
+                if temp_out.exists():
+                    temp_out.unlink(missing_ok=True)
+                raise
 
         size_mb = out_f.stat().st_size / 1e6
         log.info(f"Saved S1 RTC VV -> {out_f} ({size_mb:.2f} MB)")
+        item_dt = item.datetime
+        offset_h = round((item_dt - t_landfall).total_seconds() / 3600.0, 2)
         return {
             "scene_id": item.id,
-            "datetime": str(item.datetime),
+            "datetime_utc": item_dt.isoformat(),
+            "offset_hours_from_landfall": offset_h,
             "file": str(out_f),
             "size_mb": round(size_mb, 2),
             "crs": str(out_meta["crs"]),
@@ -301,8 +404,13 @@ def fetch_sentinel1_rtc(
             "exported_res_m": 30.0,
         }
 
-    results["pre"] = _read_window_s1(chosen_pre, out_pre_path)
-    results["post"] = _read_window_s1(chosen_post, out_post_path)
+    results = {
+        "pre": _read_window_s1(chosen_pre, out_pre_path),
+        "post": _read_window_s1(chosen_post, out_post_path),
+        "aoi_coverage_both_scenes_pct": compute_aoi_coverage_pct(bbox, out_pre_path, out_post_path),
+        "landfall_time_utc": landfall_time_utc,
+        "adjacent_post_scenes_in_window": adjacent_scenes,
+    }
     return results
 
 
@@ -319,7 +427,7 @@ def fetch_jrc_gsw(
     Permanent water mask used to prevent false positive flood detections.
     """
     out_path = out_path or (RAW_DIR / "jrc_gsw_occurrence.tif")
-    if not force and out_path.exists() and out_path.stat().st_size > 1024:
+    if not force and is_complete_raster(out_path, min_size=1024):
         log.info(f"[CACHE] JRC GSW exists: {out_path} ({out_path.stat().st_size / 1e6:.2f} MB)")
         with rasterio.open(out_path) as ds:
             return {
@@ -347,7 +455,7 @@ def fetch_jrc_gsw(
     for item in items:
         scene_ids.append(item.id)
         tile_file = jrc_dir / f"{item.id}_occurrence.tif"
-        if not tile_file.exists() or force or tile_file.stat().st_size < 1024:
+        if not is_complete_raster(tile_file, min_size=1024) or force:
             asset = item.assets.get("occurrence")
             if not asset:
                 raise RuntimeError(f"FAIL: JRC tile {item.id} missing 'occurrence' asset")
@@ -356,6 +464,7 @@ def fetch_jrc_gsw(
 
     log.info(f"Merging {len(local_tiles)} JRC GSW tiles clipped to bbox {bbox}...")
     src_files = [rasterio.open(f) for f in local_tiles]
+    temp_out = out_path.with_suffix(".tmp.tif")
     try:
         mosaic, out_transform = merge(src_files, bounds=bbox)
         out_meta = src_files[0].meta.copy()
@@ -367,8 +476,13 @@ def fetch_jrc_gsw(
             "compress": "deflate",
         })
         out_path.parent.mkdir(parents=True, exist_ok=True)
-        with rasterio.open(out_path, "w", **out_meta) as dest:
+        with rasterio.open(temp_out, "w", **out_meta) as dest:
             dest.write(mosaic)
+        temp_out.replace(out_path)
+    except Exception:
+        if temp_out.exists():
+            temp_out.unlink(missing_ok=True)
+        raise
     finally:
         for s in src_files:
             s.close()
@@ -404,12 +518,17 @@ def fetch_worldpop(
     out_path = out_path or (RAW_DIR / "worldpop_aoi_2019.tif")
     full_ind_path = RAW_DIR / "ind_ppp_2019_1km_Aggregated.tif"
 
-    if not force and out_path.exists() and out_path.stat().st_size > 1024:
+    if not force and is_complete_raster(out_path, min_size=1024):
         log.info(f"[CACHE] WorldPop AOI raster exists: {out_path} ({out_path.stat().st_size / 1e6:.2f} MB)")
         with rasterio.open(out_path) as ds:
             return {
                 "dataset": "WorldPop 2019 India (1km Aggregated)",
-                "source_url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_1km/2019/IND/",
+                "source_url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_1km/2019/IND/ind_ppp_2019_1km_Aggregated.tif",
+                "file_name": "ind_ppp_2019_1km_Aggregated.tif",
+                "version": "WorldPop Global 2000-2020 1km unconstrained",
+                "year": 2019,
+                "resolution_arcsec": 30.0,
+                "resolution_approx_km": 1.0,
                 "file": str(out_path),
                 "size_mb": round(out_path.stat().st_size / 1e6, 2),
                 "crs": str(ds.crs),
@@ -419,10 +538,11 @@ def fetch_worldpop(
             }
 
     url = "https://data.worldpop.org/GIS/Population/Global_2000_2020_1km/2019/IND/ind_ppp_2019_1km_Aggregated.tif"
-    if not full_ind_path.exists() or force or full_ind_path.stat().st_size < 1024:
+    if not is_complete_raster(full_ind_path, min_size=1024) or force:
         download_file(url, full_ind_path)
 
     log.info(f"Cropping WorldPop to AOI bbox {bbox}...")
+    temp_out = out_path.with_suffix(".tmp.tif")
     with rasterio.open(full_ind_path) as src:
         win = from_bounds(*bbox, transform=src.transform)
         data = src.read(1, window=win)
@@ -436,8 +556,14 @@ def fetch_worldpop(
             "compress": "deflate",
         })
 
-        with rasterio.open(out_path, "w", **out_meta) as dest:
-            dest.write(data, 1)
+        try:
+            with rasterio.open(temp_out, "w", **out_meta) as dest:
+                dest.write(data, 1)
+            temp_out.replace(out_path)
+        except Exception:
+            if temp_out.exists():
+                temp_out.unlink(missing_ok=True)
+            raise
 
     pop_sum = float(np.nansum(data[data > 0]))
     log.info(f"Saved cropped WorldPop -> {out_path} (AOI population sum: {pop_sum:,.0f})")
@@ -445,6 +571,11 @@ def fetch_worldpop(
     return {
         "dataset": "WorldPop 2019 India (1km Aggregated)",
         "source_url": url,
+        "file_name": "ind_ppp_2019_1km_Aggregated.tif",
+        "version": "WorldPop Global 2000-2020 1km unconstrained",
+        "year": 2019,
+        "resolution_arcsec": 30.0,
+        "resolution_approx_km": 1.0,
         "file": str(out_path),
         "size_mb": round(out_path.stat().st_size / 1e6, 2),
         "crs": str(out_meta["crs"]),
@@ -471,7 +602,7 @@ def fetch_chirps_rainfall(
     dates = dates or ["2019.05.02", "2019.05.03", "2019.05.04"]
     out_path = out_path or (RAW_DIR / "chirps_fani_aoi.tif")
 
-    if not force and out_path.exists() and out_path.stat().st_size > 512:
+    if not force and is_complete_raster(out_path, min_size=512):
         log.info(f"[CACHE] CHIRPS rainfall raster exists: {out_path} ({out_path.stat().st_size / 1e6:.2f} MB)")
         with rasterio.open(out_path) as ds:
             arr = ds.read(1)
@@ -480,6 +611,8 @@ def fetch_chirps_rainfall(
                 "dataset": "CHIRPS Daily Precipitation (UCSB/CHG)",
                 "source": "https://data.chc.ucsb.edu/products/CHIRPS-2.0/",
                 "dates": dates,
+                "resolution_deg": 0.05,
+                "resolution_approx_km": 5.5,
                 "file": str(out_path),
                 "size_mb": round(out_path.stat().st_size / 1e6, 2),
                 "crs": str(ds.crs),
@@ -497,12 +630,20 @@ def fetch_chirps_rainfall(
         gz_path = RAW_DIR / gz_name
         tif_path = RAW_DIR / tif_name
 
-        if not tif_path.exists() or force:
+        if not is_complete_raster(tif_path, min_size=1024) or force:
             url = f"{base_url}{gz_name}"
             download_file(url, gz_path)
-            with gzip.open(gz_path, "rb") as f_in, open(tif_path, "wb") as f_out:
-                shutil.copyfileobj(f_in, f_out)
-            gz_path.unlink(missing_ok=True)
+            temp_tif = tif_path.with_suffix(".tmp.tif")
+            try:
+                with gzip.open(gz_path, "rb") as f_in, open(temp_tif, "wb") as f_out:
+                    shutil.copyfileobj(f_in, f_out)
+                temp_tif.replace(tif_path)
+            except Exception:
+                if temp_tif.exists():
+                    temp_tif.unlink(missing_ok=True)
+                raise
+            finally:
+                gz_path.unlink(missing_ok=True)
             log.info(f"Extracted {tif_path.name}")
 
         daily_rasters.append(tif_path)
@@ -531,8 +672,15 @@ def fetch_chirps_rainfall(
             else:
                 accum_data += day_data.astype(np.float32)
 
-    with rasterio.open(out_path, "w", **out_meta) as dest:
-        dest.write(accum_data, 1)
+    temp_out = out_path.with_suffix(".tmp.tif")
+    try:
+        with rasterio.open(temp_out, "w", **out_meta) as dest:
+            dest.write(accum_data, 1)
+        temp_out.replace(out_path)
+    except Exception:
+        if temp_out.exists():
+            temp_out.unlink(missing_ok=True)
+        raise
 
     max_rain = float(np.max(accum_data))
     log.info(f"Saved accumulated CHIRPS rainfall -> {out_path} (Max accum: {max_rain:.1f} mm)")
@@ -541,6 +689,8 @@ def fetch_chirps_rainfall(
         "dataset": "CHIRPS Daily Precipitation (UCSB/CHG)",
         "source": base_url,
         "dates": dates,
+        "resolution_deg": 0.05,
+        "resolution_approx_km": 5.5,
         "file": str(out_path),
         "size_mb": round(out_path.stat().st_size / 1e6, 2),
         "crs": str(out_meta["crs"]),
@@ -563,11 +713,13 @@ def fetch_all(
         config = yaml.safe_load(f)
 
     bbox = config.get("aoi_bbox", [84.9, 19.6, 86.5, 20.7])
+    landfall_time_utc = config.get("landfall", {}).get("time_utc", "2019-05-03T02:40:00Z")
     log.info(f"=== Starting Open Data Download for Scenario: {scenario_name} (bbox: {bbox}) ===")
 
     report: dict[str, Any] = {
         "scenario": scenario_name,
         "aoi_bbox": bbox,
+        "landfall_time_utc": landfall_time_utc,
         "datasets": {},
     }
 
@@ -575,7 +727,9 @@ def fetch_all(
     report["datasets"]["dem"] = fetch_copernicus_dem(bbox, force=force)
 
     # 2. Sentinel-1 RTC VV
-    report["datasets"]["sentinel1"] = fetch_sentinel1_rtc(bbox, force=force)
+    report["datasets"]["sentinel1"] = fetch_sentinel1_rtc(
+        bbox, landfall_time_utc=landfall_time_utc, force=force
+    )
 
     # 3. JRC Global Surface Water
     report["datasets"]["jrc_gsw"] = fetch_jrc_gsw(bbox, force=force)
@@ -587,9 +741,11 @@ def fetch_all(
     report["datasets"]["rainfall"] = fetch_chirps_rainfall(bbox, force=force)
 
     meta_file = RAW_DIR / "open_data_meta.json"
-    with open(meta_file, "w") as f:
+    temp_meta = meta_file.with_suffix(".tmp.json")
+    with open(temp_meta, "w") as f:
         json.dump(report, f, indent=2)
-    log.info(f"Saved open data manifest to {meta_file}")
+    temp_meta.replace(meta_file)
+    log.info(f"Saved open data manifest atomically to {meta_file}")
 
     return report
 

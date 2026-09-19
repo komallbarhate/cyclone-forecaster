@@ -1,0 +1,126 @@
+{
+  "scenario": "fani_2019",
+  "aoi_bbox": [
+    84.9,
+    19.6,
+    86.5,
+    20.7
+  ],
+  "landfall_time_utc": "2019-05-03T02:40:00Z",
+  "datasets": {
+    "dem": {
+      "dataset": "Copernicus GLO-30 DEM",
+      "collection": "cop-dem-glo-30",
+      "file": "C:\\Users\\DELL\\OneDrive\\Desktop\\cyclone impact forecaster\\data\\raw\\copernicus_glo30_dem.tif",
+      "size_mb": 66.42,
+      "crs": "EPSG:4326",
+      "shape": [
+        3960,
+        5760
+      ],
+      "bounds": [
+        84.9,
+        19.6,
+        86.5,
+        20.7
+      ],
+      "resolution_arcsec": 1.0,
+      "resolution_m": 30.0,
+      "cached": true
+    },
+    "sentinel1": {
+      "pre": {
+        "scene_id": "S1A_IW_GRDH_1SDV_20190422T000501_20190422T000530_026895_030652_rtc",
+        "datetime_utc": "2019-04-22T00:05:15.804386Z",
+        "offset_hours_from_landfall": -266.58,
+        "file": "C:\\Users\\DELL\\OneDrive\\Desktop\\cyclone impact forecaster\\data\\raw\\s1_rtc_vv_pre.tif",
+        "size_mb": 29.09,
+        "crs": "EPSG:32645",
+        "shape": [
+          4102,
+          2562
+        ],
+        "cached": true
+      },
+      "post": {
+        "scene_id": "S1A_IW_GRDH_1SDV_20190504T000512_20190504T000537_027070_030CB5_rtc",
+        "datetime_utc": "2019-05-04T00:05:25.180469Z",
+        "offset_hours_from_landfall": 21.42,
+        "file": "C:\\Users\\DELL\\OneDrive\\Desktop\\cyclone impact forecaster\\data\\raw\\s1_rtc_vv_post.tif",
+        "size_mb": 27.06,
+        "crs": "EPSG:32645",
+        "shape": [
+          3927,
+          2824
+        ],
+        "cached": true
+      },
+      "aoi_coverage_both_scenes_pct": 44.65,
+      "landfall_time_utc": "2019-05-03T02:40:00Z",
+      "adjacent_post_scenes_in_window": [
+        {
+          "scene_id": "S1A_IW_GRDH_1SDV_20190504T000447_20190504T000512_027070_030CB5_rtc",
+          "datetime_utc": "2019-05-04T00:05:00.180471Z",
+          "offset_hours_from_landfall": 21.42,
+          "bbox": [
+            86.027,
+            20.234,
+            88.711,
+            22.164
+          ],
+          "note": "Northern adjacent frame on the same pass (25s earlier)"
+        }
+      ]
+    },
+    "jrc_gsw": {
+      "dataset": "JRC Global Surface Water",
+      "collection": "jrc-gsw",
+      "file": "C:\\Users\\DELL\\OneDrive\\Desktop\\cyclone impact forecaster\\data\\raw\\jrc_gsw_occurrence.tif",
+      "size_mb": 3.12,
+      "crs": "EPSG:4326",
+      "shape": [
+        4400,
+        6400
+      ],
+      "cached": true
+    },
+    "worldpop": {
+      "dataset": "WorldPop 2019 India (1km Aggregated)",
+      "source_url": "https://data.worldpop.org/GIS/Population/Global_2000_2020_1km/2019/IND/ind_ppp_2019_1km_Aggregated.tif",
+      "file_name": "ind_ppp_2019_1km_Aggregated.tif",
+      "version": "WorldPop Global 2000-2020 1km unconstrained",
+      "year": 2019,
+      "resolution_arcsec": 30.0,
+      "resolution_approx_km": 1.0,
+      "file": "C:\\Users\\DELL\\OneDrive\\Desktop\\cyclone impact forecaster\\data\\raw\\worldpop_aoi_2019.tif",
+      "size_mb": 0.08,
+      "crs": "EPSG:4326",
+      "shape": [
+        132,
+        192
+      ],
+      "total_population_aoi": 10866029,
+      "cached": true
+    },
+    "rainfall": {
+      "dataset": "CHIRPS Daily Precipitation (UCSB/CHG)",
+      "source": "https://data.chc.ucsb.edu/products/CHIRPS-2.0/",
+      "dates": [
+        "2019.05.02",
+        "2019.05.03",
+        "2019.05.04"
+      ],
+      "resolution_deg": 0.05,
+      "resolution_approx_km": 5.5,
+      "file": "C:\\Users\\DELL\\OneDrive\\Desktop\\cyclone impact forecaster\\data\\raw\\chirps_fani_aoi.tif",
+      "size_mb": 0.0,
+      "crs": "EPSG:4326",
+      "shape": [
+        22,
+        32
+      ],
+      "max_rain_mm": 162.0,
+      "cached": true
+    }
+  }
+}
