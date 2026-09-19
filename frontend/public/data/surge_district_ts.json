@@ -1,0 +1,27 @@
+{
+  "Puri": {
+    "peak_surge_m": 4.41,
+    "max_depth_m": 3.92,
+    "flooded_area_sqkm": 1736.0
+  },
+  "Khordha": {
+    "peak_surge_m": 0.0,
+    "max_depth_m": 0.0,
+    "flooded_area_sqkm": 0.0
+  },
+  "Jagatsinghpur": {
+    "peak_surge_m": 1.99,
+    "max_depth_m": 1.39,
+    "flooded_area_sqkm": 125.0
+  },
+  "Kendrapara": {
+    "peak_surge_m": 0.0,
+    "max_depth_m": 0.0,
+    "flooded_area_sqkm": 0.0
+  },
+  "Cuttack": {
+    "peak_surge_m": 0.0,
+    "max_depth_m": 0.0,
+    "flooded_area_sqkm": 0.0
+  }
+}

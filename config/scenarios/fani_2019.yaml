@@ -48,12 +48,12 @@ surge:
   # Inverse barometer: 1 hPa pressure drop → ~0.01 m sea level rise
   inverse_barometer_coeff: 0.01  # m/hPa
   # Wind setup coefficient (empirical, calibratable)
-  # surge_wind = coeff * U10^2 * fetch / (g * depth)
-  wind_setup_coeff: 0.0003       # dimensionless; ASSUMPTION — calibrated to ~2m max setup
+  # surge_wind = coeff * U10^2 * fetch / (g * depth) where coeff = (rho_air * Cd) / rho_water ~ 3.0e-6
+  wind_setup_coeff: 0.000003     # dimensionless; calibrated to ~2.5m max wind setup
   # Bathymetry proxy: average shelf depth in Bay of Bengal off Odisha coast
   shelf_depth_m: 15.0            # m; ASSUMPTION — representative shelf depth
-  # Fetch (distance over water for wind setup) — approximate for Odisha coast
-  fetch_km: 500.0                # km; ASSUMPTION
+  # Shelf width (effective distance over shallow shelf for wind setup off Odisha)
+  fetch_km: 60.0                 # km; shallow shelf width
   # Astronomical tide at landfall (no free real-time tide model; using documented estimate)
   # Source: INCOIS tidal predictions; landfall time near high tide
   tide_height_m: 1.2             # m above MSL; ASSUMPTION — label clearly in UI

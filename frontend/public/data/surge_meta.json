@@ -1,0 +1,10 @@
+{
+  "scenario": "fani_2019",
+  "max_peak_surge_m": 4.41,
+  "inland_attenuation_coeff": 0.1,
+  "astronomical_tide_m": 1.2,
+  "max_inland_penetration_km": 30.0,
+  "total_flooded_cells": 1861,
+  "physics": "Inverse Barometer + Wind Setup + Tide + Attenuated Bathtub",
+  "citation": "Pugh (1987) Tides, Surges and Mean Sea-Level; IMD Cyclone Fani Report"
+}
