@@ -26,11 +26,23 @@ def scenario():
 
 
 def test_surface_wind_factor_is_wmo():
-    """SURFACE_WIND_FACTOR must be 0.88 (WMO 1-min to 10-min, WMO/TD-No.1688)."""
+    """SURFACE_WIND_FACTOR must be 0.93 per Harper et al. (2010) WMO/TD-1555.
+
+    Harper, B.A., Kepert, J.D., and Ginger, J.D. (2010). Guidelines for
+    Converting Between Various Wind Averaging Periods in Tropical Cyclone
+    Conditions. WMO/TD-No.1555. World Meteorological Organization.
+    https://library.wmo.int/doc_num.php?explnum_id=290
+
+    Harper et al. recommend 0.93 for open-ocean exposure (marine boundary
+    layer), consistent with IBTrACS JTWC observations recorded over ocean.
+    The legacy value of 0.88 (pre-2010 WMO practice) under-estimates the
+    10-min equivalent by ~5% and is superseded by the 2010 guidance.
+    """
     from pipeline.step_02_wind_field import SURFACE_WIND_FACTOR
-    assert SURFACE_WIND_FACTOR == pytest.approx(0.88, abs=1e-6), (
-        f"Expected 0.88 (WMO), got {SURFACE_WIND_FACTOR}. "
-        "IBTrACS JTWC vmax is 1-min sustained; 0.80 under-estimates by ~10%."
+    assert SURFACE_WIND_FACTOR == pytest.approx(0.93, abs=1e-6), (
+        f"Expected 0.93 (Harper et al. 2010 WMO/TD-1555, open-ocean), got "
+        f"{SURFACE_WIND_FACTOR}. The legacy 0.88 under-estimates by ~5%; "
+        "0.93 is the current WMO recommendation for JTWC 1-min winds."
     )
 
 
@@ -124,7 +136,7 @@ def test_wind_max_geojson_structure():
 
 
 def test_wind_meta_consistency():
-    """wind_meta.json must exist and show grid peak ≥ 65% of IBTrACS 10-min vmax."""
+    """wind_meta.json must cite Harper et al. 2010 WMO/TD-1555 and show consistent Vmax provenance."""
     meta_file = PROCESSED_DIR / "wind_meta.json"
     if not meta_file.exists():
         pytest.skip("wind_meta.json not yet generated; run step_02_wind_field")
@@ -132,21 +144,44 @@ def test_wind_meta_consistency():
     with open(meta_file) as f:
         meta = json.load(f)
 
-    assert "ibtracs_vmax_kmh_1min" in meta
-    assert "ibtracs_vmax_kmh_10min_wmo" in meta
-    assert "grid_peak_kmh" in meta
-    assert "grid_peak_vs_ibtracs_10min_ratio" in meta
+    # Factor and citation
+    assert "wind_conversion_factor" in meta, "Missing wind_conversion_factor"
+    assert meta["wind_conversion_factor"] == pytest.approx(0.93, abs=1e-6), (
+        f"wind_meta factor {meta['wind_conversion_factor']} != 0.93 (Harper et al. 2010)"
+    )
+    assert "wind_conversion_citation" in meta, (
+        "wind_meta.json must include wind_conversion_citation (Harper et al. 2010 WMO/TD-1555)"
+    )
+    assert "WMO/TD" in meta["wind_conversion_citation"] and "Harper" in meta["wind_conversion_citation"], (
+        f"Citation must name Harper et al. and WMO/TD-1555, got: {meta['wind_conversion_citation'][:80]}"
+    )
 
+    # IBTrACS vmax provenance — raw_obs is canonical
+    assert "ibtracs_vmax_kmh_1min_raw_obs" in meta, (
+        "Missing ibtracs_vmax_kmh_1min_raw_obs (raw 3-hourly obs peak, canonical)"
+    )
+    assert "ibtracs_vmax_kmh_1min_splined" in meta, (
+        "Missing ibtracs_vmax_kmh_1min_splined (spline interpolation peak, reference only)"
+    )
+    raw_obs = meta["ibtracs_vmax_kmh_1min_raw_obs"]
+    splined = meta["ibtracs_vmax_kmh_1min_splined"]
+    # Both should be in a physically plausible range for Fani
+    assert 200.0 <= raw_obs <= 230.0, f"Raw obs peak {raw_obs} km/h out of range for Fani"
+    # Splined should be within 10 km/h of raw (overshoot expected but bounded)
+    assert abs(splined - raw_obs) <= 10.0, (
+        f"Splined peak {splined} km/h differs from raw {raw_obs} km/h by more than 10 km/h"
+    )
+
+    # Plausibility ratio (grid peak / 10-min canonical)
+    assert "grid_peak_vs_ibtracs_10min_ratio" in meta
     ratio = meta["grid_peak_vs_ibtracs_10min_ratio"]
     assert ratio >= 0.65, (
         f"Grid peak / IBTrACS 10-min ratio = {ratio:.3f} < 0.65. "
         "Model is severely under-estimating in-AOI wind speed."
     )
 
-    factor = meta.get("surface_wind_factor")
-    assert factor == pytest.approx(0.88, abs=1e-6), (
-        f"wind_meta surface_wind_factor={factor}, expected 0.88 (WMO)"
-    )
+    # IBTrACS source must be consistent with track_meta
+    assert "ibtracs_citation" in meta, "wind_meta must include ibtracs_citation for traceability"
 
 
 def test_wind_district_ts(scenario):

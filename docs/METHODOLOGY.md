@@ -21,26 +21,59 @@ Fallback: fixed RMW from scenario YAML (labelled ASSUMPTION if used).
 
 ## 2. Holland (1980) Parametric Wind Field
 
-**Reference**: Holland, G.J. (1980). An analytic model of the wind and pressure profiles in hurricanes. *Mon. Wea. Rev.*, 108, 1212–1218.
+**References**:
+- Holland, G.J. (1980). An analytic model of the wind and pressure profiles in hurricanes. *Mon. Wea. Rev.*, 108, 1212–1218. https://doi.org/10.1175/1520-0493(1980)108<1212:AAMOTWAPPH>2.0.CO;2
+- Harper, B.A., Kepert, J.D., and Ginger, J.D. (2010). *Guidelines for Converting Between Various Wind Averaging Periods in Tropical Cyclone Conditions*. WMO/TD-No.1555. World Meteorological Organization, Geneva. https://library.wmo.int/doc_num.php?explnum_id=290
 
-**Gradient wind formula**:
+**Gradient wind formula** (Holland 1980, Eq. 4):
 ```
 V(r) = sqrt( (B/ρ) × (Rmax/r)^B × (Pn - Pc) × exp(-(Rmax/r)^B) + (r × f/2)^2 ) - (r × f/2)
 ```
 where:
-- B = Holland B parameter (estimated from MSLP drop)
+- B = Holland B parameter (estimated from MSLP drop and Vmax via Holland 1980 Eq. 5)
 - ρ = air density (1.15 kg/m³)
 - r = distance from storm centre
-- Rmax = radius of maximum winds
+- Rmax = radius of maximum winds (RMW)
 - Pn = environmental pressure (1010 hPa)
 - Pc = central pressure
-- f = Coriolis parameter
+- f = Coriolis parameter at grid-cell latitude
 
-**Translation-speed asymmetry**: add 20% of translation vector to right-of-track wind, subtract from left.
+### 1-min → 10-min Wind Conversion (SURFACE\_WIND\_FACTOR = 0.93)
 
-**Output**: max sustained wind speed per grid cell (500m resolution over AOI).
+IBTrACS JTWC column `WMO_WIND` reports **1-minute sustained** wind speeds. Converting
+to 10-minute means (the WMO operational standard) requires a reduction factor.
+
+| Factor | Source | Notes |
+|--------|--------|-------|
+| **0.93** ✓ (used here) | Harper et al. (2010) WMO/TD-1555, open-ocean | Recommended for marine boundary layer; consistent with JTWC obs recorded over ocean |
+| 0.88 ✗ (not used) | Legacy pre-2010 WMO practice | Harper et al. found this **under-estimates** 10-min intensity by ~5%; superseded |
+| 0.80 ✗ (not used) | Informal gradient→surface approximation | Not a 1-min→10-min conversion; physically incorrect for this application |
+
+We apply 0.93 uniformly to all JTWC 1-min vmax values. This is appropriate because:
+1. IBTrACS observations are recorded over the open ocean (no terrain roughness correction needed).
+2. Harper et al. (2010) is the authoritative WMO reference for this conversion.
+3. Using 0.88 would systematically underestimate storm intensity by ~5%.
+
+### IBTrACS Vmax Provenance
+
+| Value | Source | Use |
+|-------|--------|-----|
+| **213.0 km/h (1-min)** | Raw 3-hourly IBTrACS observations (`track_meta.json`) | **Canonical reference** for all ratios and thresholds |
+| 214.9 km/h (1-min) | Cubic-spline hourly interpolation (`track_hourly.geojson`) | Reference only — spline overshoot between discrete obs |
+| **198.1 km/h (10-min)** | 213.0 × 0.93 | WMO equivalent; used in grid plausibility check |
+
+The 1.9 km/h difference between raw-obs (213.0) and splined (214.9) is a well-known
+artefact of cubic splines interpolating between discrete 3-hourly intensity reports;
+it is documented in `wind_meta.json` and not used in any metric computation.
+
+**Translation-speed asymmetry**: 20% of storm translation speed added to right-of-track
+(downwind) side, subtracted from left-of-track (upwind) side (Northern Hemisphere convention).
+
+**Output**: max 10-min sustained wind speed per 500 m grid cell over AOI, and hourly
+wind time series at five district centroids.
 
 ---
+
 
 ## 3. Storm Surge Model
 

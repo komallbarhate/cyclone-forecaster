@@ -1,20 +1,26 @@
 {
   "model": "Holland (1980) parametric wind field",
-  "surface_wind_factor": 0.88,
-  "surface_wind_factor_note": "WMO 1-min to 10-min conversion (WMO/TD-No.1688)",
+  "wind_conversion_factor": 0.93,
+  "wind_conversion_factor_value": 0.93,
+  "wind_conversion_citation": "Harper, B.A., Kepert, J.D., and Ginger, J.D. (2010). Guidelines for Converting Between Various Wind Averaging Periods in Tropical Cyclone Conditions. WMO/TD-No.1555. World Meteorological Organization, Geneva. https://library.wmo.int/doc_num.php?explnum_id=290",
+  "wind_conversion_rationale": "Harper et al. (2010) recommend 0.93 for open-ocean exposure (marine boundary layer), consistent with IBTrACS JTWC observations recorded over ocean. The legacy value of 0.88 (pre-2010 WMO practice) was found to under-estimate the 10-min equivalent by approximately 5%.",
   "asymmetry_fraction": 0.2,
   "asymmetry_note": "Translation-speed asymmetry, right-of-track positive (NH)",
-  "ibtracs_vmax_kmh_1min": 214.9,
-  "ibtracs_vmax_kmh_10min_wmo": 189.1,
-  "grid_peak_kmh": 165.5,
-  "grid_peak_vs_ibtracs_10min_ratio": 0.875,
-  "grid_peak_note": "AOI (lat 19.6\u201320.7) is north of the storm's intensity peak (lat ~18.5). Grid peak reflects in-AOI track intensity, not absolute storm maximum.",
+  "ibtracs_vmax_kmh_1min_raw_obs": 213.0,
+  "ibtracs_vmax_kmh_1min_raw_obs_note": "Maximum from 3-hourly IBTrACS observations (track_meta.json). This is the canonical JTWC 1-min value; used as reference for all ratios.",
+  "ibtracs_vmax_kmh_1min_splined": 214.9,
+  "ibtracs_vmax_kmh_1min_splined_note": "Maximum from cubic-spline hourly interpolation (track_hourly.geojson). May differ from raw_obs due to spline overshoot between discrete 3-hourly observations; for reference only, not used in ratios.",
+  "ibtracs_vmax_kmh_10min_wmo": 198.1,
+  "ibtracs_vmax_kmh_10min_wmo_note": "raw_obs \u00d7 0.93 (Harper et al. 2010 WMO/TD-1555)",
+  "grid_peak_kmh": 174.7,
+  "grid_peak_vs_ibtracs_10min_ratio": 0.882,
+  "grid_peak_note": "AOI (lat 19.6\u201320.7) is north of the storm's absolute intensity peak (lat ~18.5, raw vmax 213 km/h). The in-AOI track peaks at ~185 km/h (1-min); grid peak reflects that in-AOI intensity.",
   "district_peaks_kmh": {
-    "Puri": 157.8,
-    "Khordha": 129.2,
-    "Jagatsinghpur": 128.9,
-    "Kendrapara": 109.7,
-    "Cuttack": 124.6
+    "Puri": 166.7,
+    "Khordha": 136.8,
+    "Jagatsinghpur": 136.1,
+    "Kendrapara": 115.8,
+    "Cuttack": 131.7
   },
   "track_points_total": 211,
   "track_points_in_window": 48,
@@ -22,5 +28,7 @@
     -24,
     24
   ],
-  "scenario": "fani_2019"
+  "scenario": "fani_2019",
+  "ibtracs_source": "NOAA IBTrACS v04r00",
+  "ibtracs_citation": "Knapp et al. (2010) BAMS https://doi.org/10.1175/2009BAMS2755.1"
 }

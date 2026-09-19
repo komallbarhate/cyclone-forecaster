@@ -50,11 +50,18 @@ CORIOL_LAT = 20.0        # degrees — reference latitude for Coriolis (Odisha c
 OMEGA = 7.2921e-5        # rad/s — Earth rotation rate
 FCOR = 2 * OMEGA * math.sin(math.radians(CORIOL_LAT))  # Coriolis parameter
 
-# 10-min to surface wind conversion
-# IBTrACS JTWC reports 1-min sustained winds. WMO Technical Document WMO/TD-No.1688
-# recommends a 1-min → 10-min reduction factor of 0.88 for tropical cyclones.
-# Using 0.80 (the old value) under-estimates by ~10% relative to IBTrACS Vmax.
-SURFACE_WIND_FACTOR = 0.88  # 1-min → 10-min surface wind (WMO recommendation)
+# 1-min → 10-min sustained wind conversion factor
+# Reference: Harper, B.A., Kepert, J.D., and Ginger, J.D. (2010). Guidelines for
+#   Converting Between Various Wind Averaging Periods in Tropical Cyclone Conditions.
+#   WMO/TD-No.1555. World Meteorological Organization, Geneva.
+#   https://library.wmo.int/doc_num.php?explnum_id=290
+#
+# Harper et al. (2010) recommend 0.93 for open-ocean exposure (marine boundary layer),
+# which is the correct baseline for IBTrACS JTWC observations (recorded over ocean).
+# The legacy value of 0.88 (pre-2010 WMO practice) was found to under-estimate the
+# 10-min equivalent by approximately 5% and is superseded by the 2010 guidance.
+# We use 0.93 consistently with IBTrACS JTWC 1-min reporting convention.
+SURFACE_WIND_FACTOR = 0.93  # 1-min → 10-min (Harper et al. 2010, WMO/TD-1555, open-ocean)
 ASYMMETRY_FRACTION = 0.20   # Fraction of translation speed added to right-of-track (NH)
 
 # Saffir-Simpson equivalent category thresholds (km/h, 10-min)
@@ -411,11 +418,33 @@ def run(scenario: str = "fani_2019", force: bool = False) -> bool:
     track_points = load_hourly_track(PROCESSED_DIR)
     log.info(f"Loaded {len(track_points)} hourly track points")
 
-    # IBTrACS reported peak (1-min sustained, from track data)
-    ibtracs_vmax_kmh = max(pt.vmax_kmh for pt in track_points)
-    ibtracs_vmax_10min = ibtracs_vmax_kmh * SURFACE_WIND_FACTOR  # WMO 10-min equivalent
-    log.info(f"IBTrACS peak vmax: {ibtracs_vmax_kmh:.1f} km/h (1-min), "
-             f"{ibtracs_vmax_10min:.1f} km/h (10-min WMO equivalent)")
+    # IBTrACS peak vmax — two values with explicit provenance:
+    #   raw_obs:  maximum from 3-hourly IBTrACS observations (track_meta.json)
+    #             This is the canonical, authoritative JTWC 1-min value.
+    #   splined:  maximum from cubic-spline hourly interpolation (track_hourly.geojson)
+    #             May differ slightly from raw_obs due to spline overshoot between
+    #             discrete observations; used only as a cross-check.
+    # All ratio/threshold computations use raw_obs as the canonical reference.
+    track_meta_path = PROCESSED_DIR / "track_meta.json"
+    if not track_meta_path.exists():
+        raise FileNotFoundError(
+            f"track_meta.json not found at {track_meta_path}. Run step_01 first."
+        )
+    with open(track_meta_path) as _f:
+        track_meta = json.load(_f)
+    ibtracs_vmax_raw_kmh = float(track_meta["peak_vmax_kmh"])  # raw 3-hourly obs
+    ibtracs_vmax_splined_kmh = max(pt.vmax_kmh for pt in track_points)  # spline interpolation
+    ibtracs_vmax_10min = ibtracs_vmax_raw_kmh * SURFACE_WIND_FACTOR  # canonical 10-min
+    log.info(
+        f"IBTrACS raw-obs peak: {ibtracs_vmax_raw_kmh:.1f} km/h (1-min, JTWC, canonical)"
+    )
+    log.info(
+        f"IBTrACS splined peak: {ibtracs_vmax_splined_kmh:.1f} km/h "
+        f"(cubic-spline artifact, for reference only)"
+    )
+    log.info(
+        f"WMO 10-min equivalent (raw × {SURFACE_WIND_FACTOR}): {ibtracs_vmax_10min:.1f} km/h"
+    )
 
     bbox = config["aoi_bbox"]
     resolution_m = config.get("grid_resolution_m", 500)
@@ -429,14 +458,15 @@ def run(scenario: str = "fani_2019", force: bool = False) -> bool:
 
     # --- Plausibility check ------------------------------------------------
     # The AOI (lat 19.6–20.7) lies north of the storm's peak intensity location
-    # (lat ~18.5). The in-AOI track has max vmax ~185 km/h (1-min). The 10-min
-    # surface wind at RMW for the AOI points should be ≥ 0.70 × ibtracs_vmax_10min.
+    # (lat ~18.5). The in-AOI track reaches ~185 km/h (1-min), giving a 10-min
+    # equivalent of ~172 km/h. The grid peak should be ≥ 65% of the canonical
+    # IBTrACS 10-min vmax (computed from raw-obs peak × WMO factor).
     grid_peak = float(max_wind_kmh.max())
-    min_expected = ibtracs_vmax_10min * 0.65  # ≥ 65% of 10-min peak (AOI offset)
+    min_expected = ibtracs_vmax_10min * 0.65  # ≥ 65% of canonical 10-min peak
     if grid_peak < min_expected:
         raise RuntimeError(
             f"FAIL: Grid peak {grid_peak:.1f} km/h < {min_expected:.1f} km/h "
-            f"(65% of IBTrACS 10-min {ibtracs_vmax_10min:.1f} km/h). "
+            f"(65% of IBTrACS canonical 10-min {ibtracs_vmax_10min:.1f} km/h). "
             "Check SURFACE_WIND_FACTOR, hours_filter, or track data."
         )
     log.info(f"[PASS] Grid peak {grid_peak:.1f} km/h >= {min_expected:.1f} km/h threshold")
@@ -507,17 +537,43 @@ def run(scenario: str = "fani_2019", force: bool = False) -> bool:
     # --- Write metadata JSON ------------------------------------------------
     meta = {
         "model": "Holland (1980) parametric wind field",
-        "surface_wind_factor": SURFACE_WIND_FACTOR,
-        "surface_wind_factor_note": "WMO 1-min to 10-min conversion (WMO/TD-No.1688)",
+        "wind_conversion_factor": SURFACE_WIND_FACTOR,
+        "wind_conversion_factor_value": SURFACE_WIND_FACTOR,
+        "wind_conversion_citation": (
+            "Harper, B.A., Kepert, J.D., and Ginger, J.D. (2010). Guidelines for "
+            "Converting Between Various Wind Averaging Periods in Tropical Cyclone "
+            "Conditions. WMO/TD-No.1555. World Meteorological Organization, Geneva. "
+            "https://library.wmo.int/doc_num.php?explnum_id=290"
+        ),
+        "wind_conversion_rationale": (
+            "Harper et al. (2010) recommend 0.93 for open-ocean exposure (marine "
+            "boundary layer), consistent with IBTrACS JTWC observations recorded "
+            "over ocean. The legacy value of 0.88 (pre-2010 WMO practice) was "
+            "found to under-estimate the 10-min equivalent by approximately 5%."
+        ),
         "asymmetry_fraction": ASYMMETRY_FRACTION,
         "asymmetry_note": "Translation-speed asymmetry, right-of-track positive (NH)",
-        "ibtracs_vmax_kmh_1min": round(ibtracs_vmax_kmh, 1),
+        "ibtracs_vmax_kmh_1min_raw_obs": round(ibtracs_vmax_raw_kmh, 1),
+        "ibtracs_vmax_kmh_1min_raw_obs_note": (
+            "Maximum from 3-hourly IBTrACS observations (track_meta.json). "
+            "This is the canonical JTWC 1-min value; used as reference for all ratios."
+        ),
+        "ibtracs_vmax_kmh_1min_splined": round(ibtracs_vmax_splined_kmh, 1),
+        "ibtracs_vmax_kmh_1min_splined_note": (
+            "Maximum from cubic-spline hourly interpolation (track_hourly.geojson). "
+            "May differ from raw_obs due to spline overshoot between discrete "
+            "3-hourly observations; for reference only, not used in ratios."
+        ),
         "ibtracs_vmax_kmh_10min_wmo": round(ibtracs_vmax_10min, 1),
+        "ibtracs_vmax_kmh_10min_wmo_note": (
+            f"raw_obs × {SURFACE_WIND_FACTOR} (Harper et al. 2010 WMO/TD-1555)"
+        ),
         "grid_peak_kmh": round(grid_peak, 1),
         "grid_peak_vs_ibtracs_10min_ratio": round(grid_peak / ibtracs_vmax_10min, 3),
         "grid_peak_note": (
-            "AOI (lat 19.6–20.7) is north of the storm's intensity peak (lat ~18.5). "
-            "Grid peak reflects in-AOI track intensity, not absolute storm maximum."
+            "AOI (lat 19.6–20.7) is north of the storm's absolute intensity peak "
+            "(lat ~18.5, raw vmax 213 km/h). The in-AOI track peaks at ~185 km/h "
+            "(1-min); grid peak reflects that in-AOI intensity."
         ),
         "district_peaks_kmh": district_peaks,
         "track_points_total": len(track_points),
@@ -526,6 +582,11 @@ def run(scenario: str = "fani_2019", force: bool = False) -> bool:
         ),
         "window_hours": [start_h, end_h],
         "scenario": scenario,
+        "ibtracs_source": track_meta.get("data_source", "NOAA IBTrACS v04r00"),
+        "ibtracs_citation": track_meta.get(
+            "citation",
+            "Knapp et al. (2010) BAMS https://doi.org/10.1175/2009BAMS2755.1"
+        ),
     }
     with open(wind_meta_out, "w") as f:
         json.dump(meta, f, indent=2)
