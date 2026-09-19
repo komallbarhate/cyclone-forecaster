@@ -3,10 +3,10 @@
   "dem_source": "Copernicus GLO-30 DEM (Microsoft Planetary Computer cop-dem-glo-30)",
   "dem_type": "Digital Surface Model (DSM)",
   "grid_resolution_m": 500,
-  "max_peak_surge_m": 4.18,
-  "max_flood_depth_m": 0.14,
-  "total_flooded_area_km2": 0.2,
-  "total_flooded_polygons": 1,
+  "max_peak_surge_m": 4.28,
+  "max_flood_depth_m": 4.28,
+  "total_flooded_area_km2": 1250.1,
+  "total_flooded_polygons": 5001,
   "inland_attenuation_coeff_m_per_km": 0.1,
   "max_inland_km": 30.0,
   "astronomical_tide_m": 1.2,
@@ -15,9 +15,9 @@
   "physics": "Inverse Barometer + Shallow Shelf Wind Setup + Semi-diurnal Tide + Connectivity-Constrained Bathtub",
   "citation": "Pugh (1987) Tides, Surges and Mean Sea-Level; Harper et al. (2010); Poulter & Halpin (2008)",
   "district_flooded_area_km2": {
-    "Puri": 0.0,
-    "Khordha": 0.0,
-    "Jagatsinghpur": 0.0,
+    "Puri": 1046.2,
+    "Khordha": 102.5,
+    "Jagatsinghpur": 101.2,
     "Kendrapara": 0.2,
     "Cuttack": 0.0
   }

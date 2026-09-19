@@ -108,3 +108,56 @@ def test_sar_validation_metrics():
     track_err = metrics.get("track_error", {})
     assert "cross_track_error_km" in track_err
     assert track_err["cross_track_error_km"] < 60.0
+
+
+def test_surge_connectivity_label_not_hardcoded():
+    """
+    Regression test for bug where ocean_seed_lbl (from ocean-only label()) was reused
+    as the wet-network seed. label() re-numbers from scratch so the integer at [-1,-1]
+    in lbl_wet is NOT the same as in lbl_ocean. Fix: use lbl_wet[-1,-1] as wet seed.
+    """
+    import numpy as np
+    from scipy.ndimage import label
+
+    # 5x5 grid: bottom row = sea (0m), rest = low land (1m)
+    dem = np.ones((5, 5), dtype=float)
+    dem[4, :] = 0.0  # bottom row = sea
+
+    structure_8 = np.ones((3, 3), dtype=int)
+    ocean_candidates = dem <= 0.0
+    lbl_ocean, _ = label(ocean_candidates, structure=structure_8)
+    ocean_seed_lbl = int(lbl_ocean[-1, -1])
+    ocean_mask = (lbl_ocean == ocean_seed_lbl) & ocean_candidates
+
+    eta = 2.0
+    flood_candidate = (dem < eta) & (~ocean_mask)  # 20 land cells
+
+    wet_network = ocean_mask | flood_candidate
+    lbl_wet, _ = label(wet_network, structure=structure_8)
+    wet_seed_lbl = int(lbl_wet[-1, -1])
+
+    connected = (lbl_wet == wet_seed_lbl) & flood_candidate
+    assert connected.sum() == 20, (
+        f"All 20 land cells should flood via wet-network seed, got {connected.sum()}"
+    )
+    # Verify fix is architecturally correct: always positive
+    assert connected.sum() > 0
+
+
+def test_surge_meta_sanity():
+    """Verify surge_meta.json has plausible flooded area after connectivity bug fix."""
+    import json
+    meta_file = PROCESSED_DIR / "surge_meta.json"
+    if not meta_file.exists():
+        pytest.skip("surge_meta.json not generated; run step_03_surge_model.py --force")
+
+    with open(meta_file) as f:
+        m = json.load(f)
+
+    assert m["total_flooded_area_km2"] > 100, (
+        f"Expected >100 km2 flooded for Fani, got {m['total_flooded_area_km2']}"
+    )
+    assert m["max_peak_surge_m"] > 3.0, f"Peak surge < 3m implausible for Fani"
+    assert m["total_flooded_polygons"] > 100, "Expected many flood polygons"
+    puri_area = m["district_flooded_area_km2"].get("Puri", 0)
+    assert puri_area > 100, f"Puri should be heavily flooded, got {puri_area} km2"

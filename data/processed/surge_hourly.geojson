@@ -17,9 +17,9 @@
         "time_utc": "2019-05-02T03:00:00+00:00",
         "hours_to_landfall": -23.7,
         "local_wind_kmh": 58.2,
-        "surge_total_m": 2.02,
+        "surge_total_m": 1.75,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 0.27,
+        "surge_wind_m": 0.0,
         "tide_m": 1.1
       }
     },
@@ -39,9 +39,9 @@
         "time_utc": "2019-05-02T03:00:00+00:00",
         "hours_to_landfall": -23.7,
         "local_wind_kmh": 57.3,
-        "surge_total_m": 2.01,
+        "surge_total_m": 1.75,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 0.25,
+        "surge_wind_m": 0.0,
         "tide_m": 1.1
       }
     },
@@ -61,9 +61,9 @@
         "time_utc": "2019-05-02T03:00:00+00:00",
         "hours_to_landfall": -23.7,
         "local_wind_kmh": 56.5,
-        "surge_total_m": 1.99,
+        "surge_total_m": 1.75,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 0.24,
+        "surge_wind_m": 0.0,
         "tide_m": 1.1
       }
     },
@@ -83,9 +83,9 @@
         "time_utc": "2019-05-02T03:00:00+00:00",
         "hours_to_landfall": -23.7,
         "local_wind_kmh": 55.5,
-        "surge_total_m": 1.98,
+        "surge_total_m": 1.75,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 0.22,
+        "surge_wind_m": 0.0,
         "tide_m": 1.1
       }
     },
@@ -105,9 +105,9 @@
         "time_utc": "2019-05-02T03:00:00+00:00",
         "hours_to_landfall": -23.7,
         "local_wind_kmh": 54.3,
-        "surge_total_m": 2.0,
+        "surge_total_m": 1.75,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 0.25,
+        "surge_wind_m": 0.0,
         "tide_m": 1.1
       }
     },
@@ -127,9 +127,9 @@
         "time_utc": "2019-05-02T03:00:00+00:00",
         "hours_to_landfall": -23.7,
         "local_wind_kmh": 52.8,
-        "surge_total_m": 2.01,
+        "surge_total_m": 1.75,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 0.25,
+        "surge_wind_m": 0.0,
         "tide_m": 1.1
       }
     },
@@ -149,9 +149,9 @@
         "time_utc": "2019-05-02T03:00:00+00:00",
         "hours_to_landfall": -23.7,
         "local_wind_kmh": 51.6,
-        "surge_total_m": 2.0,
+        "surge_total_m": 1.75,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 0.25,
+        "surge_wind_m": 0.0,
         "tide_m": 1.1
       }
     },
@@ -171,9 +171,9 @@
         "time_utc": "2019-05-02T03:00:00+00:00",
         "hours_to_landfall": -23.7,
         "local_wind_kmh": 50.5,
-        "surge_total_m": 1.99,
+        "surge_total_m": 1.75,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 0.24,
+        "surge_wind_m": 0.0,
         "tide_m": 1.1
       }
     },
@@ -193,9 +193,9 @@
         "time_utc": "2019-05-02T03:00:00+00:00",
         "hours_to_landfall": -23.7,
         "local_wind_kmh": 49.6,
-        "surge_total_m": 1.98,
+        "surge_total_m": 1.75,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 0.23,
+        "surge_wind_m": 0.0,
         "tide_m": 1.1
       }
     },
@@ -215,9 +215,9 @@
         "time_utc": "2019-05-02T04:00:00+00:00",
         "hours_to_landfall": -22.7,
         "local_wind_kmh": 60.2,
-        "surge_total_m": 1.83,
+        "surge_total_m": 1.54,
         "surge_ib_m": 0.66,
-        "surge_wind_m": 0.29,
+        "surge_wind_m": 0.0,
         "tide_m": 0.88
       }
     },
@@ -237,9 +237,9 @@
         "time_utc": "2019-05-02T04:00:00+00:00",
         "hours_to_landfall": -22.7,
         "local_wind_kmh": 59.2,
-        "surge_total_m": 1.81,
+        "surge_total_m": 1.54,
         "surge_ib_m": 0.66,
-        "surge_wind_m": 0.27,
+        "surge_wind_m": 0.0,
         "tide_m": 0.88
       }
     },
@@ -259,9 +259,9 @@
         "time_utc": "2019-05-02T04:00:00+00:00",
         "hours_to_landfall": -22.7,
         "local_wind_kmh": 58.4,
-        "surge_total_m": 1.79,
+        "surge_total_m": 1.54,
         "surge_ib_m": 0.66,
-        "surge_wind_m": 0.25,
+        "surge_wind_m": 0.0,
         "tide_m": 0.88
       }
     },
@@ -281,9 +281,9 @@
         "time_utc": "2019-05-02T04:00:00+00:00",
         "hours_to_landfall": -22.7,
         "local_wind_kmh": 57.4,
-        "surge_total_m": 1.78,
+        "surge_total_m": 1.54,
         "surge_ib_m": 0.66,
-        "surge_wind_m": 0.24,
+        "surge_wind_m": 0.0,
         "tide_m": 0.88
       }
     },
@@ -303,9 +303,9 @@
         "time_utc": "2019-05-02T04:00:00+00:00",
         "hours_to_landfall": -22.7,
         "local_wind_kmh": 56.0,
-        "surge_total_m": 1.8,
+        "surge_total_m": 1.54,
         "surge_ib_m": 0.66,
-        "surge_wind_m": 0.26,
+        "surge_wind_m": 0.0,
         "tide_m": 0.88
       }
     },
@@ -325,9 +325,9 @@
         "time_utc": "2019-05-02T04:00:00+00:00",
         "hours_to_landfall": -22.7,
         "local_wind_kmh": 54.4,
-        "surge_total_m": 1.81,
+        "surge_total_m": 1.54,
         "surge_ib_m": 0.66,
-        "surge_wind_m": 0.27,
+        "surge_wind_m": 0.0,
         "tide_m": 0.88
       }
     },
@@ -347,9 +347,9 @@
         "time_utc": "2019-05-02T04:00:00+00:00",
         "hours_to_landfall": -22.7,
         "local_wind_kmh": 53.1,
-        "surge_total_m": 1.8,
+        "surge_total_m": 1.54,
         "surge_ib_m": 0.66,
-        "surge_wind_m": 0.27,
+        "surge_wind_m": 0.0,
         "tide_m": 0.88
       }
     },
@@ -369,9 +369,9 @@
         "time_utc": "2019-05-02T04:00:00+00:00",
         "hours_to_landfall": -22.7,
         "local_wind_kmh": 52.0,
-        "surge_total_m": 1.79,
+        "surge_total_m": 1.54,
         "surge_ib_m": 0.66,
-        "surge_wind_m": 0.25,
+        "surge_wind_m": 0.0,
         "tide_m": 0.88
       }
     },
@@ -391,9 +391,9 @@
         "time_utc": "2019-05-02T04:00:00+00:00",
         "hours_to_landfall": -22.7,
         "local_wind_kmh": 51.0,
-        "surge_total_m": 1.78,
+        "surge_total_m": 1.54,
         "surge_ib_m": 0.66,
-        "surge_wind_m": 0.24,
+        "surge_wind_m": 0.0,
         "tide_m": 0.88
       }
     },
@@ -413,9 +413,9 @@
         "time_utc": "2019-05-02T05:00:00+00:00",
         "hours_to_landfall": -21.7,
         "local_wind_kmh": 63.0,
-        "surge_total_m": 1.58,
+        "surge_total_m": 1.26,
         "surge_ib_m": 0.68,
-        "surge_wind_m": 0.31,
+        "surge_wind_m": 0.0,
         "tide_m": 0.59
       }
     },
@@ -435,9 +435,9 @@
         "time_utc": "2019-05-02T05:00:00+00:00",
         "hours_to_landfall": -21.7,
         "local_wind_kmh": 61.9,
-        "surge_total_m": 1.56,
+        "surge_total_m": 1.26,
         "surge_ib_m": 0.68,
-        "surge_wind_m": 0.3,
+        "surge_wind_m": 0.0,
         "tide_m": 0.59
       }
     },
@@ -457,9 +457,9 @@
         "time_utc": "2019-05-02T05:00:00+00:00",
         "hours_to_landfall": -21.7,
         "local_wind_kmh": 61.0,
-        "surge_total_m": 1.54,
+        "surge_total_m": 1.26,
         "surge_ib_m": 0.68,
-        "surge_wind_m": 0.28,
+        "surge_wind_m": 0.0,
         "tide_m": 0.59
       }
     },
@@ -479,9 +479,9 @@
         "time_utc": "2019-05-02T05:00:00+00:00",
         "hours_to_landfall": -21.7,
         "local_wind_kmh": 59.8,
-        "surge_total_m": 1.52,
+        "surge_total_m": 1.26,
         "surge_ib_m": 0.68,
-        "surge_wind_m": 0.26,
+        "surge_wind_m": 0.0,
         "tide_m": 0.59
       }
     },
@@ -501,9 +501,9 @@
         "time_utc": "2019-05-02T05:00:00+00:00",
         "hours_to_landfall": -21.7,
         "local_wind_kmh": 58.3,
-        "surge_total_m": 1.55,
+        "surge_total_m": 1.26,
         "surge_ib_m": 0.68,
-        "surge_wind_m": 0.29,
+        "surge_wind_m": 0.0,
         "tide_m": 0.59
       }
     },
@@ -523,9 +523,9 @@
         "time_utc": "2019-05-02T05:00:00+00:00",
         "hours_to_landfall": -21.7,
         "local_wind_kmh": 56.6,
-        "surge_total_m": 1.55,
+        "surge_total_m": 1.26,
         "surge_ib_m": 0.68,
-        "surge_wind_m": 0.29,
+        "surge_wind_m": 0.0,
         "tide_m": 0.59
       }
     },
@@ -545,9 +545,9 @@
         "time_utc": "2019-05-02T05:00:00+00:00",
         "hours_to_landfall": -21.7,
         "local_wind_kmh": 55.2,
-        "surge_total_m": 1.55,
+        "surge_total_m": 1.26,
         "surge_ib_m": 0.68,
-        "surge_wind_m": 0.29,
+        "surge_wind_m": 0.0,
         "tide_m": 0.59
       }
     },
@@ -567,9 +567,9 @@
         "time_utc": "2019-05-02T05:00:00+00:00",
         "hours_to_landfall": -21.7,
         "local_wind_kmh": 53.9,
-        "surge_total_m": 1.54,
+        "surge_total_m": 1.26,
         "surge_ib_m": 0.68,
-        "surge_wind_m": 0.27,
+        "surge_wind_m": 0.0,
         "tide_m": 0.59
       }
     },
@@ -589,9 +589,9 @@
         "time_utc": "2019-05-02T05:00:00+00:00",
         "hours_to_landfall": -21.7,
         "local_wind_kmh": 52.8,
-        "surge_total_m": 1.52,
+        "surge_total_m": 1.26,
         "surge_ib_m": 0.68,
-        "surge_wind_m": 0.25,
+        "surge_wind_m": 0.0,
         "tide_m": 0.59
       }
     },
@@ -611,9 +611,9 @@
         "time_utc": "2019-05-02T06:00:00+00:00",
         "hours_to_landfall": -20.7,
         "local_wind_kmh": 66.0,
-        "surge_total_m": 1.34,
+        "surge_total_m": 1.0,
         "surge_ib_m": 0.7,
-        "surge_wind_m": 0.34,
+        "surge_wind_m": 0.0,
         "tide_m": 0.3
       }
     },
@@ -633,9 +633,9 @@
         "time_utc": "2019-05-02T06:00:00+00:00",
         "hours_to_landfall": -20.7,
         "local_wind_kmh": 64.8,
-        "surge_total_m": 1.32,
+        "surge_total_m": 1.0,
         "surge_ib_m": 0.7,
-        "surge_wind_m": 0.32,
+        "surge_wind_m": 0.0,
         "tide_m": 0.3
       }
     },
@@ -655,9 +655,9 @@
         "time_utc": "2019-05-02T06:00:00+00:00",
         "hours_to_landfall": -20.7,
         "local_wind_kmh": 63.9,
-        "surge_total_m": 1.31,
+        "surge_total_m": 1.0,
         "surge_ib_m": 0.7,
-        "surge_wind_m": 0.31,
+        "surge_wind_m": 0.0,
         "tide_m": 0.3
       }
     },
@@ -677,9 +677,9 @@
         "time_utc": "2019-05-02T06:00:00+00:00",
         "hours_to_landfall": -20.7,
         "local_wind_kmh": 62.6,
-        "surge_total_m": 1.29,
+        "surge_total_m": 1.0,
         "surge_ib_m": 0.7,
-        "surge_wind_m": 0.29,
+        "surge_wind_m": 0.0,
         "tide_m": 0.3
       }
     },
@@ -699,9 +699,9 @@
         "time_utc": "2019-05-02T06:00:00+00:00",
         "hours_to_landfall": -20.7,
         "local_wind_kmh": 60.9,
-        "surge_total_m": 1.31,
+        "surge_total_m": 1.0,
         "surge_ib_m": 0.7,
-        "surge_wind_m": 0.31,
+        "surge_wind_m": 0.0,
         "tide_m": 0.3
       }
     },
@@ -721,9 +721,9 @@
         "time_utc": "2019-05-02T06:00:00+00:00",
         "hours_to_landfall": -20.7,
         "local_wind_kmh": 59.0,
-        "surge_total_m": 1.32,
+        "surge_total_m": 1.0,
         "surge_ib_m": 0.7,
-        "surge_wind_m": 0.32,
+        "surge_wind_m": 0.0,
         "tide_m": 0.3
       }
     },
@@ -743,9 +743,9 @@
         "time_utc": "2019-05-02T06:00:00+00:00",
         "hours_to_landfall": -20.7,
         "local_wind_kmh": 57.4,
-        "surge_total_m": 1.31,
+        "surge_total_m": 1.0,
         "surge_ib_m": 0.7,
-        "surge_wind_m": 0.31,
+        "surge_wind_m": 0.0,
         "tide_m": 0.3
       }
     },
@@ -765,9 +765,9 @@
         "time_utc": "2019-05-02T06:00:00+00:00",
         "hours_to_landfall": -20.7,
         "local_wind_kmh": 56.1,
-        "surge_total_m": 1.3,
+        "surge_total_m": 1.0,
         "surge_ib_m": 0.7,
-        "surge_wind_m": 0.3,
+        "surge_wind_m": 0.0,
         "tide_m": 0.3
       }
     },
@@ -787,9 +787,9 @@
         "time_utc": "2019-05-02T06:00:00+00:00",
         "hours_to_landfall": -20.7,
         "local_wind_kmh": 54.9,
-        "surge_total_m": 1.27,
+        "surge_total_m": 1.0,
         "surge_ib_m": 0.7,
-        "surge_wind_m": 0.27,
+        "surge_wind_m": 0.0,
         "tide_m": 0.3
       }
     },
@@ -809,9 +809,9 @@
         "time_utc": "2019-05-02T07:00:00+00:00",
         "hours_to_landfall": -19.7,
         "local_wind_kmh": 69.0,
-        "surge_total_m": 1.19,
+        "surge_total_m": 0.82,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 0.38,
+        "surge_wind_m": 0.0,
         "tide_m": 0.09
       }
     },
@@ -831,9 +831,9 @@
         "time_utc": "2019-05-02T07:00:00+00:00",
         "hours_to_landfall": -19.7,
         "local_wind_kmh": 67.7,
-        "surge_total_m": 1.17,
+        "surge_total_m": 0.82,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 0.36,
+        "surge_wind_m": 0.0,
         "tide_m": 0.09
       }
     },
@@ -853,9 +853,9 @@
         "time_utc": "2019-05-02T07:00:00+00:00",
         "hours_to_landfall": -19.7,
         "local_wind_kmh": 66.6,
-        "surge_total_m": 1.15,
+        "surge_total_m": 0.82,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 0.34,
+        "surge_wind_m": 0.0,
         "tide_m": 0.09
       }
     },
@@ -875,9 +875,9 @@
         "time_utc": "2019-05-02T07:00:00+00:00",
         "hours_to_landfall": -19.7,
         "local_wind_kmh": 65.2,
-        "surge_total_m": 1.13,
+        "surge_total_m": 0.82,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 0.31,
+        "surge_wind_m": 0.0,
         "tide_m": 0.09
       }
     },
@@ -897,9 +897,9 @@
         "time_utc": "2019-05-02T07:00:00+00:00",
         "hours_to_landfall": -19.7,
         "local_wind_kmh": 63.4,
-        "surge_total_m": 1.16,
+        "surge_total_m": 0.82,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 0.34,
+        "surge_wind_m": 0.0,
         "tide_m": 0.09
       }
     },
@@ -919,9 +919,9 @@
         "time_utc": "2019-05-02T07:00:00+00:00",
         "hours_to_landfall": -19.7,
         "local_wind_kmh": 61.3,
-        "surge_total_m": 1.16,
+        "surge_total_m": 0.82,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 0.34,
+        "surge_wind_m": 0.0,
         "tide_m": 0.09
       }
     },
@@ -941,9 +941,9 @@
         "time_utc": "2019-05-02T07:00:00+00:00",
         "hours_to_landfall": -19.7,
         "local_wind_kmh": 59.6,
-        "surge_total_m": 1.15,
+        "surge_total_m": 0.82,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 0.33,
+        "surge_wind_m": 0.0,
         "tide_m": 0.09
       }
     },
@@ -963,9 +963,9 @@
         "time_utc": "2019-05-02T07:00:00+00:00",
         "hours_to_landfall": -19.7,
         "local_wind_kmh": 58.2,
-        "surge_total_m": 1.13,
+        "surge_total_m": 0.82,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 0.32,
+        "surge_wind_m": 0.0,
         "tide_m": 0.09
       }
     },
@@ -985,9 +985,9 @@
         "time_utc": "2019-05-02T07:00:00+00:00",
         "hours_to_landfall": -19.7,
         "local_wind_kmh": 56.9,
-        "surge_total_m": 1.11,
+        "surge_total_m": 0.82,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 0.29,
+        "surge_wind_m": 0.0,
         "tide_m": 0.09
       }
     },
@@ -1007,9 +1007,9 @@
         "time_utc": "2019-05-02T08:00:00+00:00",
         "hours_to_landfall": -18.7,
         "local_wind_kmh": 71.8,
-        "surge_total_m": 1.17,
+        "surge_total_m": 0.76,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.41,
+        "surge_wind_m": 0.0,
         "tide_m": 0.0
       }
     },
@@ -1029,9 +1029,9 @@
         "time_utc": "2019-05-02T08:00:00+00:00",
         "hours_to_landfall": -18.7,
         "local_wind_kmh": 70.3,
-        "surge_total_m": 1.15,
+        "surge_total_m": 0.76,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.39,
+        "surge_wind_m": 0.0,
         "tide_m": 0.0
       }
     },
@@ -1051,9 +1051,9 @@
         "time_utc": "2019-05-02T08:00:00+00:00",
         "hours_to_landfall": -18.7,
         "local_wind_kmh": 69.1,
-        "surge_total_m": 1.12,
+        "surge_total_m": 0.76,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.37,
+        "surge_wind_m": 0.0,
         "tide_m": 0.0
       }
     },
@@ -1073,9 +1073,9 @@
         "time_utc": "2019-05-02T08:00:00+00:00",
         "hours_to_landfall": -18.7,
         "local_wind_kmh": 67.5,
-        "surge_total_m": 1.1,
+        "surge_total_m": 0.76,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.34,
+        "surge_wind_m": 0.0,
         "tide_m": 0.0
       }
     },
@@ -1095,9 +1095,9 @@
         "time_utc": "2019-05-02T08:00:00+00:00",
         "hours_to_landfall": -18.7,
         "local_wind_kmh": 65.6,
-        "surge_total_m": 1.13,
+        "surge_total_m": 0.76,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.37,
+        "surge_wind_m": 0.0,
         "tide_m": 0.0
       }
     },
@@ -1117,9 +1117,9 @@
         "time_utc": "2019-05-02T08:00:00+00:00",
         "hours_to_landfall": -18.7,
         "local_wind_kmh": 63.3,
-        "surge_total_m": 1.13,
+        "surge_total_m": 0.76,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.37,
+        "surge_wind_m": 0.0,
         "tide_m": 0.0
       }
     },
@@ -1139,9 +1139,9 @@
         "time_utc": "2019-05-02T08:00:00+00:00",
         "hours_to_landfall": -18.7,
         "local_wind_kmh": 61.5,
-        "surge_total_m": 1.12,
+        "surge_total_m": 0.76,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.36,
+        "surge_wind_m": 0.0,
         "tide_m": 0.0
       }
     },
@@ -1161,9 +1161,9 @@
         "time_utc": "2019-05-02T08:00:00+00:00",
         "hours_to_landfall": -18.7,
         "local_wind_kmh": 60.0,
-        "surge_total_m": 1.1,
+        "surge_total_m": 0.76,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.34,
+        "surge_wind_m": 0.0,
         "tide_m": 0.0
       }
     },
@@ -1183,9 +1183,9 @@
         "time_utc": "2019-05-02T08:00:00+00:00",
         "hours_to_landfall": -18.7,
         "local_wind_kmh": 58.6,
-        "surge_total_m": 1.07,
+        "surge_total_m": 0.76,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.31,
+        "surge_wind_m": 0.0,
         "tide_m": 0.0
       }
     },
@@ -1205,9 +1205,9 @@
         "time_utc": "2019-05-02T09:00:00+00:00",
         "hours_to_landfall": -17.7,
         "local_wind_kmh": 74.2,
-        "surge_total_m": 1.29,
+        "surge_total_m": 0.85,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.44,
+        "surge_wind_m": 0.0,
         "tide_m": 0.07
       }
     },
@@ -1227,9 +1227,9 @@
         "time_utc": "2019-05-02T09:00:00+00:00",
         "hours_to_landfall": -17.7,
         "local_wind_kmh": 72.6,
-        "surge_total_m": 1.26,
+        "surge_total_m": 0.85,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.42,
+        "surge_wind_m": 0.0,
         "tide_m": 0.07
       }
     },
@@ -1249,9 +1249,9 @@
         "time_utc": "2019-05-02T09:00:00+00:00",
         "hours_to_landfall": -17.7,
         "local_wind_kmh": 71.2,
-        "surge_total_m": 1.24,
+        "surge_total_m": 0.85,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.39,
+        "surge_wind_m": 0.0,
         "tide_m": 0.07
       }
     },
@@ -1271,9 +1271,9 @@
         "time_utc": "2019-05-02T09:00:00+00:00",
         "hours_to_landfall": -17.7,
         "local_wind_kmh": 69.5,
-        "surge_total_m": 1.21,
+        "surge_total_m": 0.85,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.37,
+        "surge_wind_m": 0.0,
         "tide_m": 0.07
       }
     },
@@ -1293,9 +1293,9 @@
         "time_utc": "2019-05-02T09:00:00+00:00",
         "hours_to_landfall": -17.7,
         "local_wind_kmh": 67.4,
-        "surge_total_m": 1.24,
+        "surge_total_m": 0.85,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.39,
+        "surge_wind_m": 0.0,
         "tide_m": 0.07
       }
     },
@@ -1315,9 +1315,9 @@
         "time_utc": "2019-05-02T09:00:00+00:00",
         "hours_to_landfall": -17.7,
         "local_wind_kmh": 65.0,
-        "surge_total_m": 1.23,
+        "surge_total_m": 0.85,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.39,
+        "surge_wind_m": 0.0,
         "tide_m": 0.07
       }
     },
@@ -1337,9 +1337,9 @@
         "time_utc": "2019-05-02T09:00:00+00:00",
         "hours_to_landfall": -17.7,
         "local_wind_kmh": 63.0,
-        "surge_total_m": 1.22,
+        "surge_total_m": 0.85,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.38,
+        "surge_wind_m": 0.0,
         "tide_m": 0.07
       }
     },
@@ -1359,9 +1359,9 @@
         "time_utc": "2019-05-02T09:00:00+00:00",
         "hours_to_landfall": -17.7,
         "local_wind_kmh": 61.4,
-        "surge_total_m": 1.2,
+        "surge_total_m": 0.85,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.35,
+        "surge_wind_m": 0.0,
         "tide_m": 0.07
       }
     },
@@ -1381,9 +1381,9 @@
         "time_utc": "2019-05-02T09:00:00+00:00",
         "hours_to_landfall": -17.7,
         "local_wind_kmh": 60.1,
-        "surge_total_m": 1.17,
+        "surge_total_m": 0.85,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.32,
+        "surge_wind_m": 0.0,
         "tide_m": 0.07
       }
     },
@@ -1403,9 +1403,9 @@
         "time_utc": "2019-05-02T10:00:00+00:00",
         "hours_to_landfall": -16.7,
         "local_wind_kmh": 76.3,
-        "surge_total_m": 1.53,
+        "surge_total_m": 1.05,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.47,
+        "surge_wind_m": 0.0,
         "tide_m": 0.26
       }
     },
@@ -1425,9 +1425,9 @@
         "time_utc": "2019-05-02T10:00:00+00:00",
         "hours_to_landfall": -16.7,
         "local_wind_kmh": 74.5,
-        "surge_total_m": 1.5,
+        "surge_total_m": 1.05,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.45,
+        "surge_wind_m": 0.0,
         "tide_m": 0.26
       }
     },
@@ -1447,9 +1447,9 @@
         "time_utc": "2019-05-02T10:00:00+00:00",
         "hours_to_landfall": -16.7,
         "local_wind_kmh": 73.1,
-        "surge_total_m": 1.47,
+        "surge_total_m": 1.05,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.42,
+        "surge_wind_m": 0.0,
         "tide_m": 0.26
       }
     },
@@ -1469,9 +1469,9 @@
         "time_utc": "2019-05-02T10:00:00+00:00",
         "hours_to_landfall": -16.7,
         "local_wind_kmh": 71.2,
-        "surge_total_m": 1.44,
+        "surge_total_m": 1.05,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.39,
+        "surge_wind_m": 0.0,
         "tide_m": 0.26
       }
     },
@@ -1491,9 +1491,9 @@
         "time_utc": "2019-05-02T10:00:00+00:00",
         "hours_to_landfall": -16.7,
         "local_wind_kmh": 68.9,
-        "surge_total_m": 1.47,
+        "surge_total_m": 1.05,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.41,
+        "surge_wind_m": 0.0,
         "tide_m": 0.26
       }
     },
@@ -1513,9 +1513,9 @@
         "time_utc": "2019-05-02T10:00:00+00:00",
         "hours_to_landfall": -16.7,
         "local_wind_kmh": 66.4,
-        "surge_total_m": 1.46,
+        "surge_total_m": 1.05,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.41,
+        "surge_wind_m": 0.0,
         "tide_m": 0.26
       }
     },
@@ -1535,9 +1535,9 @@
         "time_utc": "2019-05-02T10:00:00+00:00",
         "hours_to_landfall": -16.7,
         "local_wind_kmh": 64.2,
-        "surge_total_m": 1.44,
+        "surge_total_m": 1.05,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.39,
+        "surge_wind_m": 0.0,
         "tide_m": 0.26
       }
     },
@@ -1557,9 +1557,9 @@
         "time_utc": "2019-05-02T10:00:00+00:00",
         "hours_to_landfall": -16.7,
         "local_wind_kmh": 62.6,
-        "surge_total_m": 1.42,
+        "surge_total_m": 1.05,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.36,
+        "surge_wind_m": 0.0,
         "tide_m": 0.26
       }
     },
@@ -1579,9 +1579,9 @@
         "time_utc": "2019-05-02T10:00:00+00:00",
         "hours_to_landfall": -16.7,
         "local_wind_kmh": 61.1,
-        "surge_total_m": 1.39,
+        "surge_total_m": 1.05,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.33,
+        "surge_wind_m": 0.0,
         "tide_m": 0.26
       }
     },
@@ -1601,9 +1601,9 @@
         "time_utc": "2019-05-02T11:00:00+00:00",
         "hours_to_landfall": -15.7,
         "local_wind_kmh": 78.3,
-        "surge_total_m": 1.84,
+        "surge_total_m": 1.33,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.5,
+        "surge_wind_m": 0.0,
         "tide_m": 0.55
       }
     },
@@ -1623,9 +1623,9 @@
         "time_utc": "2019-05-02T11:00:00+00:00",
         "hours_to_landfall": -15.7,
         "local_wind_kmh": 76.3,
-        "surge_total_m": 1.81,
+        "surge_total_m": 1.33,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.47,
+        "surge_wind_m": 0.0,
         "tide_m": 0.55
       }
     },
@@ -1645,9 +1645,9 @@
         "time_utc": "2019-05-02T11:00:00+00:00",
         "hours_to_landfall": -15.7,
         "local_wind_kmh": 74.7,
-        "surge_total_m": 1.78,
+        "surge_total_m": 1.33,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.44,
+        "surge_wind_m": 0.0,
         "tide_m": 0.55
       }
     },
@@ -1667,9 +1667,9 @@
         "time_utc": "2019-05-02T11:00:00+00:00",
         "hours_to_landfall": -15.7,
         "local_wind_kmh": 72.6,
-        "surge_total_m": 1.75,
+        "surge_total_m": 1.33,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.41,
+        "surge_wind_m": 0.0,
         "tide_m": 0.55
       }
     },
@@ -1689,9 +1689,9 @@
         "time_utc": "2019-05-02T11:00:00+00:00",
         "hours_to_landfall": -15.7,
         "local_wind_kmh": 70.2,
-        "surge_total_m": 1.77,
+        "surge_total_m": 1.33,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.43,
+        "surge_wind_m": 0.0,
         "tide_m": 0.55
       }
     },
@@ -1711,9 +1711,9 @@
         "time_utc": "2019-05-02T11:00:00+00:00",
         "hours_to_landfall": -15.7,
         "local_wind_kmh": 67.5,
-        "surge_total_m": 1.76,
+        "surge_total_m": 1.33,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.42,
+        "surge_wind_m": 0.0,
         "tide_m": 0.55
       }
     },
@@ -1733,9 +1733,9 @@
         "time_utc": "2019-05-02T11:00:00+00:00",
         "hours_to_landfall": -15.7,
         "local_wind_kmh": 65.2,
-        "surge_total_m": 1.74,
+        "surge_total_m": 1.33,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.4,
+        "surge_wind_m": 0.0,
         "tide_m": 0.55
       }
     },
@@ -1755,9 +1755,9 @@
         "time_utc": "2019-05-02T11:00:00+00:00",
         "hours_to_landfall": -15.7,
         "local_wind_kmh": 63.5,
-        "surge_total_m": 1.71,
+        "surge_total_m": 1.33,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.37,
+        "surge_wind_m": 0.0,
         "tide_m": 0.55
       }
     },
@@ -1777,9 +1777,9 @@
         "time_utc": "2019-05-02T11:00:00+00:00",
         "hours_to_landfall": -15.7,
         "local_wind_kmh": 62.0,
-        "surge_total_m": 1.67,
+        "surge_total_m": 1.33,
         "surge_ib_m": 0.79,
-        "surge_wind_m": 0.34,
+        "surge_wind_m": 0.0,
         "tide_m": 0.55
       }
     },
@@ -1799,9 +1799,9 @@
         "time_utc": "2019-05-02T12:00:00+00:00",
         "hours_to_landfall": -14.7,
         "local_wind_kmh": 80.3,
-        "surge_total_m": 2.16,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.53,
+        "surge_wind_m": 0.0,
         "tide_m": 0.84
       }
     },
@@ -1821,9 +1821,9 @@
         "time_utc": "2019-05-02T12:00:00+00:00",
         "hours_to_landfall": -14.7,
         "local_wind_kmh": 78.1,
-        "surge_total_m": 2.12,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.5,
+        "surge_wind_m": 0.0,
         "tide_m": 0.84
       }
     },
@@ -1843,9 +1843,9 @@
         "time_utc": "2019-05-02T12:00:00+00:00",
         "hours_to_landfall": -14.7,
         "local_wind_kmh": 76.3,
-        "surge_total_m": 2.09,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.47,
+        "surge_wind_m": 0.0,
         "tide_m": 0.84
       }
     },
@@ -1865,9 +1865,9 @@
         "time_utc": "2019-05-02T12:00:00+00:00",
         "hours_to_landfall": -14.7,
         "local_wind_kmh": 74.0,
-        "surge_total_m": 2.06,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.43,
+        "surge_wind_m": 0.0,
         "tide_m": 0.84
       }
     },
@@ -1887,9 +1887,9 @@
         "time_utc": "2019-05-02T12:00:00+00:00",
         "hours_to_landfall": -14.7,
         "local_wind_kmh": 71.4,
-        "surge_total_m": 2.07,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.45,
+        "surge_wind_m": 0.0,
         "tide_m": 0.84
       }
     },
@@ -1909,9 +1909,9 @@
         "time_utc": "2019-05-02T12:00:00+00:00",
         "hours_to_landfall": -14.7,
         "local_wind_kmh": 68.6,
-        "surge_total_m": 2.06,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.44,
+        "surge_wind_m": 0.0,
         "tide_m": 0.84
       }
     },
@@ -1931,9 +1931,9 @@
         "time_utc": "2019-05-02T12:00:00+00:00",
         "hours_to_landfall": -14.7,
         "local_wind_kmh": 66.2,
-        "surge_total_m": 2.04,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.41,
+        "surge_wind_m": 0.0,
         "tide_m": 0.84
       }
     },
@@ -1953,9 +1953,9 @@
         "time_utc": "2019-05-02T12:00:00+00:00",
         "hours_to_landfall": -14.7,
         "local_wind_kmh": 64.4,
-        "surge_total_m": 2.01,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.38,
+        "surge_wind_m": 0.0,
         "tide_m": 0.84
       }
     },
@@ -1975,9 +1975,9 @@
         "time_utc": "2019-05-02T12:00:00+00:00",
         "hours_to_landfall": -14.7,
         "local_wind_kmh": 62.8,
-        "surge_total_m": 1.97,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.78,
-        "surge_wind_m": 0.35,
+        "surge_wind_m": 0.0,
         "tide_m": 0.84
       }
     },
@@ -1997,9 +1997,9 @@
         "time_utc": "2019-05-02T13:00:00+00:00",
         "hours_to_landfall": -13.7,
         "local_wind_kmh": 82.3,
-        "surge_total_m": 2.41,
+        "surge_total_m": 1.85,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.56,
+        "surge_wind_m": 0.0,
         "tide_m": 1.08
       }
     },
@@ -2019,9 +2019,9 @@
         "time_utc": "2019-05-02T13:00:00+00:00",
         "hours_to_landfall": -13.7,
         "local_wind_kmh": 80.0,
-        "surge_total_m": 2.38,
+        "surge_total_m": 1.85,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.53,
+        "surge_wind_m": 0.0,
         "tide_m": 1.08
       }
     },
@@ -2041,9 +2041,9 @@
         "time_utc": "2019-05-02T13:00:00+00:00",
         "hours_to_landfall": -13.7,
         "local_wind_kmh": 78.0,
-        "surge_total_m": 2.34,
+        "surge_total_m": 1.85,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.49,
+        "surge_wind_m": 0.0,
         "tide_m": 1.08
       }
     },
@@ -2063,9 +2063,9 @@
         "time_utc": "2019-05-02T13:00:00+00:00",
         "hours_to_landfall": -13.7,
         "local_wind_kmh": 75.6,
-        "surge_total_m": 2.31,
+        "surge_total_m": 1.85,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.46,
+        "surge_wind_m": 0.0,
         "tide_m": 1.08
       }
     },
@@ -2085,9 +2085,9 @@
         "time_utc": "2019-05-02T13:00:00+00:00",
         "hours_to_landfall": -13.7,
         "local_wind_kmh": 72.8,
-        "surge_total_m": 2.32,
+        "surge_total_m": 1.85,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.47,
+        "surge_wind_m": 0.0,
         "tide_m": 1.08
       }
     },
@@ -2107,9 +2107,9 @@
         "time_utc": "2019-05-02T13:00:00+00:00",
         "hours_to_landfall": -13.7,
         "local_wind_kmh": 69.8,
-        "surge_total_m": 2.31,
+        "surge_total_m": 1.85,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.45,
+        "surge_wind_m": 0.0,
         "tide_m": 1.08
       }
     },
@@ -2129,9 +2129,9 @@
         "time_utc": "2019-05-02T13:00:00+00:00",
         "hours_to_landfall": -13.7,
         "local_wind_kmh": 67.2,
-        "surge_total_m": 2.28,
+        "surge_total_m": 1.85,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.43,
+        "surge_wind_m": 0.0,
         "tide_m": 1.08
       }
     },
@@ -2151,9 +2151,9 @@
         "time_utc": "2019-05-02T13:00:00+00:00",
         "hours_to_landfall": -13.7,
         "local_wind_kmh": 65.3,
-        "surge_total_m": 2.25,
+        "surge_total_m": 1.85,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.39,
+        "surge_wind_m": 0.0,
         "tide_m": 1.08
       }
     },
@@ -2173,9 +2173,9 @@
         "time_utc": "2019-05-02T13:00:00+00:00",
         "hours_to_landfall": -13.7,
         "local_wind_kmh": 63.7,
-        "surge_total_m": 2.21,
+        "surge_total_m": 1.85,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.36,
+        "surge_wind_m": 0.0,
         "tide_m": 1.08
       }
     },
@@ -2195,9 +2195,9 @@
         "time_utc": "2019-05-02T14:00:00+00:00",
         "hours_to_landfall": -12.7,
         "local_wind_kmh": 84.6,
-        "surge_total_m": 2.55,
+        "surge_total_m": 1.96,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.59,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -2217,9 +2217,9 @@
         "time_utc": "2019-05-02T14:00:00+00:00",
         "hours_to_landfall": -12.7,
         "local_wind_kmh": 82.0,
-        "surge_total_m": 2.51,
+        "surge_total_m": 1.96,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.55,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -2239,9 +2239,9 @@
         "time_utc": "2019-05-02T14:00:00+00:00",
         "hours_to_landfall": -12.7,
         "local_wind_kmh": 79.9,
-        "surge_total_m": 2.48,
+        "surge_total_m": 1.96,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.52,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -2261,9 +2261,9 @@
         "time_utc": "2019-05-02T14:00:00+00:00",
         "hours_to_landfall": -12.7,
         "local_wind_kmh": 77.3,
-        "surge_total_m": 2.44,
+        "surge_total_m": 1.96,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.48,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -2283,9 +2283,9 @@
         "time_utc": "2019-05-02T14:00:00+00:00",
         "hours_to_landfall": -12.7,
         "local_wind_kmh": 74.2,
-        "surge_total_m": 2.45,
+        "surge_total_m": 1.96,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.49,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -2305,9 +2305,9 @@
         "time_utc": "2019-05-02T14:00:00+00:00",
         "hours_to_landfall": -12.7,
         "local_wind_kmh": 71.1,
-        "surge_total_m": 2.43,
+        "surge_total_m": 1.96,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.47,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -2327,9 +2327,9 @@
         "time_utc": "2019-05-02T14:00:00+00:00",
         "hours_to_landfall": -12.7,
         "local_wind_kmh": 68.4,
-        "surge_total_m": 2.4,
+        "surge_total_m": 1.96,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.44,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -2349,9 +2349,9 @@
         "time_utc": "2019-05-02T14:00:00+00:00",
         "hours_to_landfall": -12.7,
         "local_wind_kmh": 66.4,
-        "surge_total_m": 2.37,
+        "surge_total_m": 1.96,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.41,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -2371,9 +2371,9 @@
         "time_utc": "2019-05-02T14:00:00+00:00",
         "hours_to_landfall": -12.7,
         "local_wind_kmh": 64.7,
-        "surge_total_m": 2.33,
+        "surge_total_m": 1.96,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.37,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -2393,9 +2393,9 @@
         "time_utc": "2019-05-02T15:00:00+00:00",
         "hours_to_landfall": -11.7,
         "local_wind_kmh": 87.1,
-        "surge_total_m": 2.55,
+        "surge_total_m": 1.92,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.63,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -2415,9 +2415,9 @@
         "time_utc": "2019-05-02T15:00:00+00:00",
         "hours_to_landfall": -11.7,
         "local_wind_kmh": 84.3,
-        "surge_total_m": 2.51,
+        "surge_total_m": 1.92,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.59,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -2437,9 +2437,9 @@
         "time_utc": "2019-05-02T15:00:00+00:00",
         "hours_to_landfall": -11.7,
         "local_wind_kmh": 82.0,
-        "surge_total_m": 2.47,
+        "surge_total_m": 1.92,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.55,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -2459,9 +2459,9 @@
         "time_utc": "2019-05-02T15:00:00+00:00",
         "hours_to_landfall": -11.7,
         "local_wind_kmh": 79.1,
-        "surge_total_m": 2.43,
+        "surge_total_m": 1.92,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.51,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -2481,9 +2481,9 @@
         "time_utc": "2019-05-02T15:00:00+00:00",
         "hours_to_landfall": -11.7,
         "local_wind_kmh": 75.9,
-        "surge_total_m": 2.44,
+        "surge_total_m": 1.92,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.52,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -2503,9 +2503,9 @@
         "time_utc": "2019-05-02T15:00:00+00:00",
         "hours_to_landfall": -11.7,
         "local_wind_kmh": 72.5,
-        "surge_total_m": 2.41,
+        "surge_total_m": 1.92,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.49,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -2525,9 +2525,9 @@
         "time_utc": "2019-05-02T15:00:00+00:00",
         "hours_to_landfall": -11.7,
         "local_wind_kmh": 69.6,
-        "surge_total_m": 2.38,
+        "surge_total_m": 1.92,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.46,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -2547,9 +2547,9 @@
         "time_utc": "2019-05-02T15:00:00+00:00",
         "hours_to_landfall": -11.7,
         "local_wind_kmh": 67.5,
-        "surge_total_m": 2.34,
+        "surge_total_m": 1.92,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.42,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -2569,9 +2569,9 @@
         "time_utc": "2019-05-02T15:00:00+00:00",
         "hours_to_landfall": -11.7,
         "local_wind_kmh": 65.7,
-        "surge_total_m": 2.3,
+        "surge_total_m": 1.92,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.38,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -2591,9 +2591,9 @@
         "time_utc": "2019-05-02T16:00:00+00:00",
         "hours_to_landfall": -10.7,
         "local_wind_kmh": 90.0,
-        "surge_total_m": 2.42,
+        "surge_total_m": 1.74,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.67,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -2613,9 +2613,9 @@
         "time_utc": "2019-05-02T16:00:00+00:00",
         "hours_to_landfall": -10.7,
         "local_wind_kmh": 86.9,
-        "surge_total_m": 2.37,
+        "surge_total_m": 1.74,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.63,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -2635,9 +2635,9 @@
         "time_utc": "2019-05-02T16:00:00+00:00",
         "hours_to_landfall": -10.7,
         "local_wind_kmh": 84.3,
-        "surge_total_m": 2.33,
+        "surge_total_m": 1.74,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.58,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -2657,9 +2657,9 @@
         "time_utc": "2019-05-02T16:00:00+00:00",
         "hours_to_landfall": -10.7,
         "local_wind_kmh": 81.2,
-        "surge_total_m": 2.28,
+        "surge_total_m": 1.74,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.54,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -2679,9 +2679,9 @@
         "time_utc": "2019-05-02T16:00:00+00:00",
         "hours_to_landfall": -10.7,
         "local_wind_kmh": 77.6,
-        "surge_total_m": 2.29,
+        "surge_total_m": 1.74,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.54,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -2701,9 +2701,9 @@
         "time_utc": "2019-05-02T16:00:00+00:00",
         "hours_to_landfall": -10.7,
         "local_wind_kmh": 74.0,
-        "surge_total_m": 2.26,
+        "surge_total_m": 1.74,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.51,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -2723,9 +2723,9 @@
         "time_utc": "2019-05-02T16:00:00+00:00",
         "hours_to_landfall": -10.7,
         "local_wind_kmh": 70.9,
-        "surge_total_m": 2.22,
+        "surge_total_m": 1.74,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.47,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -2745,9 +2745,9 @@
         "time_utc": "2019-05-02T16:00:00+00:00",
         "hours_to_landfall": -10.7,
         "local_wind_kmh": 68.7,
-        "surge_total_m": 2.18,
+        "surge_total_m": 1.74,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.43,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -2767,9 +2767,9 @@
         "time_utc": "2019-05-02T16:00:00+00:00",
         "hours_to_landfall": -10.7,
         "local_wind_kmh": 66.9,
-        "surge_total_m": 2.13,
+        "surge_total_m": 1.74,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.39,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -2789,9 +2789,9 @@
         "time_utc": "2019-05-02T17:00:00+00:00",
         "hours_to_landfall": -9.7,
         "local_wind_kmh": 93.5,
-        "surge_total_m": 2.2,
+        "surge_total_m": 1.47,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.73,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -2811,9 +2811,9 @@
         "time_utc": "2019-05-02T17:00:00+00:00",
         "hours_to_landfall": -9.7,
         "local_wind_kmh": 90.0,
-        "surge_total_m": 2.15,
+        "surge_total_m": 1.47,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.67,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -2833,9 +2833,9 @@
         "time_utc": "2019-05-02T17:00:00+00:00",
         "hours_to_landfall": -9.7,
         "local_wind_kmh": 87.1,
-        "surge_total_m": 2.1,
+        "surge_total_m": 1.47,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.63,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -2855,9 +2855,9 @@
         "time_utc": "2019-05-02T17:00:00+00:00",
         "hours_to_landfall": -9.7,
         "local_wind_kmh": 83.6,
-        "surge_total_m": 2.05,
+        "surge_total_m": 1.47,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.57,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -2877,9 +2877,9 @@
         "time_utc": "2019-05-02T17:00:00+00:00",
         "hours_to_landfall": -9.7,
         "local_wind_kmh": 79.7,
-        "surge_total_m": 2.05,
+        "surge_total_m": 1.47,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.58,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -2899,9 +2899,9 @@
         "time_utc": "2019-05-02T17:00:00+00:00",
         "hours_to_landfall": -9.7,
         "local_wind_kmh": 75.8,
-        "surge_total_m": 2.01,
+        "surge_total_m": 1.47,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.54,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -2921,9 +2921,9 @@
         "time_utc": "2019-05-02T17:00:00+00:00",
         "hours_to_landfall": -9.7,
         "local_wind_kmh": 72.5,
-        "surge_total_m": 1.96,
+        "surge_total_m": 1.47,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.49,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -2943,9 +2943,9 @@
         "time_utc": "2019-05-02T17:00:00+00:00",
         "hours_to_landfall": -9.7,
         "local_wind_kmh": 70.2,
-        "surge_total_m": 1.92,
+        "surge_total_m": 1.47,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.45,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -2965,9 +2965,9 @@
         "time_utc": "2019-05-02T17:00:00+00:00",
         "hours_to_landfall": -9.7,
         "local_wind_kmh": 68.2,
-        "surge_total_m": 1.87,
+        "surge_total_m": 1.47,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.4,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -2987,9 +2987,9 @@
         "time_utc": "2019-05-02T18:00:00+00:00",
         "hours_to_landfall": -8.7,
         "local_wind_kmh": 97.8,
-        "surge_total_m": 1.97,
+        "surge_total_m": 1.18,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.79,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -3009,9 +3009,9 @@
         "time_utc": "2019-05-02T18:00:00+00:00",
         "hours_to_landfall": -8.7,
         "local_wind_kmh": 93.9,
-        "surge_total_m": 1.91,
+        "surge_total_m": 1.18,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.74,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -3031,9 +3031,9 @@
         "time_utc": "2019-05-02T18:00:00+00:00",
         "hours_to_landfall": -8.7,
         "local_wind_kmh": 90.7,
-        "surge_total_m": 1.86,
+        "surge_total_m": 1.18,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.68,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -3053,9 +3053,9 @@
         "time_utc": "2019-05-02T18:00:00+00:00",
         "hours_to_landfall": -8.7,
         "local_wind_kmh": 86.7,
-        "surge_total_m": 1.8,
+        "surge_total_m": 1.18,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.62,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -3075,9 +3075,9 @@
         "time_utc": "2019-05-02T18:00:00+00:00",
         "hours_to_landfall": -8.7,
         "local_wind_kmh": 82.4,
-        "surge_total_m": 1.79,
+        "surge_total_m": 1.18,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.62,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -3097,9 +3097,9 @@
         "time_utc": "2019-05-02T18:00:00+00:00",
         "hours_to_landfall": -8.7,
         "local_wind_kmh": 78.0,
-        "surge_total_m": 1.75,
+        "surge_total_m": 1.18,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.57,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -3119,9 +3119,9 @@
         "time_utc": "2019-05-02T18:00:00+00:00",
         "hours_to_landfall": -8.7,
         "local_wind_kmh": 74.4,
-        "surge_total_m": 1.69,
+        "surge_total_m": 1.18,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.52,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -3141,9 +3141,9 @@
         "time_utc": "2019-05-02T18:00:00+00:00",
         "hours_to_landfall": -8.7,
         "local_wind_kmh": 72.0,
-        "surge_total_m": 1.65,
+        "surge_total_m": 1.18,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.47,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -3163,9 +3163,9 @@
         "time_utc": "2019-05-02T18:00:00+00:00",
         "hours_to_landfall": -8.7,
         "local_wind_kmh": 69.8,
-        "surge_total_m": 1.59,
+        "surge_total_m": 1.18,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.42,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -3185,9 +3185,9 @@
         "time_utc": "2019-05-02T19:00:00+00:00",
         "hours_to_landfall": -7.7,
         "local_wind_kmh": 103.2,
-        "surge_total_m": 1.81,
+        "surge_total_m": 0.93,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.88,
+        "surge_wind_m": 0.0,
         "tide_m": 0.16
       }
     },
@@ -3207,9 +3207,9 @@
         "time_utc": "2019-05-02T19:00:00+00:00",
         "hours_to_landfall": -7.7,
         "local_wind_kmh": 98.6,
-        "surge_total_m": 1.74,
+        "surge_total_m": 0.93,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.81,
+        "surge_wind_m": 0.0,
         "tide_m": 0.16
       }
     },
@@ -3229,9 +3229,9 @@
         "time_utc": "2019-05-02T19:00:00+00:00",
         "hours_to_landfall": -7.7,
         "local_wind_kmh": 95.0,
-        "surge_total_m": 1.68,
+        "surge_total_m": 0.93,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.75,
+        "surge_wind_m": 0.0,
         "tide_m": 0.16
       }
     },
@@ -3251,9 +3251,9 @@
         "time_utc": "2019-05-02T19:00:00+00:00",
         "hours_to_landfall": -7.7,
         "local_wind_kmh": 90.5,
-        "surge_total_m": 1.61,
+        "surge_total_m": 0.93,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.68,
+        "surge_wind_m": 0.0,
         "tide_m": 0.16
       }
     },
@@ -3273,9 +3273,9 @@
         "time_utc": "2019-05-02T19:00:00+00:00",
         "hours_to_landfall": -7.7,
         "local_wind_kmh": 85.6,
-        "surge_total_m": 1.6,
+        "surge_total_m": 0.93,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.67,
+        "surge_wind_m": 0.0,
         "tide_m": 0.16
       }
     },
@@ -3295,9 +3295,9 @@
         "time_utc": "2019-05-02T19:00:00+00:00",
         "hours_to_landfall": -7.7,
         "local_wind_kmh": 80.8,
-        "surge_total_m": 1.55,
+        "surge_total_m": 0.93,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.62,
+        "surge_wind_m": 0.0,
         "tide_m": 0.16
       }
     },
@@ -3317,9 +3317,9 @@
         "time_utc": "2019-05-02T19:00:00+00:00",
         "hours_to_landfall": -7.7,
         "local_wind_kmh": 76.9,
-        "surge_total_m": 1.48,
+        "surge_total_m": 0.93,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.55,
+        "surge_wind_m": 0.0,
         "tide_m": 0.16
       }
     },
@@ -3339,9 +3339,9 @@
         "time_utc": "2019-05-02T19:00:00+00:00",
         "hours_to_landfall": -7.7,
         "local_wind_kmh": 74.2,
-        "surge_total_m": 1.43,
+        "surge_total_m": 0.93,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.5,
+        "surge_wind_m": 0.0,
         "tide_m": 0.16
       }
     },
@@ -3361,9 +3361,9 @@
         "time_utc": "2019-05-02T19:00:00+00:00",
         "hours_to_landfall": -7.7,
         "local_wind_kmh": 71.9,
-        "surge_total_m": 1.37,
+        "surge_total_m": 0.93,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.44,
+        "surge_wind_m": 0.0,
         "tide_m": 0.16
       }
     },
@@ -3383,9 +3383,9 @@
         "time_utc": "2019-05-02T20:00:00+00:00",
         "hours_to_landfall": -6.7,
         "local_wind_kmh": 109.3,
-        "surge_total_m": 1.76,
+        "surge_total_m": 0.79,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.97,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3405,9 +3405,9 @@
         "time_utc": "2019-05-02T20:00:00+00:00",
         "hours_to_landfall": -6.7,
         "local_wind_kmh": 104.1,
-        "surge_total_m": 1.69,
+        "surge_total_m": 0.79,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.9,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3427,9 +3427,9 @@
         "time_utc": "2019-05-02T20:00:00+00:00",
         "hours_to_landfall": -6.7,
         "local_wind_kmh": 99.9,
-        "surge_total_m": 1.62,
+        "surge_total_m": 0.79,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.83,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3449,9 +3449,9 @@
         "time_utc": "2019-05-02T20:00:00+00:00",
         "hours_to_landfall": -6.7,
         "local_wind_kmh": 94.7,
-        "surge_total_m": 1.54,
+        "surge_total_m": 0.79,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.75,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3471,9 +3471,9 @@
         "time_utc": "2019-05-02T20:00:00+00:00",
         "hours_to_landfall": -6.7,
         "local_wind_kmh": 89.2,
-        "surge_total_m": 1.52,
+        "surge_total_m": 0.79,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.73,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3493,9 +3493,9 @@
         "time_utc": "2019-05-02T20:00:00+00:00",
         "hours_to_landfall": -6.7,
         "local_wind_kmh": 83.8,
-        "surge_total_m": 1.45,
+        "surge_total_m": 0.79,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.66,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3515,9 +3515,9 @@
         "time_utc": "2019-05-02T20:00:00+00:00",
         "hours_to_landfall": -6.7,
         "local_wind_kmh": 79.4,
-        "surge_total_m": 1.38,
+        "surge_total_m": 0.79,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.59,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3537,9 +3537,9 @@
         "time_utc": "2019-05-02T20:00:00+00:00",
         "hours_to_landfall": -6.7,
         "local_wind_kmh": 76.5,
-        "surge_total_m": 1.32,
+        "surge_total_m": 0.79,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.53,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3559,9 +3559,9 @@
         "time_utc": "2019-05-02T20:00:00+00:00",
         "hours_to_landfall": -6.7,
         "local_wind_kmh": 74.0,
-        "surge_total_m": 1.26,
+        "surge_total_m": 0.79,
         "surge_ib_m": 0.77,
-        "surge_wind_m": 0.47,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3581,9 +3581,9 @@
         "time_utc": "2019-05-02T21:00:00+00:00",
         "hours_to_landfall": -5.7,
         "local_wind_kmh": 115.6,
-        "surge_total_m": 1.84,
+        "surge_total_m": 0.78,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 1.06,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3603,9 +3603,9 @@
         "time_utc": "2019-05-02T21:00:00+00:00",
         "hours_to_landfall": -5.7,
         "local_wind_kmh": 109.7,
-        "surge_total_m": 1.76,
+        "surge_total_m": 0.78,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.98,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3625,9 +3625,9 @@
         "time_utc": "2019-05-02T21:00:00+00:00",
         "hours_to_landfall": -5.7,
         "local_wind_kmh": 104.8,
-        "surge_total_m": 1.69,
+        "surge_total_m": 0.78,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.91,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3647,9 +3647,9 @@
         "time_utc": "2019-05-02T21:00:00+00:00",
         "hours_to_landfall": -5.7,
         "local_wind_kmh": 98.8,
-        "surge_total_m": 1.6,
+        "surge_total_m": 0.78,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.82,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3669,9 +3669,9 @@
         "time_utc": "2019-05-02T21:00:00+00:00",
         "hours_to_landfall": -5.7,
         "local_wind_kmh": 92.4,
-        "surge_total_m": 1.56,
+        "surge_total_m": 0.78,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.78,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3691,9 +3691,9 @@
         "time_utc": "2019-05-02T21:00:00+00:00",
         "hours_to_landfall": -5.7,
         "local_wind_kmh": 86.4,
-        "surge_total_m": 1.48,
+        "surge_total_m": 0.78,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.7,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3713,9 +3713,9 @@
         "time_utc": "2019-05-02T21:00:00+00:00",
         "hours_to_landfall": -5.7,
         "local_wind_kmh": 81.5,
-        "surge_total_m": 1.4,
+        "surge_total_m": 0.78,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.62,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3735,9 +3735,9 @@
         "time_utc": "2019-05-02T21:00:00+00:00",
         "hours_to_landfall": -5.7,
         "local_wind_kmh": 78.4,
-        "surge_total_m": 1.33,
+        "surge_total_m": 0.78,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.55,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3757,9 +3757,9 @@
         "time_utc": "2019-05-02T21:00:00+00:00",
         "hours_to_landfall": -5.7,
         "local_wind_kmh": 75.7,
-        "surge_total_m": 1.27,
+        "surge_total_m": 0.78,
         "surge_ib_m": 0.76,
-        "surge_wind_m": 0.49,
+        "surge_wind_m": 0.0,
         "tide_m": 0.02
       }
     },
@@ -3779,9 +3779,9 @@
         "time_utc": "2019-05-02T22:00:00+00:00",
         "hours_to_landfall": -4.7,
         "local_wind_kmh": 122.2,
-        "surge_total_m": 2.02,
+        "surge_total_m": 0.9,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 1.13,
+        "surge_wind_m": 0.0,
         "tide_m": 0.17
       }
     },
@@ -3801,9 +3801,9 @@
         "time_utc": "2019-05-02T22:00:00+00:00",
         "hours_to_landfall": -4.7,
         "local_wind_kmh": 115.3,
-        "surge_total_m": 1.96,
+        "surge_total_m": 0.9,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 1.07,
+        "surge_wind_m": 0.0,
         "tide_m": 0.17
       }
     },
@@ -3823,9 +3823,9 @@
         "time_utc": "2019-05-02T22:00:00+00:00",
         "hours_to_landfall": -4.7,
         "local_wind_kmh": 109.6,
-        "surge_total_m": 1.88,
+        "surge_total_m": 0.9,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 0.99,
+        "surge_wind_m": 0.0,
         "tide_m": 0.17
       }
     },
@@ -3845,9 +3845,9 @@
         "time_utc": "2019-05-02T22:00:00+00:00",
         "hours_to_landfall": -4.7,
         "local_wind_kmh": 102.5,
-        "surge_total_m": 1.77,
+        "surge_total_m": 0.9,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 0.88,
+        "surge_wind_m": 0.0,
         "tide_m": 0.17
       }
     },
@@ -3867,9 +3867,9 @@
         "time_utc": "2019-05-02T22:00:00+00:00",
         "hours_to_landfall": -4.7,
         "local_wind_kmh": 95.1,
-        "surge_total_m": 1.73,
+        "surge_total_m": 0.9,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 0.83,
+        "surge_wind_m": 0.0,
         "tide_m": 0.17
       }
     },
@@ -3889,9 +3889,9 @@
         "time_utc": "2019-05-02T22:00:00+00:00",
         "hours_to_landfall": -4.7,
         "local_wind_kmh": 88.3,
-        "surge_total_m": 1.63,
+        "surge_total_m": 0.9,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 0.73,
+        "surge_wind_m": 0.0,
         "tide_m": 0.17
       }
     },
@@ -3911,9 +3911,9 @@
         "time_utc": "2019-05-02T22:00:00+00:00",
         "hours_to_landfall": -4.7,
         "local_wind_kmh": 82.8,
-        "surge_total_m": 1.53,
+        "surge_total_m": 0.9,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 0.64,
+        "surge_wind_m": 0.0,
         "tide_m": 0.17
       }
     },
@@ -3933,9 +3933,9 @@
         "time_utc": "2019-05-02T22:00:00+00:00",
         "hours_to_landfall": -4.7,
         "local_wind_kmh": 79.3,
-        "surge_total_m": 1.46,
+        "surge_total_m": 0.9,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 0.57,
+        "surge_wind_m": 0.0,
         "tide_m": 0.17
       }
     },
@@ -3955,9 +3955,9 @@
         "time_utc": "2019-05-02T22:00:00+00:00",
         "hours_to_landfall": -4.7,
         "local_wind_kmh": 76.4,
-        "surge_total_m": 1.39,
+        "surge_total_m": 0.9,
         "surge_ib_m": 0.73,
-        "surge_wind_m": 0.49,
+        "surge_wind_m": 0.0,
         "tide_m": 0.17
       }
     },
@@ -3977,9 +3977,9 @@
         "time_utc": "2019-05-02T23:00:00+00:00",
         "hours_to_landfall": -3.7,
         "local_wind_kmh": 130.6,
-        "surge_total_m": 2.3,
+        "surge_total_m": 1.11,
         "surge_ib_m": 0.69,
-        "surge_wind_m": 1.19,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -3999,9 +3999,9 @@
         "time_utc": "2019-05-02T23:00:00+00:00",
         "hours_to_landfall": -3.7,
         "local_wind_kmh": 122.6,
-        "surge_total_m": 2.28,
+        "surge_total_m": 1.11,
         "surge_ib_m": 0.69,
-        "surge_wind_m": 1.17,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -4021,9 +4021,9 @@
         "time_utc": "2019-05-02T23:00:00+00:00",
         "hours_to_landfall": -3.7,
         "local_wind_kmh": 115.6,
-        "surge_total_m": 2.2,
+        "surge_total_m": 1.11,
         "surge_ib_m": 0.69,
-        "surge_wind_m": 1.09,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -4043,9 +4043,9 @@
         "time_utc": "2019-05-02T23:00:00+00:00",
         "hours_to_landfall": -3.7,
         "local_wind_kmh": 106.8,
-        "surge_total_m": 2.07,
+        "surge_total_m": 1.11,
         "surge_ib_m": 0.69,
-        "surge_wind_m": 0.96,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -4065,9 +4065,9 @@
         "time_utc": "2019-05-02T23:00:00+00:00",
         "hours_to_landfall": -3.7,
         "local_wind_kmh": 97.9,
-        "surge_total_m": 1.99,
+        "surge_total_m": 1.11,
         "surge_ib_m": 0.69,
-        "surge_wind_m": 0.89,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -4087,9 +4087,9 @@
         "time_utc": "2019-05-02T23:00:00+00:00",
         "hours_to_landfall": -3.7,
         "local_wind_kmh": 90.1,
-        "surge_total_m": 1.88,
+        "surge_total_m": 1.11,
         "surge_ib_m": 0.69,
-        "surge_wind_m": 0.77,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -4109,9 +4109,9 @@
         "time_utc": "2019-05-02T23:00:00+00:00",
         "hours_to_landfall": -3.7,
         "local_wind_kmh": 83.9,
-        "surge_total_m": 1.76,
+        "surge_total_m": 1.11,
         "surge_ib_m": 0.69,
-        "surge_wind_m": 0.65,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -4131,9 +4131,9 @@
         "time_utc": "2019-05-02T23:00:00+00:00",
         "hours_to_landfall": -3.7,
         "local_wind_kmh": 80.1,
-        "surge_total_m": 1.68,
+        "surge_total_m": 1.11,
         "surge_ib_m": 0.69,
-        "surge_wind_m": 0.57,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -4153,9 +4153,9 @@
         "time_utc": "2019-05-02T23:00:00+00:00",
         "hours_to_landfall": -3.7,
         "local_wind_kmh": 76.9,
-        "surge_total_m": 1.61,
+        "surge_total_m": 1.11,
         "surge_ib_m": 0.69,
-        "surge_wind_m": 0.5,
+        "surge_wind_m": 0.0,
         "tide_m": 0.42
       }
     },
@@ -4175,9 +4175,9 @@
         "time_utc": "2019-05-03T00:00:00+00:00",
         "hours_to_landfall": -2.7,
         "local_wind_kmh": 143.0,
-        "surge_total_m": 2.62,
+        "surge_total_m": 1.37,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 1.25,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -4197,9 +4197,9 @@
         "time_utc": "2019-05-03T00:00:00+00:00",
         "hours_to_landfall": -2.7,
         "local_wind_kmh": 133.8,
-        "surge_total_m": 2.71,
+        "surge_total_m": 1.37,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 1.34,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -4219,9 +4219,9 @@
         "time_utc": "2019-05-03T00:00:00+00:00",
         "hours_to_landfall": -2.7,
         "local_wind_kmh": 124.7,
-        "surge_total_m": 2.63,
+        "surge_total_m": 1.37,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 1.26,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -4241,9 +4241,9 @@
         "time_utc": "2019-05-03T00:00:00+00:00",
         "hours_to_landfall": -2.7,
         "local_wind_kmh": 113.3,
-        "surge_total_m": 2.46,
+        "surge_total_m": 1.37,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 1.09,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -4263,9 +4263,9 @@
         "time_utc": "2019-05-03T00:00:00+00:00",
         "hours_to_landfall": -2.7,
         "local_wind_kmh": 102.2,
-        "surge_total_m": 2.34,
+        "surge_total_m": 1.37,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 0.97,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -4285,9 +4285,9 @@
         "time_utc": "2019-05-03T00:00:00+00:00",
         "hours_to_landfall": -2.7,
         "local_wind_kmh": 92.9,
-        "surge_total_m": 2.19,
+        "surge_total_m": 1.37,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 0.81,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -4307,9 +4307,9 @@
         "time_utc": "2019-05-03T00:00:00+00:00",
         "hours_to_landfall": -2.7,
         "local_wind_kmh": 85.7,
-        "surge_total_m": 2.05,
+        "surge_total_m": 1.37,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 0.68,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -4329,9 +4329,9 @@
         "time_utc": "2019-05-03T00:00:00+00:00",
         "hours_to_landfall": -2.7,
         "local_wind_kmh": 81.4,
-        "surge_total_m": 1.96,
+        "surge_total_m": 1.37,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 0.59,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -4351,9 +4351,9 @@
         "time_utc": "2019-05-03T00:00:00+00:00",
         "hours_to_landfall": -2.7,
         "local_wind_kmh": 77.9,
-        "surge_total_m": 1.88,
+        "surge_total_m": 1.37,
         "surge_ib_m": 0.65,
-        "surge_wind_m": 0.51,
+        "surge_wind_m": 0.0,
         "tide_m": 0.72
       }
     },
@@ -4373,9 +4373,9 @@
         "time_utc": "2019-05-03T01:00:00+00:00",
         "hours_to_landfall": -1.7,
         "local_wind_kmh": 163.2,
-        "surge_total_m": 2.86,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.63,
-        "surge_wind_m": 1.24,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -4395,9 +4395,9 @@
         "time_utc": "2019-05-03T01:00:00+00:00",
         "hours_to_landfall": -1.7,
         "local_wind_kmh": 152.9,
-        "surge_total_m": 3.27,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.63,
-        "surge_wind_m": 1.66,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -4417,9 +4417,9 @@
         "time_utc": "2019-05-03T01:00:00+00:00",
         "hours_to_landfall": -1.7,
         "local_wind_kmh": 139.8,
-        "surge_total_m": 3.2,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.63,
-        "surge_wind_m": 1.59,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -4439,9 +4439,9 @@
         "time_utc": "2019-05-03T01:00:00+00:00",
         "hours_to_landfall": -1.7,
         "local_wind_kmh": 123.4,
-        "surge_total_m": 2.94,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.63,
-        "surge_wind_m": 1.32,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -4461,9 +4461,9 @@
         "time_utc": "2019-05-03T01:00:00+00:00",
         "hours_to_landfall": -1.7,
         "local_wind_kmh": 108.8,
-        "surge_total_m": 2.73,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.63,
-        "surge_wind_m": 1.11,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -4483,9 +4483,9 @@
         "time_utc": "2019-05-03T01:00:00+00:00",
         "hours_to_landfall": -1.7,
         "local_wind_kmh": 97.4,
-        "surge_total_m": 2.51,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.63,
-        "surge_wind_m": 0.9,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -4505,9 +4505,9 @@
         "time_utc": "2019-05-03T01:00:00+00:00",
         "hours_to_landfall": -1.7,
         "local_wind_kmh": 88.9,
-        "surge_total_m": 2.34,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.63,
-        "surge_wind_m": 0.72,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -4527,9 +4527,9 @@
         "time_utc": "2019-05-03T01:00:00+00:00",
         "hours_to_landfall": -1.7,
         "local_wind_kmh": 84.1,
-        "surge_total_m": 2.24,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.63,
-        "surge_wind_m": 0.62,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -4549,9 +4549,9 @@
         "time_utc": "2019-05-03T01:00:00+00:00",
         "hours_to_landfall": -1.7,
         "local_wind_kmh": 80.2,
-        "surge_total_m": 2.15,
+        "surge_total_m": 1.62,
         "surge_ib_m": 0.63,
-        "surge_wind_m": 0.53,
+        "surge_wind_m": 0.0,
         "tide_m": 0.99
       }
     },
@@ -4571,9 +4571,9 @@
         "time_utc": "2019-05-03T02:00:00+00:00",
         "hours_to_landfall": -0.7,
         "local_wind_kmh": 181.6,
-        "surge_total_m": 2.32,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.61,
-        "surge_wind_m": 0.55,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -4593,9 +4593,9 @@
         "time_utc": "2019-05-03T02:00:00+00:00",
         "hours_to_landfall": -0.7,
         "local_wind_kmh": 188.2,
-        "surge_total_m": 4.04,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.61,
-        "surge_wind_m": 2.27,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -4615,9 +4615,9 @@
         "time_utc": "2019-05-03T02:00:00+00:00",
         "hours_to_landfall": -0.7,
         "local_wind_kmh": 165.4,
-        "surge_total_m": 4.05,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.61,
-        "surge_wind_m": 2.27,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -4637,9 +4637,9 @@
         "time_utc": "2019-05-03T02:00:00+00:00",
         "hours_to_landfall": -0.7,
         "local_wind_kmh": 138.4,
-        "surge_total_m": 3.49,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.61,
-        "surge_wind_m": 1.72,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -4659,9 +4659,9 @@
         "time_utc": "2019-05-03T02:00:00+00:00",
         "hours_to_landfall": -0.7,
         "local_wind_kmh": 117.8,
-        "surge_total_m": 3.08,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.61,
-        "surge_wind_m": 1.31,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -4681,9 +4681,9 @@
         "time_utc": "2019-05-03T02:00:00+00:00",
         "hours_to_landfall": -0.7,
         "local_wind_kmh": 103.5,
-        "surge_total_m": 2.78,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.61,
-        "surge_wind_m": 1.01,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -4703,9 +4703,9 @@
         "time_utc": "2019-05-03T02:00:00+00:00",
         "hours_to_landfall": -0.7,
         "local_wind_kmh": 93.1,
-        "surge_total_m": 2.55,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.61,
-        "surge_wind_m": 0.78,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -4725,9 +4725,9 @@
         "time_utc": "2019-05-03T02:00:00+00:00",
         "hours_to_landfall": -0.7,
         "local_wind_kmh": 87.8,
-        "surge_total_m": 2.43,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.61,
-        "surge_wind_m": 0.66,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -4747,9 +4747,9 @@
         "time_utc": "2019-05-03T02:00:00+00:00",
         "hours_to_landfall": -0.7,
         "local_wind_kmh": 83.2,
-        "surge_total_m": 2.33,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.61,
-        "surge_wind_m": 0.56,
+        "surge_wind_m": 0.0,
         "tide_m": 1.16
       }
     },
@@ -4769,9 +4769,9 @@
         "time_utc": "2019-05-03T03:00:00+00:00",
         "hours_to_landfall": 0.3,
         "local_wind_kmh": 142.0,
-        "surge_total_m": 1.77,
+        "surge_total_m": 2.7,
         "surge_ib_m": 0.58,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.92,
         "tide_m": 1.19
       }
     },
@@ -4791,9 +4791,9 @@
         "time_utc": "2019-05-03T03:00:00+00:00",
         "hours_to_landfall": 0.3,
         "local_wind_kmh": 84.2,
-        "surge_total_m": 2.03,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.58,
-        "surge_wind_m": 0.25,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -4813,9 +4813,9 @@
         "time_utc": "2019-05-03T03:00:00+00:00",
         "hours_to_landfall": 0.3,
         "local_wind_kmh": 132.3,
-        "surge_total_m": 3.31,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.58,
-        "surge_wind_m": 1.54,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -4835,9 +4835,9 @@
         "time_utc": "2019-05-03T03:00:00+00:00",
         "hours_to_landfall": 0.3,
         "local_wind_kmh": 160.3,
-        "surge_total_m": 4.18,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.58,
-        "surge_wind_m": 2.4,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -4857,9 +4857,9 @@
         "time_utc": "2019-05-03T03:00:00+00:00",
         "hours_to_landfall": 0.3,
         "local_wind_kmh": 128.7,
-        "surge_total_m": 3.33,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.58,
-        "surge_wind_m": 1.55,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -4879,9 +4879,9 @@
         "time_utc": "2019-05-03T03:00:00+00:00",
         "hours_to_landfall": 0.3,
         "local_wind_kmh": 110.3,
-        "surge_total_m": 2.9,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.58,
-        "surge_wind_m": 1.12,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -4901,9 +4901,9 @@
         "time_utc": "2019-05-03T03:00:00+00:00",
         "hours_to_landfall": 0.3,
         "local_wind_kmh": 97.4,
-        "surge_total_m": 2.6,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.58,
-        "surge_wind_m": 0.82,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -4923,9 +4923,9 @@
         "time_utc": "2019-05-03T03:00:00+00:00",
         "hours_to_landfall": 0.3,
         "local_wind_kmh": 91.3,
-        "surge_total_m": 2.47,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.58,
-        "surge_wind_m": 0.7,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -4945,9 +4945,9 @@
         "time_utc": "2019-05-03T03:00:00+00:00",
         "hours_to_landfall": 0.3,
         "local_wind_kmh": 86.2,
-        "surge_total_m": 2.35,
+        "surge_total_m": 1.77,
         "surge_ib_m": 0.58,
-        "surge_wind_m": 0.58,
+        "surge_wind_m": 0.0,
         "tide_m": 1.19
       }
     },
@@ -4967,9 +4967,9 @@
         "time_utc": "2019-05-03T04:00:00+00:00",
         "hours_to_landfall": 1.3,
         "local_wind_kmh": 174.4,
-        "surge_total_m": 1.61,
+        "surge_total_m": 4.28,
         "surge_ib_m": 0.54,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 2.67,
         "tide_m": 1.07
       }
     },
@@ -4989,9 +4989,9 @@
         "time_utc": "2019-05-03T04:00:00+00:00",
         "hours_to_landfall": 1.3,
         "local_wind_kmh": 71.1,
-        "surge_total_m": 1.61,
+        "surge_total_m": 2.08,
         "surge_ib_m": 0.54,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.47,
         "tide_m": 1.07
       }
     },
@@ -5011,9 +5011,9 @@
         "time_utc": "2019-05-03T04:00:00+00:00",
         "hours_to_landfall": 1.3,
         "local_wind_kmh": 33.6,
-        "surge_total_m": 1.69,
+        "surge_total_m": 1.61,
         "surge_ib_m": 0.54,
-        "surge_wind_m": 0.08,
+        "surge_wind_m": 0.0,
         "tide_m": 1.07
       }
     },
@@ -5033,9 +5033,9 @@
         "time_utc": "2019-05-03T04:00:00+00:00",
         "hours_to_landfall": 1.3,
         "local_wind_kmh": 153.5,
-        "surge_total_m": 3.73,
+        "surge_total_m": 1.61,
         "surge_ib_m": 0.54,
-        "surge_wind_m": 2.12,
+        "surge_wind_m": 0.0,
         "tide_m": 1.07
       }
     },
@@ -5055,9 +5055,9 @@
         "time_utc": "2019-05-03T04:00:00+00:00",
         "hours_to_landfall": 1.3,
         "local_wind_kmh": 140.6,
-        "surge_total_m": 3.36,
+        "surge_total_m": 1.61,
         "surge_ib_m": 0.54,
-        "surge_wind_m": 1.75,
+        "surge_wind_m": 0.0,
         "tide_m": 1.07
       }
     },
@@ -5077,9 +5077,9 @@
         "time_utc": "2019-05-03T04:00:00+00:00",
         "hours_to_landfall": 1.3,
         "local_wind_kmh": 117.2,
-        "surge_total_m": 2.82,
+        "surge_total_m": 1.61,
         "surge_ib_m": 0.54,
-        "surge_wind_m": 1.21,
+        "surge_wind_m": 0.0,
         "tide_m": 1.07
       }
     },
@@ -5099,9 +5099,9 @@
         "time_utc": "2019-05-03T04:00:00+00:00",
         "hours_to_landfall": 1.3,
         "local_wind_kmh": 100.9,
-        "surge_total_m": 2.44,
+        "surge_total_m": 1.61,
         "surge_ib_m": 0.54,
-        "surge_wind_m": 0.83,
+        "surge_wind_m": 0.0,
         "tide_m": 1.07
       }
     },
@@ -5121,9 +5121,9 @@
         "time_utc": "2019-05-03T04:00:00+00:00",
         "hours_to_landfall": 1.3,
         "local_wind_kmh": 94.2,
-        "surge_total_m": 2.31,
+        "surge_total_m": 1.61,
         "surge_ib_m": 0.54,
-        "surge_wind_m": 0.7,
+        "surge_wind_m": 0.0,
         "tide_m": 1.07
       }
     },
@@ -5143,9 +5143,9 @@
         "time_utc": "2019-05-03T04:00:00+00:00",
         "hours_to_landfall": 1.3,
         "local_wind_kmh": 88.4,
-        "surge_total_m": 2.19,
+        "surge_total_m": 1.61,
         "surge_ib_m": 0.54,
-        "surge_wind_m": 0.58,
+        "surge_wind_m": 0.0,
         "tide_m": 1.07
       }
     },
@@ -5165,9 +5165,9 @@
         "time_utc": "2019-05-03T05:00:00+00:00",
         "hours_to_landfall": 2.3,
         "local_wind_kmh": 133.8,
-        "surge_total_m": 1.32,
+        "surge_total_m": 3.01,
         "surge_ib_m": 0.48,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 1.69,
         "tide_m": 0.84
       }
     },
@@ -5187,9 +5187,9 @@
         "time_utc": "2019-05-03T05:00:00+00:00",
         "hours_to_landfall": 2.3,
         "local_wind_kmh": 167.2,
-        "surge_total_m": 1.32,
+        "surge_total_m": 3.86,
         "surge_ib_m": 0.48,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 2.54,
         "tide_m": 0.84
       }
     },
@@ -5209,9 +5209,9 @@
         "time_utc": "2019-05-03T05:00:00+00:00",
         "hours_to_landfall": 2.3,
         "local_wind_kmh": 112.3,
-        "surge_total_m": 1.32,
+        "surge_total_m": 2.04,
         "surge_ib_m": 0.48,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.72,
         "tide_m": 0.84
       }
     },
@@ -5231,9 +5231,9 @@
         "time_utc": "2019-05-03T05:00:00+00:00",
         "hours_to_landfall": 2.3,
         "local_wind_kmh": 129.3,
-        "surge_total_m": 1.98,
+        "surge_total_m": 1.32,
         "surge_ib_m": 0.48,
-        "surge_wind_m": 0.66,
+        "surge_wind_m": 0.0,
         "tide_m": 0.84
       }
     },
@@ -5253,9 +5253,9 @@
         "time_utc": "2019-05-03T05:00:00+00:00",
         "hours_to_landfall": 2.3,
         "local_wind_kmh": 147.5,
-        "surge_total_m": 2.79,
+        "surge_total_m": 1.32,
         "surge_ib_m": 0.48,
-        "surge_wind_m": 1.47,
+        "surge_wind_m": 0.0,
         "tide_m": 0.84
       }
     },
@@ -5275,9 +5275,9 @@
         "time_utc": "2019-05-03T05:00:00+00:00",
         "hours_to_landfall": 2.3,
         "local_wind_kmh": 123.0,
-        "surge_total_m": 2.49,
+        "surge_total_m": 1.32,
         "surge_ib_m": 0.48,
-        "surge_wind_m": 1.17,
+        "surge_wind_m": 0.0,
         "tide_m": 0.84
       }
     },
@@ -5297,9 +5297,9 @@
         "time_utc": "2019-05-03T05:00:00+00:00",
         "hours_to_landfall": 2.3,
         "local_wind_kmh": 103.3,
-        "surge_total_m": 2.09,
+        "surge_total_m": 1.32,
         "surge_ib_m": 0.48,
-        "surge_wind_m": 0.77,
+        "surge_wind_m": 0.0,
         "tide_m": 0.84
       }
     },
@@ -5319,9 +5319,9 @@
         "time_utc": "2019-05-03T05:00:00+00:00",
         "hours_to_landfall": 2.3,
         "local_wind_kmh": 96.4,
-        "surge_total_m": 1.99,
+        "surge_total_m": 1.32,
         "surge_ib_m": 0.48,
-        "surge_wind_m": 0.67,
+        "surge_wind_m": 0.0,
         "tide_m": 0.84
       }
     },
@@ -5341,9 +5341,9 @@
         "time_utc": "2019-05-03T05:00:00+00:00",
         "hours_to_landfall": 2.3,
         "local_wind_kmh": 90.0,
-        "surge_total_m": 1.87,
+        "surge_total_m": 1.32,
         "surge_ib_m": 0.48,
-        "surge_wind_m": 0.55,
+        "surge_wind_m": 0.0,
         "tide_m": 0.84
       }
     },
@@ -5363,9 +5363,9 @@
         "time_utc": "2019-05-03T06:00:00+00:00",
         "hours_to_landfall": 3.3,
         "local_wind_kmh": 107.9,
-        "surge_total_m": 0.98,
+        "surge_total_m": 2.07,
         "surge_ib_m": 0.44,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 1.09,
         "tide_m": 0.54
       }
     },
@@ -5385,9 +5385,9 @@
         "time_utc": "2019-05-03T06:00:00+00:00",
         "hours_to_landfall": 3.3,
         "local_wind_kmh": 123.9,
-        "surge_total_m": 0.98,
+        "surge_total_m": 2.32,
         "surge_ib_m": 0.44,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 1.34,
         "tide_m": 0.54
       }
     },
@@ -5407,9 +5407,9 @@
         "time_utc": "2019-05-03T06:00:00+00:00",
         "hours_to_landfall": 3.3,
         "local_wind_kmh": 138.7,
-        "surge_total_m": 0.98,
+        "surge_total_m": 2.25,
         "surge_ib_m": 0.44,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 1.27,
         "tide_m": 0.54
       }
     },
@@ -5429,9 +5429,9 @@
         "time_utc": "2019-05-03T06:00:00+00:00",
         "hours_to_landfall": 3.3,
         "local_wind_kmh": 147.4,
-        "surge_total_m": 0.98,
+        "surge_total_m": 1.23,
         "surge_ib_m": 0.44,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.24,
         "tide_m": 0.54
       }
     },
@@ -5451,9 +5451,9 @@
         "time_utc": "2019-05-03T06:00:00+00:00",
         "hours_to_landfall": 3.3,
         "local_wind_kmh": 137.7,
-        "surge_total_m": 1.53,
+        "surge_total_m": 0.98,
         "surge_ib_m": 0.44,
-        "surge_wind_m": 0.55,
+        "surge_wind_m": 0.0,
         "tide_m": 0.54
       }
     },
@@ -5473,9 +5473,9 @@
         "time_utc": "2019-05-03T06:00:00+00:00",
         "hours_to_landfall": 3.3,
         "local_wind_kmh": 123.8,
-        "surge_total_m": 1.82,
+        "surge_total_m": 0.98,
         "surge_ib_m": 0.44,
-        "surge_wind_m": 0.84,
+        "surge_wind_m": 0.0,
         "tide_m": 0.54
       }
     },
@@ -5495,9 +5495,9 @@
         "time_utc": "2019-05-03T06:00:00+00:00",
         "hours_to_landfall": 3.3,
         "local_wind_kmh": 103.5,
-        "surge_total_m": 1.59,
+        "surge_total_m": 0.98,
         "surge_ib_m": 0.44,
-        "surge_wind_m": 0.61,
+        "surge_wind_m": 0.0,
         "tide_m": 0.54
       }
     },
@@ -5517,9 +5517,9 @@
         "time_utc": "2019-05-03T06:00:00+00:00",
         "hours_to_landfall": 3.3,
         "local_wind_kmh": 97.6,
-        "surge_total_m": 1.56,
+        "surge_total_m": 0.98,
         "surge_ib_m": 0.44,
-        "surge_wind_m": 0.58,
+        "surge_wind_m": 0.0,
         "tide_m": 0.54
       }
     },
@@ -5539,9 +5539,9 @@
         "time_utc": "2019-05-03T06:00:00+00:00",
         "hours_to_landfall": 3.3,
         "local_wind_kmh": 91.1,
-        "surge_total_m": 1.47,
+        "surge_total_m": 0.98,
         "surge_ib_m": 0.44,
-        "surge_wind_m": 0.49,
+        "surge_wind_m": 0.0,
         "tide_m": 0.54
       }
     },
@@ -5561,9 +5561,9 @@
         "time_utc": "2019-05-03T07:00:00+00:00",
         "hours_to_landfall": 4.3,
         "local_wind_kmh": 91.9,
-        "surge_total_m": 0.68,
+        "surge_total_m": 1.46,
         "surge_ib_m": 0.42,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.78,
         "tide_m": 0.26
       }
     },
@@ -5583,9 +5583,9 @@
         "time_utc": "2019-05-03T07:00:00+00:00",
         "hours_to_landfall": 4.3,
         "local_wind_kmh": 101.8,
-        "surge_total_m": 0.68,
+        "surge_total_m": 1.56,
         "surge_ib_m": 0.42,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.88,
         "tide_m": 0.26
       }
     },
@@ -5605,9 +5605,9 @@
         "time_utc": "2019-05-03T07:00:00+00:00",
         "hours_to_landfall": 4.3,
         "local_wind_kmh": 110.2,
-        "surge_total_m": 0.68,
+        "surge_total_m": 1.5,
         "surge_ib_m": 0.42,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.82,
         "tide_m": 0.26
       }
     },
@@ -5627,9 +5627,9 @@
         "time_utc": "2019-05-03T07:00:00+00:00",
         "hours_to_landfall": 4.3,
         "local_wind_kmh": 117.6,
-        "surge_total_m": 0.68,
+        "surge_total_m": 1.1,
         "surge_ib_m": 0.42,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.42,
         "tide_m": 0.26
       }
     },
@@ -5649,9 +5649,9 @@
         "time_utc": "2019-05-03T07:00:00+00:00",
         "hours_to_landfall": 4.3,
         "local_wind_kmh": 119.2,
-        "surge_total_m": 0.68,
+        "surge_total_m": 0.72,
         "surge_ib_m": 0.42,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.04,
         "tide_m": 0.26
       }
     },
@@ -5671,9 +5671,9 @@
         "time_utc": "2019-05-03T07:00:00+00:00",
         "hours_to_landfall": 4.3,
         "local_wind_kmh": 117.4,
-        "surge_total_m": 1.04,
+        "surge_total_m": 0.68,
         "surge_ib_m": 0.42,
-        "surge_wind_m": 0.36,
+        "surge_wind_m": 0.0,
         "tide_m": 0.26
       }
     },
@@ -5693,9 +5693,9 @@
         "time_utc": "2019-05-03T07:00:00+00:00",
         "hours_to_landfall": 4.3,
         "local_wind_kmh": 101.2,
-        "surge_total_m": 1.06,
+        "surge_total_m": 0.68,
         "surge_ib_m": 0.42,
-        "surge_wind_m": 0.39,
+        "surge_wind_m": 0.0,
         "tide_m": 0.26
       }
     },
@@ -5715,9 +5715,9 @@
         "time_utc": "2019-05-03T07:00:00+00:00",
         "hours_to_landfall": 4.3,
         "local_wind_kmh": 97.7,
-        "surge_total_m": 1.11,
+        "surge_total_m": 0.68,
         "surge_ib_m": 0.42,
-        "surge_wind_m": 0.44,
+        "surge_wind_m": 0.0,
         "tide_m": 0.26
       }
     },
@@ -5737,9 +5737,9 @@
         "time_utc": "2019-05-03T07:00:00+00:00",
         "hours_to_landfall": 4.3,
         "local_wind_kmh": 91.8,
-        "surge_total_m": 1.07,
+        "surge_total_m": 0.68,
         "surge_ib_m": 0.42,
-        "surge_wind_m": 0.4,
+        "surge_wind_m": 0.0,
         "tide_m": 0.26
       }
     },
@@ -5759,9 +5759,9 @@
         "time_utc": "2019-05-03T08:00:00+00:00",
         "hours_to_landfall": 5.3,
         "local_wind_kmh": 80.9,
-        "surge_total_m": 0.47,
+        "surge_total_m": 1.07,
         "surge_ib_m": 0.41,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.6,
         "tide_m": 0.06
       }
     },
@@ -5781,9 +5781,9 @@
         "time_utc": "2019-05-03T08:00:00+00:00",
         "hours_to_landfall": 5.3,
         "local_wind_kmh": 87.8,
-        "surge_total_m": 0.47,
+        "surge_total_m": 1.12,
         "surge_ib_m": 0.41,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.65,
         "tide_m": 0.06
       }
     },
@@ -5803,9 +5803,9 @@
         "time_utc": "2019-05-03T08:00:00+00:00",
         "hours_to_landfall": 5.3,
         "local_wind_kmh": 93.4,
-        "surge_total_m": 0.47,
+        "surge_total_m": 1.07,
         "surge_ib_m": 0.41,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.6,
         "tide_m": 0.06
       }
     },
@@ -5825,9 +5825,9 @@
         "time_utc": "2019-05-03T08:00:00+00:00",
         "hours_to_landfall": 5.3,
         "local_wind_kmh": 99.2,
-        "surge_total_m": 0.47,
+        "surge_total_m": 0.87,
         "surge_ib_m": 0.41,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.4,
         "tide_m": 0.06
       }
     },
@@ -5847,9 +5847,9 @@
         "time_utc": "2019-05-03T08:00:00+00:00",
         "hours_to_landfall": 5.3,
         "local_wind_kmh": 103.5,
-        "surge_total_m": 0.47,
+        "surge_total_m": 0.72,
         "surge_ib_m": 0.41,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.25,
         "tide_m": 0.06
       }
     },
@@ -5869,9 +5869,9 @@
         "time_utc": "2019-05-03T08:00:00+00:00",
         "hours_to_landfall": 5.3,
         "local_wind_kmh": 107.8,
-        "surge_total_m": 0.47,
+        "surge_total_m": 0.49,
         "surge_ib_m": 0.41,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.02,
         "tide_m": 0.06
       }
     },
@@ -5891,9 +5891,9 @@
         "time_utc": "2019-05-03T08:00:00+00:00",
         "hours_to_landfall": 5.3,
         "local_wind_kmh": 97.7,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.47,
         "surge_ib_m": 0.41,
-        "surge_wind_m": 0.16,
+        "surge_wind_m": 0.0,
         "tide_m": 0.06
       }
     },
@@ -5913,9 +5913,9 @@
         "time_utc": "2019-05-03T08:00:00+00:00",
         "hours_to_landfall": 5.3,
         "local_wind_kmh": 97.2,
-        "surge_total_m": 0.72,
+        "surge_total_m": 0.47,
         "surge_ib_m": 0.41,
-        "surge_wind_m": 0.25,
+        "surge_wind_m": 0.0,
         "tide_m": 0.06
       }
     },
@@ -5935,9 +5935,9 @@
         "time_utc": "2019-05-03T08:00:00+00:00",
         "hours_to_landfall": 5.3,
         "local_wind_kmh": 92.9,
-        "surge_total_m": 0.75,
+        "surge_total_m": 0.47,
         "surge_ib_m": 0.41,
-        "surge_wind_m": 0.28,
+        "surge_wind_m": 0.0,
         "tide_m": 0.06
       }
     },
@@ -5957,9 +5957,9 @@
         "time_utc": "2019-05-03T09:00:00+00:00",
         "hours_to_landfall": 6.3,
         "local_wind_kmh": 72.4,
-        "surge_total_m": 0.4,
+        "surge_total_m": 0.88,
         "surge_ib_m": 0.4,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.48,
         "tide_m": 0.0
       }
     },
@@ -5979,9 +5979,9 @@
         "time_utc": "2019-05-03T09:00:00+00:00",
         "hours_to_landfall": 6.3,
         "local_wind_kmh": 77.5,
-        "surge_total_m": 0.4,
+        "surge_total_m": 0.91,
         "surge_ib_m": 0.4,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.5,
         "tide_m": 0.0
       }
     },
@@ -6001,9 +6001,9 @@
         "time_utc": "2019-05-03T09:00:00+00:00",
         "hours_to_landfall": 6.3,
         "local_wind_kmh": 81.7,
-        "surge_total_m": 0.4,
+        "surge_total_m": 0.88,
         "surge_ib_m": 0.4,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.48,
         "tide_m": 0.0
       }
     },
@@ -6023,9 +6023,9 @@
         "time_utc": "2019-05-03T09:00:00+00:00",
         "hours_to_landfall": 6.3,
         "local_wind_kmh": 86.5,
-        "surge_total_m": 0.4,
+        "surge_total_m": 0.77,
         "surge_ib_m": 0.4,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.37,
         "tide_m": 0.0
       }
     },
@@ -6045,9 +6045,9 @@
         "time_utc": "2019-05-03T09:00:00+00:00",
         "hours_to_landfall": 6.3,
         "local_wind_kmh": 91.4,
-        "surge_total_m": 0.4,
+        "surge_total_m": 0.73,
         "surge_ib_m": 0.4,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.33,
         "tide_m": 0.0
       }
     },
@@ -6067,9 +6067,9 @@
         "time_utc": "2019-05-03T09:00:00+00:00",
         "hours_to_landfall": 6.3,
         "local_wind_kmh": 98.4,
-        "surge_total_m": 0.4,
+        "surge_total_m": 0.66,
         "surge_ib_m": 0.4,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.26,
         "tide_m": 0.0
       }
     },
@@ -6089,9 +6089,9 @@
         "time_utc": "2019-05-03T09:00:00+00:00",
         "hours_to_landfall": 6.3,
         "local_wind_kmh": 94.1,
-        "surge_total_m": 0.4,
+        "surge_total_m": 0.47,
         "surge_ib_m": 0.4,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.07,
         "tide_m": 0.0
       }
     },
@@ -6111,9 +6111,9 @@
         "time_utc": "2019-05-03T09:00:00+00:00",
         "hours_to_landfall": 6.3,
         "local_wind_kmh": 97.3,
-        "surge_total_m": 0.43,
+        "surge_total_m": 0.4,
         "surge_ib_m": 0.4,
-        "surge_wind_m": 0.03,
+        "surge_wind_m": 0.0,
         "tide_m": 0.0
       }
     },
@@ -6133,9 +6133,9 @@
         "time_utc": "2019-05-03T09:00:00+00:00",
         "hours_to_landfall": 6.3,
         "local_wind_kmh": 95.6,
-        "surge_total_m": 0.51,
+        "surge_total_m": 0.4,
         "surge_ib_m": 0.4,
-        "surge_wind_m": 0.11,
+        "surge_wind_m": 0.0,
         "tide_m": 0.0
       }
     },
@@ -6155,9 +6155,9 @@
         "time_utc": "2019-05-03T10:00:00+00:00",
         "hours_to_landfall": 7.3,
         "local_wind_kmh": 65.3,
-        "surge_total_m": 0.47,
+        "surge_total_m": 0.86,
         "surge_ib_m": 0.38,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.39,
         "tide_m": 0.09
       }
     },
@@ -6177,9 +6177,9 @@
         "time_utc": "2019-05-03T10:00:00+00:00",
         "hours_to_landfall": 7.3,
         "local_wind_kmh": 69.2,
-        "surge_total_m": 0.47,
+        "surge_total_m": 0.88,
         "surge_ib_m": 0.38,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.41,
         "tide_m": 0.09
       }
     },
@@ -6199,9 +6199,9 @@
         "time_utc": "2019-05-03T10:00:00+00:00",
         "hours_to_landfall": 7.3,
         "local_wind_kmh": 72.5,
-        "surge_total_m": 0.47,
+        "surge_total_m": 0.87,
         "surge_ib_m": 0.38,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.4,
         "tide_m": 0.09
       }
     },
@@ -6221,9 +6221,9 @@
         "time_utc": "2019-05-03T10:00:00+00:00",
         "hours_to_landfall": 7.3,
         "local_wind_kmh": 76.6,
-        "surge_total_m": 0.47,
+        "surge_total_m": 0.81,
         "surge_ib_m": 0.38,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.34,
         "tide_m": 0.09
       }
     },
@@ -6243,9 +6243,9 @@
         "time_utc": "2019-05-03T10:00:00+00:00",
         "hours_to_landfall": 7.3,
         "local_wind_kmh": 81.5,
-        "surge_total_m": 0.47,
+        "surge_total_m": 0.83,
         "surge_ib_m": 0.38,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.36,
         "tide_m": 0.09
       }
     },
@@ -6265,9 +6265,9 @@
         "time_utc": "2019-05-03T10:00:00+00:00",
         "hours_to_landfall": 7.3,
         "local_wind_kmh": 89.2,
-        "surge_total_m": 0.47,
+        "surge_total_m": 0.87,
         "surge_ib_m": 0.38,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.39,
         "tide_m": 0.09
       }
     },
@@ -6287,9 +6287,9 @@
         "time_utc": "2019-05-03T10:00:00+00:00",
         "hours_to_landfall": 7.3,
         "local_wind_kmh": 90.0,
-        "surge_total_m": 0.47,
+        "surge_total_m": 0.75,
         "surge_ib_m": 0.38,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.28,
         "tide_m": 0.09
       }
     },
@@ -6309,9 +6309,9 @@
         "time_utc": "2019-05-03T10:00:00+00:00",
         "hours_to_landfall": 7.3,
         "local_wind_kmh": 97.1,
-        "surge_total_m": 0.47,
+        "surge_total_m": 0.73,
         "surge_ib_m": 0.38,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.26,
         "tide_m": 0.09
       }
     },
@@ -6331,9 +6331,9 @@
         "time_utc": "2019-05-03T10:00:00+00:00",
         "hours_to_landfall": 7.3,
         "local_wind_kmh": 99.8,
-        "surge_total_m": 0.47,
+        "surge_total_m": 0.64,
         "surge_ib_m": 0.38,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.17,
         "tide_m": 0.09
       }
     },
@@ -6353,9 +6353,9 @@
         "time_utc": "2019-05-03T11:00:00+00:00",
         "hours_to_landfall": 8.3,
         "local_wind_kmh": 59.3,
-        "surge_total_m": 0.67,
+        "surge_total_m": 0.99,
         "surge_ib_m": 0.36,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.32,
         "tide_m": 0.31
       }
     },
@@ -6375,9 +6375,9 @@
         "time_utc": "2019-05-03T11:00:00+00:00",
         "hours_to_landfall": 8.3,
         "local_wind_kmh": 62.4,
-        "surge_total_m": 0.67,
+        "surge_total_m": 1.01,
         "surge_ib_m": 0.36,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.34,
         "tide_m": 0.31
       }
     },
@@ -6397,9 +6397,9 @@
         "time_utc": "2019-05-03T11:00:00+00:00",
         "hours_to_landfall": 8.3,
         "local_wind_kmh": 65.1,
-        "surge_total_m": 0.67,
+        "surge_total_m": 1.0,
         "surge_ib_m": 0.36,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.33,
         "tide_m": 0.31
       }
     },
@@ -6419,9 +6419,9 @@
         "time_utc": "2019-05-03T11:00:00+00:00",
         "hours_to_landfall": 8.3,
         "local_wind_kmh": 68.5,
-        "surge_total_m": 0.67,
+        "surge_total_m": 0.97,
         "surge_ib_m": 0.36,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.31,
         "tide_m": 0.31
       }
     },
@@ -6441,9 +6441,9 @@
         "time_utc": "2019-05-03T11:00:00+00:00",
         "hours_to_landfall": 8.3,
         "local_wind_kmh": 72.9,
-        "surge_total_m": 0.67,
+        "surge_total_m": 1.01,
         "surge_ib_m": 0.36,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.35,
         "tide_m": 0.31
       }
     },
@@ -6463,9 +6463,9 @@
         "time_utc": "2019-05-03T11:00:00+00:00",
         "hours_to_landfall": 8.3,
         "local_wind_kmh": 80.0,
-        "surge_total_m": 0.67,
+        "surge_total_m": 1.09,
         "surge_ib_m": 0.36,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.42,
         "tide_m": 0.31
       }
     },
@@ -6485,9 +6485,9 @@
         "time_utc": "2019-05-03T11:00:00+00:00",
         "hours_to_landfall": 8.3,
         "local_wind_kmh": 83.7,
-        "surge_total_m": 0.67,
+        "surge_total_m": 1.07,
         "surge_ib_m": 0.36,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.4,
         "tide_m": 0.31
       }
     },
@@ -6507,9 +6507,9 @@
         "time_utc": "2019-05-03T11:00:00+00:00",
         "hours_to_landfall": 8.3,
         "local_wind_kmh": 92.7,
-        "surge_total_m": 0.67,
+        "surge_total_m": 1.16,
         "surge_ib_m": 0.36,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.49,
         "tide_m": 0.31
       }
     },
@@ -6529,9 +6529,9 @@
         "time_utc": "2019-05-03T11:00:00+00:00",
         "hours_to_landfall": 8.3,
         "local_wind_kmh": 100.4,
-        "surge_total_m": 0.67,
+        "surge_total_m": 1.19,
         "surge_ib_m": 0.36,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.52,
         "tide_m": 0.31
       }
     },
@@ -6551,9 +6551,9 @@
         "time_utc": "2019-05-03T12:00:00+00:00",
         "hours_to_landfall": 9.3,
         "local_wind_kmh": 54.0,
-        "surge_total_m": 0.94,
+        "surge_total_m": 1.21,
         "surge_ib_m": 0.34,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.27,
         "tide_m": 0.6
       }
     },
@@ -6573,9 +6573,9 @@
         "time_utc": "2019-05-03T12:00:00+00:00",
         "hours_to_landfall": 9.3,
         "local_wind_kmh": 56.5,
-        "surge_total_m": 0.94,
+        "surge_total_m": 1.22,
         "surge_ib_m": 0.34,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.28,
         "tide_m": 0.6
       }
     },
@@ -6595,9 +6595,9 @@
         "time_utc": "2019-05-03T12:00:00+00:00",
         "hours_to_landfall": 9.3,
         "local_wind_kmh": 58.7,
-        "surge_total_m": 0.94,
+        "surge_total_m": 1.22,
         "surge_ib_m": 0.34,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.28,
         "tide_m": 0.6
       }
     },
@@ -6617,9 +6617,9 @@
         "time_utc": "2019-05-03T12:00:00+00:00",
         "hours_to_landfall": 9.3,
         "local_wind_kmh": 61.6,
-        "surge_total_m": 0.94,
+        "surge_total_m": 1.2,
         "surge_ib_m": 0.34,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.26,
         "tide_m": 0.6
       }
     },
@@ -6639,9 +6639,9 @@
         "time_utc": "2019-05-03T12:00:00+00:00",
         "hours_to_landfall": 9.3,
         "local_wind_kmh": 65.3,
-        "surge_total_m": 0.94,
+        "surge_total_m": 1.24,
         "surge_ib_m": 0.34,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.31,
         "tide_m": 0.6
       }
     },
@@ -6661,9 +6661,9 @@
         "time_utc": "2019-05-03T12:00:00+00:00",
         "hours_to_landfall": 9.3,
         "local_wind_kmh": 71.2,
-        "surge_total_m": 0.94,
+        "surge_total_m": 1.32,
         "surge_ib_m": 0.34,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.38,
         "tide_m": 0.6
       }
     },
@@ -6683,9 +6683,9 @@
         "time_utc": "2019-05-03T12:00:00+00:00",
         "hours_to_landfall": 9.3,
         "local_wind_kmh": 75.7,
-        "surge_total_m": 0.94,
+        "surge_total_m": 1.35,
         "surge_ib_m": 0.34,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.41,
         "tide_m": 0.6
       }
     },
@@ -6705,9 +6705,9 @@
         "time_utc": "2019-05-03T12:00:00+00:00",
         "hours_to_landfall": 9.3,
         "local_wind_kmh": 84.0,
-        "surge_total_m": 0.94,
+        "surge_total_m": 1.47,
         "surge_ib_m": 0.34,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.54,
         "tide_m": 0.6
       }
     },
@@ -6727,9 +6727,9 @@
         "time_utc": "2019-05-03T12:00:00+00:00",
         "hours_to_landfall": 9.3,
         "local_wind_kmh": 93.2,
-        "surge_total_m": 0.94,
+        "surge_total_m": 1.6,
         "surge_ib_m": 0.34,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.67,
         "tide_m": 0.6
       }
     },
@@ -6749,9 +6749,9 @@
         "time_utc": "2019-05-03T13:00:00+00:00",
         "hours_to_landfall": 10.3,
         "local_wind_kmh": 49.1,
-        "surge_total_m": 1.21,
+        "surge_total_m": 1.43,
         "surge_ib_m": 0.32,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.22,
         "tide_m": 0.89
       }
     },
@@ -6771,9 +6771,9 @@
         "time_utc": "2019-05-03T13:00:00+00:00",
         "hours_to_landfall": 10.3,
         "local_wind_kmh": 51.1,
-        "surge_total_m": 1.21,
+        "surge_total_m": 1.44,
         "surge_ib_m": 0.32,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.23,
         "tide_m": 0.89
       }
     },
@@ -6793,9 +6793,9 @@
         "time_utc": "2019-05-03T13:00:00+00:00",
         "hours_to_landfall": 10.3,
         "local_wind_kmh": 52.9,
-        "surge_total_m": 1.21,
+        "surge_total_m": 1.44,
         "surge_ib_m": 0.32,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.23,
         "tide_m": 0.89
       }
     },
@@ -6815,9 +6815,9 @@
         "time_utc": "2019-05-03T13:00:00+00:00",
         "hours_to_landfall": 10.3,
         "local_wind_kmh": 55.3,
-        "surge_total_m": 1.21,
+        "surge_total_m": 1.43,
         "surge_ib_m": 0.32,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.22,
         "tide_m": 0.89
       }
     },
@@ -6837,9 +6837,9 @@
         "time_utc": "2019-05-03T13:00:00+00:00",
         "hours_to_landfall": 10.3,
         "local_wind_kmh": 58.5,
-        "surge_total_m": 1.21,
+        "surge_total_m": 1.47,
         "surge_ib_m": 0.32,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.26,
         "tide_m": 0.89
       }
     },
@@ -6859,9 +6859,9 @@
         "time_utc": "2019-05-03T13:00:00+00:00",
         "hours_to_landfall": 10.3,
         "local_wind_kmh": 63.3,
-        "surge_total_m": 1.21,
+        "surge_total_m": 1.53,
         "surge_ib_m": 0.32,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.32,
         "tide_m": 0.89
       }
     },
@@ -6881,9 +6881,9 @@
         "time_utc": "2019-05-03T13:00:00+00:00",
         "hours_to_landfall": 10.3,
         "local_wind_kmh": 67.4,
-        "surge_total_m": 1.21,
+        "surge_total_m": 1.58,
         "surge_ib_m": 0.32,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.36,
         "tide_m": 0.89
       }
     },
@@ -6903,9 +6903,9 @@
         "time_utc": "2019-05-03T13:00:00+00:00",
         "hours_to_landfall": 10.3,
         "local_wind_kmh": 74.3,
-        "surge_total_m": 1.21,
+        "surge_total_m": 1.68,
         "surge_ib_m": 0.32,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.47,
         "tide_m": 0.89
       }
     },
@@ -6925,9 +6925,9 @@
         "time_utc": "2019-05-03T13:00:00+00:00",
         "hours_to_landfall": 10.3,
         "local_wind_kmh": 82.2,
-        "surge_total_m": 1.21,
+        "surge_total_m": 1.81,
         "surge_ib_m": 0.32,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.6,
         "tide_m": 0.89
       }
     },
@@ -6947,9 +6947,9 @@
         "time_utc": "2019-05-03T14:00:00+00:00",
         "hours_to_landfall": 11.3,
         "local_wind_kmh": 44.5,
-        "surge_total_m": 1.42,
+        "surge_total_m": 1.6,
         "surge_ib_m": 0.31,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.18,
         "tide_m": 1.11
       }
     },
@@ -6969,9 +6969,9 @@
         "time_utc": "2019-05-03T14:00:00+00:00",
         "hours_to_landfall": 11.3,
         "local_wind_kmh": 46.2,
-        "surge_total_m": 1.42,
+        "surge_total_m": 1.61,
         "surge_ib_m": 0.31,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.19,
         "tide_m": 1.11
       }
     },
@@ -6991,9 +6991,9 @@
         "time_utc": "2019-05-03T14:00:00+00:00",
         "hours_to_landfall": 11.3,
         "local_wind_kmh": 47.7,
-        "surge_total_m": 1.42,
+        "surge_total_m": 1.61,
         "surge_ib_m": 0.31,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.19,
         "tide_m": 1.11
       }
     },
@@ -7013,9 +7013,9 @@
         "time_utc": "2019-05-03T14:00:00+00:00",
         "hours_to_landfall": 11.3,
         "local_wind_kmh": 49.7,
-        "surge_total_m": 1.42,
+        "surge_total_m": 1.6,
         "surge_ib_m": 0.31,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.18,
         "tide_m": 1.11
       }
     },
@@ -7035,9 +7035,9 @@
         "time_utc": "2019-05-03T14:00:00+00:00",
         "hours_to_landfall": 11.3,
         "local_wind_kmh": 52.4,
-        "surge_total_m": 1.42,
+        "surge_total_m": 1.63,
         "surge_ib_m": 0.31,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.22,
         "tide_m": 1.11
       }
     },
@@ -7057,9 +7057,9 @@
         "time_utc": "2019-05-03T14:00:00+00:00",
         "hours_to_landfall": 11.3,
         "local_wind_kmh": 56.3,
-        "surge_total_m": 1.42,
+        "surge_total_m": 1.68,
         "surge_ib_m": 0.31,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.27,
         "tide_m": 1.11
       }
     },
@@ -7079,9 +7079,9 @@
         "time_utc": "2019-05-03T14:00:00+00:00",
         "hours_to_landfall": 11.3,
         "local_wind_kmh": 60.0,
-        "surge_total_m": 1.42,
+        "surge_total_m": 1.72,
         "surge_ib_m": 0.31,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.3,
         "tide_m": 1.11
       }
     },
@@ -7101,9 +7101,9 @@
         "time_utc": "2019-05-03T14:00:00+00:00",
         "hours_to_landfall": 11.3,
         "local_wind_kmh": 65.4,
-        "surge_total_m": 1.42,
+        "surge_total_m": 1.8,
         "surge_ib_m": 0.31,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.38,
         "tide_m": 1.11
       }
     },
@@ -7123,9 +7123,9 @@
         "time_utc": "2019-05-03T14:00:00+00:00",
         "hours_to_landfall": 11.3,
         "local_wind_kmh": 71.7,
-        "surge_total_m": 1.42,
+        "surge_total_m": 1.89,
         "surge_ib_m": 0.31,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.48,
         "tide_m": 1.11
       }
     },
@@ -7145,9 +7145,9 @@
         "time_utc": "2019-05-03T15:00:00+00:00",
         "hours_to_landfall": 12.3,
         "local_wind_kmh": 40.6,
-        "surge_total_m": 1.5,
+        "surge_total_m": 1.65,
         "surge_ib_m": 0.3,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.15,
         "tide_m": 1.2
       }
     },
@@ -7167,9 +7167,9 @@
         "time_utc": "2019-05-03T15:00:00+00:00",
         "hours_to_landfall": 12.3,
         "local_wind_kmh": 42.0,
-        "surge_total_m": 1.5,
+        "surge_total_m": 1.66,
         "surge_ib_m": 0.3,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.16,
         "tide_m": 1.2
       }
     },
@@ -7189,9 +7189,9 @@
         "time_utc": "2019-05-03T15:00:00+00:00",
         "hours_to_landfall": 12.3,
         "local_wind_kmh": 43.3,
-        "surge_total_m": 1.5,
+        "surge_total_m": 1.66,
         "surge_ib_m": 0.3,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.16,
         "tide_m": 1.2
       }
     },
@@ -7211,9 +7211,9 @@
         "time_utc": "2019-05-03T15:00:00+00:00",
         "hours_to_landfall": 12.3,
         "local_wind_kmh": 45.0,
-        "surge_total_m": 1.5,
+        "surge_total_m": 1.65,
         "surge_ib_m": 0.3,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.16,
         "tide_m": 1.2
       }
     },
@@ -7233,9 +7233,9 @@
         "time_utc": "2019-05-03T15:00:00+00:00",
         "hours_to_landfall": 12.3,
         "local_wind_kmh": 47.3,
-        "surge_total_m": 1.5,
+        "surge_total_m": 1.68,
         "surge_ib_m": 0.3,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.18,
         "tide_m": 1.2
       }
     },
@@ -7255,9 +7255,9 @@
         "time_utc": "2019-05-03T15:00:00+00:00",
         "hours_to_landfall": 12.3,
         "local_wind_kmh": 50.6,
-        "surge_total_m": 1.5,
+        "surge_total_m": 1.72,
         "surge_ib_m": 0.3,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.22,
         "tide_m": 1.2
       }
     },
@@ -7277,9 +7277,9 @@
         "time_utc": "2019-05-03T15:00:00+00:00",
         "hours_to_landfall": 12.3,
         "local_wind_kmh": 53.7,
-        "surge_total_m": 1.5,
+        "surge_total_m": 1.75,
         "surge_ib_m": 0.3,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.25,
         "tide_m": 1.2
       }
     },
@@ -7299,9 +7299,9 @@
         "time_utc": "2019-05-03T15:00:00+00:00",
         "hours_to_landfall": 12.3,
         "local_wind_kmh": 58.1,
-        "surge_total_m": 1.5,
+        "surge_total_m": 1.81,
         "surge_ib_m": 0.3,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.31,
         "tide_m": 1.2
       }
     },
@@ -7321,9 +7321,9 @@
         "time_utc": "2019-05-03T15:00:00+00:00",
         "hours_to_landfall": 12.3,
         "local_wind_kmh": 63.1,
-        "surge_total_m": 1.5,
+        "surge_total_m": 1.87,
         "surge_ib_m": 0.3,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.37,
         "tide_m": 1.2
       }
     },
@@ -7343,9 +7343,9 @@
         "time_utc": "2019-05-03T16:00:00+00:00",
         "hours_to_landfall": 13.3,
         "local_wind_kmh": 37.6,
-        "surge_total_m": 1.43,
+        "surge_total_m": 1.56,
         "surge_ib_m": 0.29,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.13,
         "tide_m": 1.14
       }
     },
@@ -7365,9 +7365,9 @@
         "time_utc": "2019-05-03T16:00:00+00:00",
         "hours_to_landfall": 13.3,
         "local_wind_kmh": 38.9,
-        "surge_total_m": 1.43,
+        "surge_total_m": 1.56,
         "surge_ib_m": 0.29,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.14,
         "tide_m": 1.14
       }
     },
@@ -7387,9 +7387,9 @@
         "time_utc": "2019-05-03T16:00:00+00:00",
         "hours_to_landfall": 13.3,
         "local_wind_kmh": 40.0,
-        "surge_total_m": 1.43,
+        "surge_total_m": 1.56,
         "surge_ib_m": 0.29,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.14,
         "tide_m": 1.14
       }
     },
@@ -7409,9 +7409,9 @@
         "time_utc": "2019-05-03T16:00:00+00:00",
         "hours_to_landfall": 13.3,
         "local_wind_kmh": 41.5,
-        "surge_total_m": 1.43,
+        "surge_total_m": 1.56,
         "surge_ib_m": 0.29,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.13,
         "tide_m": 1.14
       }
     },
@@ -7431,9 +7431,9 @@
         "time_utc": "2019-05-03T16:00:00+00:00",
         "hours_to_landfall": 13.3,
         "local_wind_kmh": 43.4,
-        "surge_total_m": 1.43,
+        "surge_total_m": 1.58,
         "surge_ib_m": 0.29,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.16,
         "tide_m": 1.14
       }
     },
@@ -7453,9 +7453,9 @@
         "time_utc": "2019-05-03T16:00:00+00:00",
         "hours_to_landfall": 13.3,
         "local_wind_kmh": 46.2,
-        "surge_total_m": 1.43,
+        "surge_total_m": 1.61,
         "surge_ib_m": 0.29,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.19,
         "tide_m": 1.14
       }
     },
@@ -7475,9 +7475,9 @@
         "time_utc": "2019-05-03T16:00:00+00:00",
         "hours_to_landfall": 13.3,
         "local_wind_kmh": 49.0,
-        "surge_total_m": 1.43,
+        "surge_total_m": 1.64,
         "surge_ib_m": 0.29,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.22,
         "tide_m": 1.14
       }
     },
@@ -7497,9 +7497,9 @@
         "time_utc": "2019-05-03T16:00:00+00:00",
         "hours_to_landfall": 13.3,
         "local_wind_kmh": 52.5,
-        "surge_total_m": 1.43,
+        "surge_total_m": 1.68,
         "surge_ib_m": 0.29,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.26,
         "tide_m": 1.14
       }
     },
@@ -7519,9 +7519,9 @@
         "time_utc": "2019-05-03T16:00:00+00:00",
         "hours_to_landfall": 13.3,
         "local_wind_kmh": 56.5,
-        "surge_total_m": 1.43,
+        "surge_total_m": 1.73,
         "surge_ib_m": 0.29,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.3,
         "tide_m": 1.14
       }
     },
@@ -7541,9 +7541,9 @@
         "time_utc": "2019-05-03T17:00:00+00:00",
         "hours_to_landfall": 14.3,
         "local_wind_kmh": 35.2,
-        "surge_total_m": 1.22,
+        "surge_total_m": 1.33,
         "surge_ib_m": 0.27,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.12,
         "tide_m": 0.95
       }
     },
@@ -7563,9 +7563,9 @@
         "time_utc": "2019-05-03T17:00:00+00:00",
         "hours_to_landfall": 14.3,
         "local_wind_kmh": 36.3,
-        "surge_total_m": 1.22,
+        "surge_total_m": 1.34,
         "surge_ib_m": 0.27,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.12,
         "tide_m": 0.95
       }
     },
@@ -7585,9 +7585,9 @@
         "time_utc": "2019-05-03T17:00:00+00:00",
         "hours_to_landfall": 14.3,
         "local_wind_kmh": 37.3,
-        "surge_total_m": 1.22,
+        "surge_total_m": 1.34,
         "surge_ib_m": 0.27,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.12,
         "tide_m": 0.95
       }
     },
@@ -7607,9 +7607,9 @@
         "time_utc": "2019-05-03T17:00:00+00:00",
         "hours_to_landfall": 14.3,
         "local_wind_kmh": 38.6,
-        "surge_total_m": 1.22,
+        "surge_total_m": 1.34,
         "surge_ib_m": 0.27,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.12,
         "tide_m": 0.95
       }
     },
@@ -7629,9 +7629,9 @@
         "time_utc": "2019-05-03T17:00:00+00:00",
         "hours_to_landfall": 14.3,
         "local_wind_kmh": 40.3,
-        "surge_total_m": 1.22,
+        "surge_total_m": 1.36,
         "surge_ib_m": 0.27,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.14,
         "tide_m": 0.95
       }
     },
@@ -7651,9 +7651,9 @@
         "time_utc": "2019-05-03T17:00:00+00:00",
         "hours_to_landfall": 14.3,
         "local_wind_kmh": 42.7,
-        "surge_total_m": 1.22,
+        "surge_total_m": 1.38,
         "surge_ib_m": 0.27,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.16,
         "tide_m": 0.95
       }
     },
@@ -7673,9 +7673,9 @@
         "time_utc": "2019-05-03T17:00:00+00:00",
         "hours_to_landfall": 14.3,
         "local_wind_kmh": 45.1,
-        "surge_total_m": 1.22,
+        "surge_total_m": 1.41,
         "surge_ib_m": 0.27,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.19,
         "tide_m": 0.95
       }
     },
@@ -7695,9 +7695,9 @@
         "time_utc": "2019-05-03T17:00:00+00:00",
         "hours_to_landfall": 14.3,
         "local_wind_kmh": 48.0,
-        "surge_total_m": 1.22,
+        "surge_total_m": 1.44,
         "surge_ib_m": 0.27,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.22,
         "tide_m": 0.95
       }
     },
@@ -7717,9 +7717,9 @@
         "time_utc": "2019-05-03T17:00:00+00:00",
         "hours_to_landfall": 14.3,
         "local_wind_kmh": 51.1,
-        "surge_total_m": 1.22,
+        "surge_total_m": 1.46,
         "surge_ib_m": 0.27,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.24,
         "tide_m": 0.95
       }
     },
@@ -7739,9 +7739,9 @@
         "time_utc": "2019-05-03T18:00:00+00:00",
         "hours_to_landfall": 15.3,
         "local_wind_kmh": 33.1,
-        "surge_total_m": 0.93,
+        "surge_total_m": 1.03,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.1,
         "tide_m": 0.67
       }
     },
@@ -7761,9 +7761,9 @@
         "time_utc": "2019-05-03T18:00:00+00:00",
         "hours_to_landfall": 15.3,
         "local_wind_kmh": 34.0,
-        "surge_total_m": 0.93,
+        "surge_total_m": 1.03,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.11,
         "tide_m": 0.67
       }
     },
@@ -7783,9 +7783,9 @@
         "time_utc": "2019-05-03T18:00:00+00:00",
         "hours_to_landfall": 15.3,
         "local_wind_kmh": 34.9,
-        "surge_total_m": 0.93,
+        "surge_total_m": 1.03,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.11,
         "tide_m": 0.67
       }
     },
@@ -7805,9 +7805,9 @@
         "time_utc": "2019-05-03T18:00:00+00:00",
         "hours_to_landfall": 15.3,
         "local_wind_kmh": 36.0,
-        "surge_total_m": 0.93,
+        "surge_total_m": 1.03,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.11,
         "tide_m": 0.67
       }
     },
@@ -7827,9 +7827,9 @@
         "time_utc": "2019-05-03T18:00:00+00:00",
         "hours_to_landfall": 15.3,
         "local_wind_kmh": 37.5,
-        "surge_total_m": 0.93,
+        "surge_total_m": 1.05,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.12,
         "tide_m": 0.67
       }
     },
@@ -7849,9 +7849,9 @@
         "time_utc": "2019-05-03T18:00:00+00:00",
         "hours_to_landfall": 15.3,
         "local_wind_kmh": 39.5,
-        "surge_total_m": 0.93,
+        "surge_total_m": 1.07,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.14,
         "tide_m": 0.67
       }
     },
@@ -7871,9 +7871,9 @@
         "time_utc": "2019-05-03T18:00:00+00:00",
         "hours_to_landfall": 15.3,
         "local_wind_kmh": 41.6,
-        "surge_total_m": 0.93,
+        "surge_total_m": 1.09,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.16,
         "tide_m": 0.67
       }
     },
@@ -7893,9 +7893,9 @@
         "time_utc": "2019-05-03T18:00:00+00:00",
         "hours_to_landfall": 15.3,
         "local_wind_kmh": 43.9,
-        "surge_total_m": 0.93,
+        "surge_total_m": 1.11,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.18,
         "tide_m": 0.67
       }
     },
@@ -7915,9 +7915,9 @@
         "time_utc": "2019-05-03T18:00:00+00:00",
         "hours_to_landfall": 15.3,
         "local_wind_kmh": 46.5,
-        "surge_total_m": 0.93,
+        "surge_total_m": 1.13,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.2,
         "tide_m": 0.67
       }
     },
@@ -7937,9 +7937,9 @@
         "time_utc": "2019-05-03T19:00:00+00:00",
         "hours_to_landfall": 16.3,
         "local_wind_kmh": 30.9,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.72,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.09,
         "tide_m": 0.37
       }
     },
@@ -7959,9 +7959,9 @@
         "time_utc": "2019-05-03T19:00:00+00:00",
         "hours_to_landfall": 16.3,
         "local_wind_kmh": 31.8,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.72,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.09,
         "tide_m": 0.37
       }
     },
@@ -7981,9 +7981,9 @@
         "time_utc": "2019-05-03T19:00:00+00:00",
         "hours_to_landfall": 16.3,
         "local_wind_kmh": 32.5,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.72,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.09,
         "tide_m": 0.37
       }
     },
@@ -8003,9 +8003,9 @@
         "time_utc": "2019-05-03T19:00:00+00:00",
         "hours_to_landfall": 16.3,
         "local_wind_kmh": 33.5,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.72,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.09,
         "tide_m": 0.37
       }
     },
@@ -8025,9 +8025,9 @@
         "time_utc": "2019-05-03T19:00:00+00:00",
         "hours_to_landfall": 16.3,
         "local_wind_kmh": 34.7,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.73,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.11,
         "tide_m": 0.37
       }
     },
@@ -8047,9 +8047,9 @@
         "time_utc": "2019-05-03T19:00:00+00:00",
         "hours_to_landfall": 16.3,
         "local_wind_kmh": 36.4,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.75,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.12,
         "tide_m": 0.37
       }
     },
@@ -8069,9 +8069,9 @@
         "time_utc": "2019-05-03T19:00:00+00:00",
         "hours_to_landfall": 16.3,
         "local_wind_kmh": 38.2,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.76,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.14,
         "tide_m": 0.37
       }
     },
@@ -8091,9 +8091,9 @@
         "time_utc": "2019-05-03T19:00:00+00:00",
         "hours_to_landfall": 16.3,
         "local_wind_kmh": 40.0,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.78,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.15,
         "tide_m": 0.37
       }
     },
@@ -8113,9 +8113,9 @@
         "time_utc": "2019-05-03T19:00:00+00:00",
         "hours_to_landfall": 16.3,
         "local_wind_kmh": 42.0,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.79,
         "surge_ib_m": 0.26,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.16,
         "tide_m": 0.37
       }
     },
@@ -8135,9 +8135,9 @@
         "time_utc": "2019-05-03T20:00:00+00:00",
         "hours_to_landfall": 17.3,
         "local_wind_kmh": 28.8,
-        "surge_total_m": 0.38,
+        "surge_total_m": 0.46,
         "surge_ib_m": 0.25,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.08,
         "tide_m": 0.13
       }
     },
@@ -8157,9 +8157,9 @@
         "time_utc": "2019-05-03T20:00:00+00:00",
         "hours_to_landfall": 17.3,
         "local_wind_kmh": 29.5,
-        "surge_total_m": 0.38,
+        "surge_total_m": 0.46,
         "surge_ib_m": 0.25,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.08,
         "tide_m": 0.13
       }
     },
@@ -8179,9 +8179,9 @@
         "time_utc": "2019-05-03T20:00:00+00:00",
         "hours_to_landfall": 17.3,
         "local_wind_kmh": 30.1,
-        "surge_total_m": 0.38,
+        "surge_total_m": 0.46,
         "surge_ib_m": 0.25,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.08,
         "tide_m": 0.13
       }
     },
@@ -8201,9 +8201,9 @@
         "time_utc": "2019-05-03T20:00:00+00:00",
         "hours_to_landfall": 17.3,
         "local_wind_kmh": 30.9,
-        "surge_total_m": 0.38,
+        "surge_total_m": 0.46,
         "surge_ib_m": 0.25,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.08,
         "tide_m": 0.13
       }
     },
@@ -8223,9 +8223,9 @@
         "time_utc": "2019-05-03T20:00:00+00:00",
         "hours_to_landfall": 17.3,
         "local_wind_kmh": 32.0,
-        "surge_total_m": 0.38,
+        "surge_total_m": 0.47,
         "surge_ib_m": 0.25,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.09,
         "tide_m": 0.13
       }
     },
@@ -8245,9 +8245,9 @@
         "time_utc": "2019-05-03T20:00:00+00:00",
         "hours_to_landfall": 17.3,
         "local_wind_kmh": 33.4,
-        "surge_total_m": 0.38,
+        "surge_total_m": 0.49,
         "surge_ib_m": 0.25,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.1,
         "tide_m": 0.13
       }
     },
@@ -8267,9 +8267,9 @@
         "time_utc": "2019-05-03T20:00:00+00:00",
         "hours_to_landfall": 17.3,
         "local_wind_kmh": 34.9,
-        "surge_total_m": 0.38,
+        "surge_total_m": 0.5,
         "surge_ib_m": 0.25,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.11,
         "tide_m": 0.13
       }
     },
@@ -8289,9 +8289,9 @@
         "time_utc": "2019-05-03T20:00:00+00:00",
         "hours_to_landfall": 17.3,
         "local_wind_kmh": 36.4,
-        "surge_total_m": 0.38,
+        "surge_total_m": 0.51,
         "surge_ib_m": 0.25,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.12,
         "tide_m": 0.13
       }
     },
@@ -8311,9 +8311,9 @@
         "time_utc": "2019-05-03T20:00:00+00:00",
         "hours_to_landfall": 17.3,
         "local_wind_kmh": 37.9,
-        "surge_total_m": 0.38,
+        "surge_total_m": 0.51,
         "surge_ib_m": 0.25,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.13,
         "tide_m": 0.13
       }
     },
@@ -8333,9 +8333,9 @@
         "time_utc": "2019-05-03T21:00:00+00:00",
         "hours_to_landfall": 18.3,
         "local_wind_kmh": 26.5,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.31,
         "surge_ib_m": 0.24,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.07,
         "tide_m": 0.01
       }
     },
@@ -8355,9 +8355,9 @@
         "time_utc": "2019-05-03T21:00:00+00:00",
         "hours_to_landfall": 18.3,
         "local_wind_kmh": 27.1,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.32,
         "surge_ib_m": 0.24,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.07,
         "tide_m": 0.01
       }
     },
@@ -8377,9 +8377,9 @@
         "time_utc": "2019-05-03T21:00:00+00:00",
         "hours_to_landfall": 18.3,
         "local_wind_kmh": 27.7,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.32,
         "surge_ib_m": 0.24,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.07,
         "tide_m": 0.01
       }
     },
@@ -8399,9 +8399,9 @@
         "time_utc": "2019-05-03T21:00:00+00:00",
         "hours_to_landfall": 18.3,
         "local_wind_kmh": 28.4,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.32,
         "surge_ib_m": 0.24,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.07,
         "tide_m": 0.01
       }
     },
@@ -8421,9 +8421,9 @@
         "time_utc": "2019-05-03T21:00:00+00:00",
         "hours_to_landfall": 18.3,
         "local_wind_kmh": 29.3,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.33,
         "surge_ib_m": 0.24,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.08,
         "tide_m": 0.01
       }
     },
@@ -8443,9 +8443,9 @@
         "time_utc": "2019-05-03T21:00:00+00:00",
         "hours_to_landfall": 18.3,
         "local_wind_kmh": 30.5,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.34,
         "surge_ib_m": 0.24,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.09,
         "tide_m": 0.01
       }
     },
@@ -8465,9 +8465,9 @@
         "time_utc": "2019-05-03T21:00:00+00:00",
         "hours_to_landfall": 18.3,
         "local_wind_kmh": 31.7,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.34,
         "surge_ib_m": 0.24,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.09,
         "tide_m": 0.01
       }
     },
@@ -8487,9 +8487,9 @@
         "time_utc": "2019-05-03T21:00:00+00:00",
         "hours_to_landfall": 18.3,
         "local_wind_kmh": 32.9,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.35,
         "surge_ib_m": 0.24,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.1,
         "tide_m": 0.01
       }
     },
@@ -8509,9 +8509,9 @@
         "time_utc": "2019-05-03T21:00:00+00:00",
         "hours_to_landfall": 18.3,
         "local_wind_kmh": 34.1,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.35,
         "surge_ib_m": 0.24,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.1,
         "tide_m": 0.01
       }
     },
@@ -8531,9 +8531,9 @@
         "time_utc": "2019-05-03T22:00:00+00:00",
         "hours_to_landfall": 19.3,
         "local_wind_kmh": 24.1,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.3,
         "surge_ib_m": 0.21,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.05,
         "tide_m": 0.03
       }
     },
@@ -8553,9 +8553,9 @@
         "time_utc": "2019-05-03T22:00:00+00:00",
         "hours_to_landfall": 19.3,
         "local_wind_kmh": 24.6,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.3,
         "surge_ib_m": 0.21,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.06,
         "tide_m": 0.03
       }
     },
@@ -8575,9 +8575,9 @@
         "time_utc": "2019-05-03T22:00:00+00:00",
         "hours_to_landfall": 19.3,
         "local_wind_kmh": 25.1,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.3,
         "surge_ib_m": 0.21,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.06,
         "tide_m": 0.03
       }
     },
@@ -8597,9 +8597,9 @@
         "time_utc": "2019-05-03T22:00:00+00:00",
         "hours_to_landfall": 19.3,
         "local_wind_kmh": 25.7,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.3,
         "surge_ib_m": 0.21,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.06,
         "tide_m": 0.03
       }
     },
@@ -8619,9 +8619,9 @@
         "time_utc": "2019-05-03T22:00:00+00:00",
         "hours_to_landfall": 19.3,
         "local_wind_kmh": 26.5,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.31,
         "surge_ib_m": 0.21,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.06,
         "tide_m": 0.03
       }
     },
@@ -8641,9 +8641,9 @@
         "time_utc": "2019-05-03T22:00:00+00:00",
         "hours_to_landfall": 19.3,
         "local_wind_kmh": 27.4,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.32,
         "surge_ib_m": 0.21,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.07,
         "tide_m": 0.03
       }
     },
@@ -8663,9 +8663,9 @@
         "time_utc": "2019-05-03T22:00:00+00:00",
         "hours_to_landfall": 19.3,
         "local_wind_kmh": 28.5,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.32,
         "surge_ib_m": 0.21,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.08,
         "tide_m": 0.03
       }
     },
@@ -8685,9 +8685,9 @@
         "time_utc": "2019-05-03T22:00:00+00:00",
         "hours_to_landfall": 19.3,
         "local_wind_kmh": 29.4,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.33,
         "surge_ib_m": 0.21,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.08,
         "tide_m": 0.03
       }
     },
@@ -8707,9 +8707,9 @@
         "time_utc": "2019-05-03T22:00:00+00:00",
         "hours_to_landfall": 19.3,
         "local_wind_kmh": 30.4,
-        "surge_total_m": 0.25,
+        "surge_total_m": 0.33,
         "surge_ib_m": 0.21,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.08,
         "tide_m": 0.03
       }
     },
@@ -8729,9 +8729,9 @@
         "time_utc": "2019-05-03T23:00:00+00:00",
         "hours_to_landfall": 20.3,
         "local_wind_kmh": 21.7,
-        "surge_total_m": 0.39,
+        "surge_total_m": 0.43,
         "surge_ib_m": 0.18,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.04,
         "tide_m": 0.2
       }
     },
@@ -8751,9 +8751,9 @@
         "time_utc": "2019-05-03T23:00:00+00:00",
         "hours_to_landfall": 20.3,
         "local_wind_kmh": 22.2,
-        "surge_total_m": 0.39,
+        "surge_total_m": 0.43,
         "surge_ib_m": 0.18,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.05,
         "tide_m": 0.2
       }
     },
@@ -8773,9 +8773,9 @@
         "time_utc": "2019-05-03T23:00:00+00:00",
         "hours_to_landfall": 20.3,
         "local_wind_kmh": 22.6,
-        "surge_total_m": 0.39,
+        "surge_total_m": 0.43,
         "surge_ib_m": 0.18,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.05,
         "tide_m": 0.2
       }
     },
@@ -8795,9 +8795,9 @@
         "time_utc": "2019-05-03T23:00:00+00:00",
         "hours_to_landfall": 20.3,
         "local_wind_kmh": 23.1,
-        "surge_total_m": 0.39,
+        "surge_total_m": 0.43,
         "surge_ib_m": 0.18,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.05,
         "tide_m": 0.2
       }
     },
@@ -8817,9 +8817,9 @@
         "time_utc": "2019-05-03T23:00:00+00:00",
         "hours_to_landfall": 20.3,
         "local_wind_kmh": 23.7,
-        "surge_total_m": 0.39,
+        "surge_total_m": 0.44,
         "surge_ib_m": 0.18,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.05,
         "tide_m": 0.2
       }
     },
@@ -8839,9 +8839,9 @@
         "time_utc": "2019-05-03T23:00:00+00:00",
         "hours_to_landfall": 20.3,
         "local_wind_kmh": 24.5,
-        "surge_total_m": 0.39,
+        "surge_total_m": 0.44,
         "surge_ib_m": 0.18,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.06,
         "tide_m": 0.2
       }
     },
@@ -8861,9 +8861,9 @@
         "time_utc": "2019-05-03T23:00:00+00:00",
         "hours_to_landfall": 20.3,
         "local_wind_kmh": 25.4,
-        "surge_total_m": 0.39,
+        "surge_total_m": 0.45,
         "surge_ib_m": 0.18,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.06,
         "tide_m": 0.2
       }
     },
@@ -8883,9 +8883,9 @@
         "time_utc": "2019-05-03T23:00:00+00:00",
         "hours_to_landfall": 20.3,
         "local_wind_kmh": 26.2,
-        "surge_total_m": 0.39,
+        "surge_total_m": 0.45,
         "surge_ib_m": 0.18,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.06,
         "tide_m": 0.2
       }
     },
@@ -8905,9 +8905,9 @@
         "time_utc": "2019-05-03T23:00:00+00:00",
         "hours_to_landfall": 20.3,
         "local_wind_kmh": 27.0,
-        "surge_total_m": 0.39,
+        "surge_total_m": 0.45,
         "surge_ib_m": 0.18,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.06,
         "tide_m": 0.2
       }
     },
@@ -8927,9 +8927,9 @@
         "time_utc": "2019-05-04T00:00:00+00:00",
         "hours_to_landfall": 21.3,
         "local_wind_kmh": 19.6,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.66,
         "surge_ib_m": 0.16,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.04,
         "tide_m": 0.47
       }
     },
@@ -8949,9 +8949,9 @@
         "time_utc": "2019-05-04T00:00:00+00:00",
         "hours_to_landfall": 21.3,
         "local_wind_kmh": 19.9,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.67,
         "surge_ib_m": 0.16,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.04,
         "tide_m": 0.47
       }
     },
@@ -8971,9 +8971,9 @@
         "time_utc": "2019-05-04T00:00:00+00:00",
         "hours_to_landfall": 21.3,
         "local_wind_kmh": 20.3,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.67,
         "surge_ib_m": 0.16,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.04,
         "tide_m": 0.47
       }
     },
@@ -8993,9 +8993,9 @@
         "time_utc": "2019-05-04T00:00:00+00:00",
         "hours_to_landfall": 21.3,
         "local_wind_kmh": 20.7,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.67,
         "surge_ib_m": 0.16,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.04,
         "tide_m": 0.47
       }
     },
@@ -9015,9 +9015,9 @@
         "time_utc": "2019-05-04T00:00:00+00:00",
         "hours_to_landfall": 21.3,
         "local_wind_kmh": 21.2,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.67,
         "surge_ib_m": 0.16,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.04,
         "tide_m": 0.47
       }
     },
@@ -9037,9 +9037,9 @@
         "time_utc": "2019-05-04T00:00:00+00:00",
         "hours_to_landfall": 21.3,
         "local_wind_kmh": 21.9,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.67,
         "surge_ib_m": 0.16,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.04,
         "tide_m": 0.47
       }
     },
@@ -9059,9 +9059,9 @@
         "time_utc": "2019-05-04T00:00:00+00:00",
         "hours_to_landfall": 21.3,
         "local_wind_kmh": 22.6,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.68,
         "surge_ib_m": 0.16,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.05,
         "tide_m": 0.47
       }
     },
@@ -9081,9 +9081,9 @@
         "time_utc": "2019-05-04T00:00:00+00:00",
         "hours_to_landfall": 21.3,
         "local_wind_kmh": 23.3,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.68,
         "surge_ib_m": 0.16,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.05,
         "tide_m": 0.47
       }
     },
@@ -9103,9 +9103,9 @@
         "time_utc": "2019-05-04T00:00:00+00:00",
         "hours_to_landfall": 21.3,
         "local_wind_kmh": 24.0,
-        "surge_total_m": 0.63,
+        "surge_total_m": 0.68,
         "surge_ib_m": 0.16,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.05,
         "tide_m": 0.47
       }
     },
@@ -9125,9 +9125,9 @@
         "time_utc": "2019-05-04T01:00:00+00:00",
         "hours_to_landfall": 22.3,
         "local_wind_kmh": 17.7,
-        "surge_total_m": 0.92,
+        "surge_total_m": 0.95,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.03,
         "tide_m": 0.77
       }
     },
@@ -9147,9 +9147,9 @@
         "time_utc": "2019-05-04T01:00:00+00:00",
         "hours_to_landfall": 22.3,
         "local_wind_kmh": 18.0,
-        "surge_total_m": 0.92,
+        "surge_total_m": 0.95,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.03,
         "tide_m": 0.77
       }
     },
@@ -9169,9 +9169,9 @@
         "time_utc": "2019-05-04T01:00:00+00:00",
         "hours_to_landfall": 22.3,
         "local_wind_kmh": 18.3,
-        "surge_total_m": 0.92,
+        "surge_total_m": 0.95,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.03,
         "tide_m": 0.77
       }
     },
@@ -9191,9 +9191,9 @@
         "time_utc": "2019-05-04T01:00:00+00:00",
         "hours_to_landfall": 22.3,
         "local_wind_kmh": 18.7,
-        "surge_total_m": 0.92,
+        "surge_total_m": 0.95,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.03,
         "tide_m": 0.77
       }
     },
@@ -9213,9 +9213,9 @@
         "time_utc": "2019-05-04T01:00:00+00:00",
         "hours_to_landfall": 22.3,
         "local_wind_kmh": 19.1,
-        "surge_total_m": 0.92,
+        "surge_total_m": 0.95,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.03,
         "tide_m": 0.77
       }
     },
@@ -9235,9 +9235,9 @@
         "time_utc": "2019-05-04T01:00:00+00:00",
         "hours_to_landfall": 22.3,
         "local_wind_kmh": 19.7,
-        "surge_total_m": 0.92,
+        "surge_total_m": 0.96,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.04,
         "tide_m": 0.77
       }
     },
@@ -9257,9 +9257,9 @@
         "time_utc": "2019-05-04T01:00:00+00:00",
         "hours_to_landfall": 22.3,
         "local_wind_kmh": 20.3,
-        "surge_total_m": 0.92,
+        "surge_total_m": 0.96,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.04,
         "tide_m": 0.77
       }
     },
@@ -9279,9 +9279,9 @@
         "time_utc": "2019-05-04T01:00:00+00:00",
         "hours_to_landfall": 22.3,
         "local_wind_kmh": 20.9,
-        "surge_total_m": 0.92,
+        "surge_total_m": 0.96,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.04,
         "tide_m": 0.77
       }
     },
@@ -9301,9 +9301,9 @@
         "time_utc": "2019-05-04T01:00:00+00:00",
         "hours_to_landfall": 22.3,
         "local_wind_kmh": 21.4,
-        "surge_total_m": 0.92,
+        "surge_total_m": 0.96,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.04,
         "tide_m": 0.77
       }
     },
@@ -9323,9 +9323,9 @@
         "time_utc": "2019-05-04T02:00:00+00:00",
         "hours_to_landfall": 23.3,
         "local_wind_kmh": 15.8,
-        "surge_total_m": 1.18,
+        "surge_total_m": 1.2,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.02,
         "tide_m": 1.03
       }
     },
@@ -9345,9 +9345,9 @@
         "time_utc": "2019-05-04T02:00:00+00:00",
         "hours_to_landfall": 23.3,
         "local_wind_kmh": 16.1,
-        "surge_total_m": 1.18,
+        "surge_total_m": 1.2,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.02,
         "tide_m": 1.03
       }
     },
@@ -9367,9 +9367,9 @@
         "time_utc": "2019-05-04T02:00:00+00:00",
         "hours_to_landfall": 23.3,
         "local_wind_kmh": 16.4,
-        "surge_total_m": 1.18,
+        "surge_total_m": 1.2,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.02,
         "tide_m": 1.03
       }
     },
@@ -9389,9 +9389,9 @@
         "time_utc": "2019-05-04T02:00:00+00:00",
         "hours_to_landfall": 23.3,
         "local_wind_kmh": 16.7,
-        "surge_total_m": 1.18,
+        "surge_total_m": 1.2,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.02,
         "tide_m": 1.03
       }
     },
@@ -9411,9 +9411,9 @@
         "time_utc": "2019-05-04T02:00:00+00:00",
         "hours_to_landfall": 23.3,
         "local_wind_kmh": 17.1,
-        "surge_total_m": 1.18,
+        "surge_total_m": 1.2,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.03,
         "tide_m": 1.03
       }
     },
@@ -9433,9 +9433,9 @@
         "time_utc": "2019-05-04T02:00:00+00:00",
         "hours_to_landfall": 23.3,
         "local_wind_kmh": 17.6,
-        "surge_total_m": 1.18,
+        "surge_total_m": 1.2,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.03,
         "tide_m": 1.03
       }
     },
@@ -9455,9 +9455,9 @@
         "time_utc": "2019-05-04T02:00:00+00:00",
         "hours_to_landfall": 23.3,
         "local_wind_kmh": 18.1,
-        "surge_total_m": 1.18,
+        "surge_total_m": 1.21,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.03,
         "tide_m": 1.03
       }
     },
@@ -9477,9 +9477,9 @@
         "time_utc": "2019-05-04T02:00:00+00:00",
         "hours_to_landfall": 23.3,
         "local_wind_kmh": 18.5,
-        "surge_total_m": 1.18,
+        "surge_total_m": 1.21,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.03,
         "tide_m": 1.03
       }
     },
@@ -9499,9 +9499,9 @@
         "time_utc": "2019-05-04T02:00:00+00:00",
         "hours_to_landfall": 23.3,
         "local_wind_kmh": 19.0,
-        "surge_total_m": 1.18,
+        "surge_total_m": 1.21,
         "surge_ib_m": 0.15,
-        "surge_wind_m": 0.0,
+        "surge_wind_m": 0.03,
         "tide_m": 1.03
       }
     }

@@ -361,10 +361,14 @@ def run(
     )
 
     # CONNECTIVITY CONSTRAINT (8-connectivity):
-    # Floodwater must be connected to the open ocean boundary
+    # Floodwater must be connected to the open ocean boundary.
+    # NOTE: label() re-numbers components from scratch, so the wet-network label at
+    # the sea boundary (SE corner, Bay of Bengal) is NOT the same integer as
+    # ocean_seed_lbl from the ocean-only labelling. We must read lbl_wet[-1,-1].
     wet_network = ocean_mask | flood_candidate
     lbl_wet, _ = label(wet_network, structure=structure_8)
-    connected_flood_mask = (lbl_wet == ocean_seed_lbl) & flood_candidate
+    wet_seed_lbl = int(lbl_wet[-1, -1])  # label of the open-ocean component in wet_network
+    connected_flood_mask = (lbl_wet == wet_seed_lbl) & flood_candidate
 
     # Flood depth
     flood_depth_grid = np.where(connected_flood_mask, eta_surge - dem_grid, 0.0)
