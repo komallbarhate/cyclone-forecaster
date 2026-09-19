@@ -1,8 +1,0 @@
-{
-  "scenario": "fani_2019",
-  "satellite_source": "GPM IMERG v06 (NASA / JAXA) calibrated against IMD Rain Gauges",
-  "topographic_index": "Height Above Nearest Drainage (HAND) derived from SRTM 30m DEM",
-  "timerange_utc": "2019-04-30 to 2019-05-06",
-  "district_peak_district": "Jagatsinghpur",
-  "highest_rainfall_mm": 362.7
-}

@@ -333,7 +333,7 @@ def run(scenario: str = "fani_2019", force: bool = False) -> bool:
         "scenario": scenario,
         "population_source": pop_summary["metadata"]["source"],
         "population_year": 2019,
-        "infrastructure_source": "OpenStreetMap + Verified District Disaster Management Authority Catalogs",
+        "infrastructure_source": "OpenStreetMap contributors via Overpass API",
         "total_exposed_population": total_exposed_pop,
         "substations_compromised": comp_substations,
         "hospitals_at_risk": at_risk_hospitals,

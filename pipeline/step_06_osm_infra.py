@@ -159,7 +159,7 @@ def run(
     # --- Fetch from Overpass (or use cached raw response) ---
     osm_data: dict[str, Any] | None = None
 
-    if not force and raw_cache.exists():
+    if raw_cache.exists():
         log.info(f"Loading cached OSM raw response from {raw_cache}")
         with open(raw_cache) as f:
             osm_data = json.load(f)
@@ -219,21 +219,46 @@ def run(
             # We rebuild the query to include geometry:
             pass  # handled below in road-geometry requery
 
+    DISTRICT_CENTROIDS = {
+        "Puri": (19.81, 85.83),
+        "Khordha": (20.18, 85.62),
+        "Jagatsinghpur": (20.27, 86.17),
+        "Kendrapara": (20.50, 86.42),
+        "Cuttack": (20.46, 85.88),
+    }
+
+    def assign_district(lat: float, lon: float, tags: dict[str, Any]) -> str:
+        for key in ("district", "addr:district", "is_in:district", "is_in:state_district"):
+            val = tags.get(key)
+            if val in DISTRICT_CENTROIDS:
+                return val
+        return min(
+            DISTRICT_CENTROIDS.keys(),
+            key=lambda d: haversine_km(lon, lat, DISTRICT_CENTROIDS[d][1], DISTRICT_CENTROIDS[d][0]),
+        )
+
+    for el in elements:
+        tags = el.get("tags", {})
+        etype = el.get("type")
+
         # --- Power infrastructure (nodes and way centres) ---
         pwr = tags.get("power", "")
         if pwr in POWER_TAGS:
             lat = el.get("lat") or el.get("center", {}).get("lat")
             lon = el.get("lon") or el.get("center", {}).get("lon")
             if lat is not None and lon is not None:
+                category = "substation" if pwr == "substation" else "transformer"
                 infra_features.append(point_feature(
                     lon=lon, lat=lat,
                     properties={
                         "osm_id": f"{etype}_{el['id']}",
                         "name": tags.get("name", f"OSM {pwr.title()} {el['id']}"),
                         "type": "substation",
+                        "category": category,
                         "power": pwr,
                         "voltage": tags.get("voltage", ""),
                         "operator": tags.get("operator", ""),
+                        "district": assign_district(lat, lon, tags),
                         "source": "OpenStreetMap",
                     },
                 ))
@@ -244,15 +269,18 @@ def run(
             lat = el.get("lat") or el.get("center", {}).get("lat")
             lon = el.get("lon") or el.get("center", {}).get("lon")
             if lat is not None and lon is not None:
+                category = "hospital" if amenity == "hospital" else ("clinic" if amenity == "clinic" else amenity)
                 infra_features.append(point_feature(
                     lon=lon, lat=lat,
                     properties={
                         "osm_id": f"{etype}_{el['id']}",
                         "name": tags.get("name", f"OSM {amenity.title()} {el['id']}"),
                         "type": "hospital",
+                        "category": category,
                         "amenity": amenity,
                         "beds": tags.get("capacity", tags.get("beds", "")),
                         "operator": tags.get("operator", ""),
+                        "district": assign_district(lat, lon, tags),
                         "source": "OpenStreetMap",
                     },
                 ))
@@ -262,23 +290,44 @@ def run(
             lat = el.get("lat") or el.get("center", {}).get("lat")
             lon = el.get("lon") or el.get("center", {}).get("lon")
             if lat is not None and lon is not None:
+                category = "shelter" if amenity == "shelter" else ("community_centre" if amenity == "community_centre" else "school")
                 infra_features.append(point_feature(
                     lon=lon, lat=lat,
                     properties={
                         "osm_id": f"{etype}_{el['id']}",
                         "name": tags.get("name", f"OSM {amenity.title()} {el['id']}"),
                         "type": "shelter",
+                        "category": category,
                         "amenity": amenity,
                         "capacity": tags.get("capacity", ""),
                         "operator": tags.get("operator", ""),
+                        "district": assign_district(lat, lon, tags),
                         "source": "OpenStreetMap",
                     },
                 ))
 
-    # For roads we need geometry — re-fetch with `out geom;`
-    log.info("Fetching road geometry (Overpass out geom)...")
-    road_data = _fetch_roads_with_geometry(bbox)
+    # For roads we need geometry — check cache or re-fetch with `out geom;`
+    roads_raw_cache = RAW_DIR / "osm_roads_raw.json"
+    road_data: dict[str, Any] | None = None
     total_road_km = 0.0
+
+    if roads_raw_cache.exists():
+        log.info(f"Loading cached road raw response from {roads_raw_cache}")
+        with open(roads_raw_cache) as f:
+            road_data = json.load(f)
+    elif roads_out.exists():
+        log.info(f"Re-using verified road network from {roads_out}")
+        with open(roads_out) as f:
+            roads_existing = json.load(f)
+            road_features = roads_existing.get("features", [])
+            total_road_km = sum(f.get("properties", {}).get("length_km", 0.0) for f in road_features)
+    else:
+        log.info("Fetching road geometry (Overpass out geom)...")
+        road_data = _fetch_roads_with_geometry(bbox)
+        if road_data:
+            with open(roads_raw_cache, "w") as f:
+                json.dump(road_data, f)
+
     if road_data:
         for el in road_data.get("elements", []):
             tags = el.get("tags", {})
@@ -304,15 +353,19 @@ def run(
                 },
             ))
 
-    # --- Summary ---
-    n_sub = sum(1 for f in infra_features if f["properties"]["type"] == "substation")
-    n_hosp = sum(1 for f in infra_features if f["properties"]["type"] == "hospital")
-    n_shelt = sum(1 for f in infra_features if f["properties"]["type"] == "shelter")
+    # --- Summary & Counts ---
+    n_substations = sum(1 for f in infra_features if f["properties"].get("category") == "substation")
+    n_transformers = sum(1 for f in infra_features if f["properties"].get("category") == "transformer")
+    n_hospitals = sum(1 for f in infra_features if f["properties"].get("category") == "hospital")
+    n_clinics = sum(1 for f in infra_features if f["properties"].get("category") in {"clinic", "health_post", "doctors"})
+    n_shelters = sum(1 for f in infra_features if f["properties"].get("category") == "shelter")
+    n_schools = sum(1 for f in infra_features if f["properties"].get("category") in {"school", "community_centre"})
     n_roads = len(road_features)
 
     log.info(
-        f"Parsed: {n_sub} substations, {n_hosp} hospitals/clinics, "
-        f"{n_shelt} shelters/schools, {n_roads} road segments "
+        f"Parsed: {n_substations} substations, {n_transformers} transformers, "
+        f"{n_hospitals} hospitals, {n_clinics} clinics/health posts, "
+        f"{n_shelters} shelters, {n_schools} schools/centres, {n_roads} road segments "
         f"({total_road_km:.1f} km total)"
     )
 
@@ -340,13 +393,25 @@ def run(
             "highway": ["trunk", "primary", "secondary"],
         },
         "counts": {
-            "substations": n_sub,
-            "hospitals_clinics": n_hosp,
-            "shelters_schools": n_shelt,
+            "substations": n_substations,
+            "transformers": n_transformers,
+            "hospitals": n_hospitals,
+            "clinics_health_posts": n_clinics,
+            "shelters": n_shelters,
+            "schools_community_centres": n_schools,
+            "substations_and_transformers": n_substations + n_transformers,
+            "hospitals_and_clinics": n_hospitals + n_clinics,
+            "shelters_and_schools": n_shelters + n_schools,
             "road_segments": n_roads,
             "total_road_km": round(total_road_km, 2),
             "total_infra_points": len(infra_features),
         },
+        "substations": n_substations,
+        "transformers": n_transformers,
+        "hospitals": n_hospitals,
+        "clinics": n_clinics,
+        "shelters": n_shelters + n_schools,
+        "arterial_roads": n_roads,
         "synthetic": False,
         "scenario": scenario,
     }

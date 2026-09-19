@@ -101,9 +101,10 @@ capacity, soil infiltration, or antecedent moisture conditions.
 
 ## 5. Cascade Failure Limitations
 
-### 5.1 Network Completeness
-The road and infrastructure network depends on OSM coverage. Rural OSM coverage
-in Odisha may miss informal roads and paths used for evacuation.
+### 5.1 Network Completeness & Temporal Mismatch
+The road and critical infrastructure network is extracted from OpenStreetMap (OSM) via the Overpass API.
+- **Temporal Mismatch**: The OSM snapshot is September 2026, not May 2019 (the time of Cyclone Fani landfall). Infrastructure constructed or modified between 2019 and 2026 is reflected in the dataset, while historical 2019-specific assets that were subsequently decommissioned or re-tagged may differ.
+- **Spatial Completeness**: OSM completeness in rural Odisha is partial. While major substations, arterial roads (trunk, primary, secondary), and major hospitals are well-mapped, rural health posts, unpaved local connectors, and informal evacuation pathways may be under-represented.
 
 ### 5.2 Generator Assumption
 The 12-hour generator backup assumption for hospitals is the default and may not

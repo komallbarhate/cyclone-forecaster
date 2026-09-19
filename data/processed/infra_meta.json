@@ -31,13 +31,25 @@
     ]
   },
   "counts": {
-    "substations": 110,
-    "hospitals_clinics": 632,
-    "shelters_schools": 159,
+    "substations": 98,
+    "transformers": 12,
+    "hospitals": 383,
+    "clinics_health_posts": 249,
+    "shelters": 3,
+    "schools_community_centres": 156,
+    "substations_and_transformers": 110,
+    "hospitals_and_clinics": 632,
+    "shelters_and_schools": 159,
     "road_segments": 3249,
-    "total_road_km": 3274.96,
+    "total_road_km": 3274.93,
     "total_infra_points": 901
   },
+  "substations": 98,
+  "transformers": 12,
+  "hospitals": 383,
+  "clinics": 249,
+  "shelters": 159,
+  "arterial_roads": 3249,
   "synthetic": false,
   "scenario": "fani_2019"
 }
