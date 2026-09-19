@@ -1,14 +1,43 @@
 {
-  "total_infra": 33,
-  "substations": 13,
-  "hospitals": 10,
-  "shelters": 10,
-  "arterial_roads": 7,
-  "aoi_bbox": [
+  "source": "OpenStreetMap contributors via Overpass API",
+  "license": "ODbL 1.0 \u2014 https://www.openstreetmap.org/copyright",
+  "overpass_timestamp_osm_base": "2026-09-19T12:26:51Z",
+  "query_bbox_lonlat": [
     84.9,
     19.6,
     86.5,
     20.7
   ],
-  "source": "OpenStreetMap + Verified District Admin Catalog"
+  "infra_tags_queried": {
+    "power": [
+      "substation",
+      "transformer"
+    ],
+    "amenity_hospital": [
+      "hospital",
+      "clinic",
+      "health_post",
+      "doctors"
+    ],
+    "amenity_shelter": [
+      "school",
+      "community_centre",
+      "shelter"
+    ],
+    "highway": [
+      "trunk",
+      "primary",
+      "secondary"
+    ]
+  },
+  "counts": {
+    "substations": 110,
+    "hospitals_clinics": 632,
+    "shelters_schools": 159,
+    "road_segments": 3249,
+    "total_road_km": 3274.96,
+    "total_infra_points": 901
+  },
+  "synthetic": false,
+  "scenario": "fani_2019"
 }

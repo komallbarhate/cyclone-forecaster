@@ -1,25 +1,35 @@
 """
-Step 06 — OSM Critical Infrastructure Extraction
-==================================================
-Extracts critical infrastructure within the AOI from OpenStreetMap:
-  - Power grid substations / transformers (power=substation|transformer)
-  - Medical facilities / hospitals (amenity=hospital|clinic|health_post|doctors)
-  - Cyclone shelters / community centres (amenity=school|community_centre)
-  - Arterial roads: trunk, primary, secondary only (per Amendment 7)
+Step 06 — OSM Critical Infrastructure Extraction (real data, no padding)
+=========================================================================
+Queries the public Overpass API for critical infrastructure within the AOI:
+  - Power substations / transformers  (power=substation|transformer)
+  - Hospitals and clinics             (amenity=hospital|clinic|health_post|doctors)
+  - Emergency shelters and schools    (amenity=school|community_centre|shelter)
+  - Arterial roads: trunk, primary, secondary only (Amendment 7)
+
+Data source: OpenStreetMap contributors via Overpass API
+  https://overpass-api.de / https://lz4.overpass-api.de / https://z.overpass-api.de
+  License: ODbL 1.0  https://www.openstreetmap.org/copyright
+
+HARD RULE: This step will FAIL if Overpass returns zero elements, unless the
+  --allow-synthetic flag is passed. No padding, no fallback catalog.
 
 Produces:
-  - data/processed/infra.geojson       (points: substations, hospitals, shelters)
-  - data/processed/roads.geojson       (linestrings: arterial road network)
-  - data/processed/infra_meta.json     (counts, source, metadata)
+  - data/raw/osm_raw.json          (raw Overpass JSON response, cached)
+  - data/processed/infra.geojson  (points: substations, hospitals, shelters)
+  - data/processed/roads.geojson  (linestrings: arterial road segments)
+  - data/processed/infra_meta.json (counts, road_km, source, OSM timestamp)
 
 Usage:
-    python pipeline/step_06_osm_infra.py [--scenario fani_2019] [--force]
+    python -m pipeline.step_06_osm_infra [--scenario fani_2019] [--force]
+    python -m pipeline.step_06_osm_infra --allow-synthetic   # only for offline testing
 """
 
 from __future__ import annotations
 
 import argparse
 import json
+import math
 import sys
 import time
 from pathlib import Path
@@ -31,7 +41,6 @@ if str(PROJECT_ROOT) not in sys.path:
 
 import requests
 import yaml
-from shapely.geometry import Point, LineString, mapping
 
 from pipeline.utils.geo import feature_collection, point_feature, linestring_feature
 from pipeline.utils.logger import get_logger
@@ -47,488 +56,9 @@ OVERPASS_URLS = [
     "https://z.overpass-api.de/api/interpreter",
 ]
 
-# Curated ground-truth infrastructure in Odisha coastal districts (Puri, Khordha, Jagatsinghpur, Kendrapara, Cuttack)
-# Used if Overpass API is unavailable, throttled, or offline
-CURATED_INFRASTRUCTURE = [
-    # --- Puri District ---
-    {
-        "id": "sub_puri_132kv",
-        "name": "Puri 132/33kV Grid Substation",
-        "type": "substation",
-        "district": "Puri",
-        "voltage_kv": 132,
-        "backup_gen": False,
-        "lat": 19.8245,
-        "lon": 85.8340,
-        "criticality": "high",
-    },
-    {
-        "id": "sub_brahmagiri_33kv",
-        "name": "Brahmagiri 33/11kV Substation",
-        "type": "substation",
-        "district": "Puri",
-        "voltage_kv": 33,
-        "backup_gen": False,
-        "lat": 19.8010,
-        "lon": 85.6420,
-        "criticality": "medium",
-    },
-    {
-        "id": "sub_konark_33kv",
-        "name": "Konark 33/11kV Substation",
-        "type": "substation",
-        "district": "Puri",
-        "voltage_kv": 33,
-        "backup_gen": False,
-        "lat": 19.8890,
-        "lon": 86.0960,
-        "criticality": "medium",
-    },
-    {
-        "id": "hosp_puri_dhh",
-        "name": "District Headquarter Hospital (DHH) Puri",
-        "type": "hospital",
-        "district": "Puri",
-        "beds": 350,
-        "has_icu": True,
-        "generator_hours": 18,
-        "lat": 19.8080,
-        "lon": 85.8210,
-        "criticality": "critical",
-    },
-    {
-        "id": "hosp_brahmagiri_chc",
-        "name": "Community Health Centre Brahmagiri",
-        "type": "hospital",
-        "district": "Puri",
-        "beds": 40,
-        "has_icu": False,
-        "generator_hours": 8,
-        "lat": 19.8035,
-        "lon": 85.6510,
-        "criticality": "high",
-    },
-    {
-        "id": "shelt_puri_city_1",
-        "name": "Puri Multipurpose Cyclone Shelter 01",
-        "type": "shelter",
-        "district": "Puri",
-        "capacity": 1500,
-        "has_water": True,
-        "lat": 19.7990,
-        "lon": 85.8150,
-        "criticality": "high",
-    },
-    {
-        "id": "shelt_satapada",
-        "name": "Satapada Coastal Cyclone Shelter",
-        "type": "shelter",
-        "district": "Puri",
-        "capacity": 2000,
-        "has_water": True,
-        "lat": 19.6750,
-        "lon": 85.4350,
-        "criticality": "critical",
-    },
-    {
-        "id": "shelt_chandrabhaga",
-        "name": "Chandrabhaga Cyclone Shelter",
-        "type": "shelter",
-        "district": "Puri",
-        "capacity": 1200,
-        "has_water": True,
-        "lat": 19.8730,
-        "lon": 86.1120,
-        "criticality": "high",
-    },
-    {
-        "id": "shelt_astarang",
-        "name": "Astaranga Coastal Shelter",
-        "type": "shelter",
-        "district": "Puri",
-        "capacity": 1800,
-        "has_water": True,
-        "lat": 19.9820,
-        "lon": 86.2650,
-        "criticality": "critical",
-    },
-
-    # --- Khordha District (including Bhubaneswar) ---
-    {
-        "id": "sub_chandaka_400kv",
-        "name": "Chandaka 400/220kV Master Substation",
-        "type": "substation",
-        "district": "Khordha",
-        "voltage_kv": 400,
-        "backup_gen": True,
-        "lat": 20.3520,
-        "lon": 85.7650,
-        "criticality": "critical",
-    },
-    {
-        "id": "sub_mancheswar_220kv",
-        "name": "Mancheswar 220/132kV Grid Substation",
-        "type": "substation",
-        "district": "Khordha",
-        "voltage_kv": 220,
-        "backup_gen": False,
-        "lat": 20.3150,
-        "lon": 85.8450,
-        "criticality": "critical",
-    },
-    {
-        "id": "sub_khordha_132kv",
-        "name": "Khordha Town 132/33kV Substation",
-        "type": "substation",
-        "district": "Khordha",
-        "voltage_kv": 132,
-        "backup_gen": False,
-        "lat": 20.1820,
-        "lon": 85.6180,
-        "criticality": "high",
-    },
-    {
-        "id": "hosp_aiims_bbsr",
-        "name": "AIIMS Bhubaneswar Super-Specialty",
-        "type": "hospital",
-        "district": "Khordha",
-        "beds": 950,
-        "has_icu": True,
-        "generator_hours": 36,
-        "lat": 20.2310,
-        "lon": 85.7720,
-        "criticality": "critical",
-    },
-    {
-        "id": "hosp_capital_bbsr",
-        "name": "Capital Hospital Bhubaneswar",
-        "type": "hospital",
-        "district": "Khordha",
-        "beds": 600,
-        "has_icu": True,
-        "generator_hours": 24,
-        "lat": 20.2640,
-        "lon": 85.8280,
-        "criticality": "critical",
-    },
-    {
-        "id": "hosp_khordha_dhh",
-        "name": "Khordha District Hospital",
-        "type": "hospital",
-        "district": "Khordha",
-        "beds": 200,
-        "has_icu": True,
-        "generator_hours": 12,
-        "lat": 20.1910,
-        "lon": 85.6250,
-        "criticality": "high",
-    },
-    {
-        "id": "shelt_bbsr_khandagiri",
-        "name": "Khandagiri Relief Center",
-        "type": "shelter",
-        "district": "Khordha",
-        "capacity": 2500,
-        "has_water": True,
-        "lat": 20.2550,
-        "lon": 85.7850,
-        "criticality": "high",
-    },
-
-    # --- Jagatsinghpur District (Coastal landfall impact zone) ---
-    {
-        "id": "sub_paradip_220kv",
-        "name": "Paradip 220/132kV Port Grid Substation",
-        "type": "substation",
-        "district": "Jagatsinghpur",
-        "voltage_kv": 220,
-        "backup_gen": True,
-        "lat": 20.2810,
-        "lon": 86.6320,
-        "criticality": "critical",
-    },
-    {
-        "id": "sub_jagatsinghpur_132kv",
-        "name": "Jagatsinghpur 132/33kV Substation",
-        "type": "substation",
-        "district": "Jagatsinghpur",
-        "voltage_kv": 132,
-        "backup_gen": False,
-        "lat": 20.2620,
-        "lon": 86.1720,
-        "criticality": "high",
-    },
-    {
-        "id": "sub_ersama_33kv",
-        "name": "Ersama 33/11kV Coastal Substation",
-        "type": "substation",
-        "district": "Jagatsinghpur",
-        "voltage_kv": 33,
-        "backup_gen": False,
-        "lat": 20.1650,
-        "lon": 86.4450,
-        "criticality": "critical",
-    },
-    {
-        "id": "hosp_paradip_port",
-        "name": "Paradip Port Trust Hospital",
-        "type": "hospital",
-        "district": "Jagatsinghpur",
-        "beds": 150,
-        "has_icu": True,
-        "generator_hours": 24,
-        "lat": 20.2920,
-        "lon": 86.6710,
-        "criticality": "critical",
-    },
-    {
-        "id": "hosp_jagatsinghpur_dhh",
-        "name": "Jagatsinghpur District Headquarter Hospital",
-        "type": "hospital",
-        "district": "Jagatsinghpur",
-        "beds": 250,
-        "has_icu": True,
-        "generator_hours": 16,
-        "lat": 20.2580,
-        "lon": 86.1680,
-        "criticality": "critical",
-    },
-    {
-        "id": "shelt_ersama_central",
-        "name": "Ersama Mega Cyclone Shelter",
-        "type": "shelter",
-        "district": "Jagatsinghpur",
-        "capacity": 3000,
-        "has_water": True,
-        "lat": 20.1710,
-        "lon": 86.4380,
-        "criticality": "critical",
-    },
-    {
-        "id": "shelt_paradip_lock",
-        "name": "Paradip Lock Multi-Purpose Shelter",
-        "type": "shelter",
-        "district": "Jagatsinghpur",
-        "capacity": 2200,
-        "has_water": True,
-        "lat": 20.2750,
-        "lon": 86.6450,
-        "criticality": "critical",
-    },
-
-    # --- Kendrapara District ---
-    {
-        "id": "sub_kendrapara_132kv",
-        "name": "Kendrapara 132/33kV Substation",
-        "type": "substation",
-        "district": "Kendrapara",
-        "voltage_kv": 132,
-        "backup_gen": False,
-        "lat": 20.5020,
-        "lon": 86.4210,
-        "criticality": "high",
-    },
-    {
-        "id": "sub_mahakalpara_33kv",
-        "name": "Mahakalpara 33/11kV Coastal Substation",
-        "type": "substation",
-        "district": "Kendrapara",
-        "voltage_kv": 33,
-        "backup_gen": False,
-        "lat": 20.4150,
-        "lon": 86.5820,
-        "criticality": "high",
-    },
-    {
-        "id": "hosp_kendrapara_dhh",
-        "name": "Kendrapara District Hospital",
-        "type": "hospital",
-        "district": "Kendrapara",
-        "beds": 280,
-        "has_icu": True,
-        "generator_hours": 14,
-        "lat": 20.4980,
-        "lon": 86.4150,
-        "criticality": "critical",
-    },
-    {
-        "id": "shelt_rajanagar_shelter",
-        "name": "Rajanagar Coastal Cyclone Shelter",
-        "type": "shelter",
-        "district": "Kendrapara",
-        "capacity": 2000,
-        "has_water": True,
-        "lat": 20.5820,
-        "lon": 86.7210,
-        "criticality": "critical",
-    },
-    {
-        "id": "shelt_mahakalpara_shelter",
-        "name": "Mahakalpara High School Shelter",
-        "type": "shelter",
-        "district": "Kendrapara",
-        "capacity": 1500,
-        "has_water": True,
-        "lat": 20.4210,
-        "lon": 86.5750,
-        "criticality": "high",
-    },
-
-    # --- Cuttack District ---
-    {
-        "id": "sub_bidanasi_220kv",
-        "name": "Bidanasi 220/132kV Substation",
-        "type": "substation",
-        "district": "Cuttack",
-        "voltage_kv": 220,
-        "backup_gen": False,
-        "lat": 20.4850,
-        "lon": 85.8320,
-        "criticality": "critical",
-    },
-    {
-        "id": "sub_choudwar_220kv",
-        "name": "Choudwar 220/132kV Industrial Substation",
-        "type": "substation",
-        "district": "Cuttack",
-        "voltage_kv": 220,
-        "backup_gen": True,
-        "lat": 20.5350,
-        "lon": 85.9120,
-        "criticality": "critical",
-    },
-    {
-        "id": "hosp_scb_medical",
-        "name": "SCB Medical College & Hospital Cuttack",
-        "type": "hospital",
-        "district": "Cuttack",
-        "beds": 2100,
-        "has_icu": True,
-        "generator_hours": 48,
-        "lat": 20.4680,
-        "lon": 85.8920,
-        "criticality": "critical",
-    },
-    {
-        "id": "hosp_cuttack_city",
-        "name": "City Hospital Cuttack",
-        "type": "hospital",
-        "district": "Cuttack",
-        "beds": 200,
-        "has_icu": False,
-        "generator_hours": 12,
-        "lat": 20.4590,
-        "lon": 85.8650,
-        "criticality": "high",
-    },
-    {
-        "id": "shelt_cuttack_barabati",
-        "name": "Barabati Relief Operations Center",
-        "type": "shelter",
-        "district": "Cuttack",
-        "capacity": 3500,
-        "has_water": True,
-        "lat": 20.4820,
-        "lon": 85.8680,
-        "criticality": "critical",
-    },
-]
-
-# Curated arterial road segments (trunk, primary, secondary only per Amendment 7)
-CURATED_ARTERIAL_ROADS = [
-    {
-        "id": "road_nh16_bbsr_ctc",
-        "name": "National Highway 16 (Bhubaneswar-Cuttack Expressway)",
-        "highway": "trunk",
-        "ref": "NH-16",
-        "lanes": 6,
-        "coords": [
-            [85.820, 20.260],
-            [85.845, 20.315],
-            [85.875, 20.395],
-            [85.890, 20.460],
-        ],
-    },
-    {
-        "id": "road_nh316_puri_bbsr",
-        "name": "National Highway 316 (Puri-Bhubaneswar Highway)",
-        "highway": "primary",
-        "ref": "NH-316",
-        "lanes": 4,
-        "coords": [
-            [85.835, 19.825],
-            [85.842, 19.920],
-            [85.850, 20.080],
-            [85.840, 20.210],
-            [85.825, 20.260],
-        ],
-    },
-    {
-        "id": "road_sh12_cuttack_paradip",
-        "name": "State Highway 12 / NH-53 (Cuttack-Paradip Port Highway)",
-        "highway": "primary",
-        "ref": "NH-53 / SH-12",
-        "lanes": 4,
-        "coords": [
-            [85.890, 20.460],
-            [86.050, 20.410],
-            [86.220, 20.350],
-            [86.450, 20.300],
-            [86.630, 20.280],
-        ],
-    },
-    {
-        "id": "road_sh60_puri_konark",
-        "name": "Marine Drive Road (Puri to Konark)",
-        "highway": "secondary",
-        "ref": "SH-60",
-        "lanes": 2,
-        "coords": [
-            [85.835, 19.805],
-            [85.940, 19.840],
-            [86.020, 19.870],
-            [86.095, 19.890],
-        ],
-    },
-    {
-        "id": "road_sh43_konark_paradip",
-        "name": "Coastal Arterial (Konark-Astarang-Paradip)",
-        "highway": "secondary",
-        "ref": "SH-43",
-        "lanes": 2,
-        "coords": [
-            [86.095, 19.890],
-            [86.265, 19.982],
-            [86.445, 20.165],
-            [86.630, 20.280],
-        ],
-    },
-    {
-        "id": "road_sh9a_cuttack_kendrapara",
-        "name": "State Highway 9A (Cuttack-Kendrapara-Chandabali)",
-        "highway": "primary",
-        "ref": "SH-9A",
-        "lanes": 2,
-        "coords": [
-            [85.890, 20.460],
-            [86.150, 20.485],
-            [86.420, 20.502],
-            [86.650, 20.550],
-        ],
-    },
-    {
-        "id": "road_nh16_south_khordha",
-        "name": "National Highway 16 South (Bhubaneswar to Khordha Town)",
-        "highway": "trunk",
-        "ref": "NH-16",
-        "lanes": 4,
-        "coords": [
-            [85.820, 20.260],
-            [85.730, 20.210],
-            [85.625, 20.180],
-        ],
-    },
-]
+# Overpass query timeout (seconds) — must match [timeout:NN] in query string
+OVERPASS_TIMEOUT = 60
+REQUEST_TIMEOUT = 90  # HTTP socket timeout
 
 
 def load_scenario(scenario_name: str) -> dict[str, Any]:
@@ -539,162 +69,368 @@ def load_scenario(scenario_name: str) -> dict[str, Any]:
 
 def build_overpass_query(bbox: list[float]) -> str:
     """
-    Build Overpass QL query for critical infrastructure and arterial roads.
-    bbox: [lon_min, lat_min, lon_max, lat_max] -> Overpass expects (lat_min, lon_min, lat_max, lon_max)
+    Overpass QL query for power, medical, shelter, and arterial road features.
+    bbox: [lon_min, lat_min, lon_max, lat_max] — Overpass order: (S,W,N,E).
     """
     lon_min, lat_min, lon_max, lat_max = bbox
-    return f"""[out:json][timeout:45];
+    south, west, north, east = lat_min, lon_min, lat_max, lon_max
+    return f"""[out:json][timeout:{OVERPASS_TIMEOUT}];
 (
-  node["power"~"substation|transformer"]({lat_min},{lon_min},{lat_max},{lon_max});
-  way["power"~"substation"]({lat_min},{lon_min},{lat_max},{lon_max});
-  node["amenity"~"hospital|clinic"]({lat_min},{lon_min},{lat_max},{lon_max});
-  way["amenity"~"hospital|clinic"]({lat_min},{lon_min},{lat_max},{lon_max});
-  node["amenity"~"school|community_centre"]({lat_min},{lon_min},{lat_max},{lon_max});
-  way["amenity"~"school|community_centre"]({lat_min},{lon_min},{lat_max},{lon_max});
-  way["highway"~"trunk|primary|secondary"]({lat_min},{lon_min},{lat_max},{lon_max});
+  node["power"~"^(substation|transformer)$"]({south},{west},{north},{east});
+  way["power"~"^(substation|transformer)$"]({south},{west},{north},{east});
+  node["amenity"~"^(hospital|clinic|health_post|doctors)$"]({south},{west},{north},{east});
+  way["amenity"~"^(hospital|clinic|health_post|doctors)$"]({south},{west},{north},{east});
+  node["amenity"~"^(school|community_centre|shelter)$"]({south},{west},{north},{east});
+  way["amenity"~"^(school|community_centre|shelter)$"]({south},{west},{north},{east});
+  way["highway"~"^(trunk|primary|secondary)$"]({south},{west},{north},{east});
 );
 out body center qt;
 """
 
 
 def fetch_from_overpass(query: str) -> dict[str, Any] | None:
-    """Try fetching from public Overpass API mirrors with timeout."""
+    """Try each Overpass mirror in order; return JSON or None on failure."""
     for url in OVERPASS_URLS:
         try:
-            log.info(f"Querying Overpass API at {url}...")
-            resp = requests.post(url, data={"data": query}, timeout=30)
+            log.info(f"  Querying Overpass: {url}")
+            resp = requests.post(
+                url,
+                data={"data": query},
+                timeout=REQUEST_TIMEOUT,
+                headers={"User-Agent": "CycloneShield-hackathon/1.0 (educational)"},
+            )
             if resp.status_code == 200:
                 data = resp.json()
-                if "elements" in data and len(data["elements"]) > 0:
-                    log.info(f"Retrieved {len(data['elements'])} elements from {url}")
+                n = len(data.get("elements", []))
+                if n > 0:
+                    log.info(f"  {url}: {n} elements received")
                     return data
-        except Exception as e:
-            log.warning(f"Overpass query failed at {url}: {e}")
+                else:
+                    log.warning(f"  {url}: response OK but 0 elements returned")
+            else:
+                log.warning(f"  {url}: HTTP {resp.status_code}")
+        except Exception as exc:
+            log.warning(f"  {url}: {exc}")
+        time.sleep(1)
     return None
 
 
-def run(scenario: str = "fani_2019", force: bool = False) -> bool:
+def haversine_km(lon1: float, lat1: float, lon2: float, lat2: float) -> float:
+    """Great-circle distance in km."""
+    r = 6371.0
+    dlat = math.radians(lat2 - lat1)
+    dlon = math.radians(lon2 - lon1)
+    a = (math.sin(dlat / 2) ** 2
+         + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2))
+         * math.sin(dlon / 2) ** 2)
+    return 2 * r * math.asin(math.sqrt(max(a, 0)))
+
+
+def linestring_length_km(coords: list[list[float]]) -> float:
+    """Total length of a [lon, lat] coordinate list in km."""
+    total = 0.0
+    for i in range(len(coords) - 1):
+        total += haversine_km(coords[i][0], coords[i][1], coords[i + 1][0], coords[i + 1][1])
+    return total
+
+
+def run(
+    scenario: str = "fani_2019",
+    force: bool = False,
+    allow_synthetic: bool = False,
+) -> bool:
     """Run Step 06 OSM infrastructure extraction."""
     infra_out = PROCESSED_DIR / "infra.geojson"
     roads_out = PROCESSED_DIR / "roads.geojson"
     meta_out = PROCESSED_DIR / "infra_meta.json"
+    raw_cache = RAW_DIR / "osm_raw.json"
 
     if not force and infra_out.exists() and roads_out.exists() and meta_out.exists():
-        log.info("Infrastructure data already exists. Use --force to regenerate.")
+        log.info("Infrastructure outputs exist; use --force to regenerate.")
         return True
 
     PROCESSED_DIR.mkdir(parents=True, exist_ok=True)
+    RAW_DIR.mkdir(parents=True, exist_ok=True)
+
     config = load_scenario(scenario)
     bbox = config.get("aoi_bbox", [84.9, 19.6, 86.5, 20.7])
+    log.info(f"AOI bbox: {bbox}")
 
-    # Try live Overpass first, fall back gracefully to curated ground-truth
-    overpass_data = None
-    try:
+    # --- Fetch from Overpass (or use cached raw response) ---
+    osm_data: dict[str, Any] | None = None
+
+    if not force and raw_cache.exists():
+        log.info(f"Loading cached OSM raw response from {raw_cache}")
+        with open(raw_cache) as f:
+            osm_data = json.load(f)
+        n = len(osm_data.get("elements", []))
+        log.info(f"  Cached: {n} elements")
+        if n == 0:
+            osm_data = None  # treat as invalid cache
+
+    if osm_data is None:
+        log.info("Fetching from Overpass API...")
         query = build_overpass_query(bbox)
-        overpass_data = fetch_from_overpass(query)
-    except Exception as e:
-        log.warning(f"Could not reach Overpass API: {e}")
+        osm_data = fetch_from_overpass(query)
+        if osm_data is not None:
+            with open(raw_cache, "w") as f:
+                json.dump(osm_data, f)
+            log.info(f"Saved raw OSM response to {raw_cache}")
 
-    infra_features = []
-    road_features = []
+    elements = osm_data.get("elements", []) if osm_data else []
+    log.info(f"Total OSM elements to process: {len(elements)}")
 
-    if overpass_data and "elements" in overpass_data:
-        log.info("Processing live Overpass elements...")
-        for el in overpass_data["elements"]:
-            tags = el.get("tags", {})
+    if len(elements) == 0:
+        if allow_synthetic:
+            log.warning(
+                "[SYNTHETIC] --allow-synthetic is set: Overpass returned 0 elements. "
+                "Writing empty GeoJSONs labelled SYNTHETIC. Do NOT use for real analysis."
+            )
+            _write_empty(infra_out, roads_out, meta_out, bbox, synthetic=True)
+            return True
+        else:
+            raise RuntimeError(
+                "FAIL: Overpass API returned 0 elements for the AOI bbox. "
+                "Check your internet connection, try again later (rate limiting), "
+                "or pass --allow-synthetic for offline testing (results will be labelled SYNTHETIC)."
+            )
+
+    # --- Parse elements ---
+    infra_features: list[dict] = []
+    road_features: list[dict] = []
+
+    # Tag maps
+    POWER_TAGS = {"substation", "transformer"}
+    HOSPITAL_TAGS = {"hospital", "clinic", "health_post", "doctors"}
+    SHELTER_TAGS = {"school", "community_centre", "shelter"}
+    ROAD_TAGS = {"trunk", "primary", "secondary"}
+
+    for el in elements:
+        tags = el.get("tags", {})
+        etype = el.get("type")
+
+        # --- Road ways ---
+        hw = tags.get("highway", "")
+        if etype == "way" and hw in ROAD_TAGS:
+            # Overpass `out body center qt` returns geometry for ways only if
+            # we add `>;` — we used `out body center qt` which gives center but
+            # not node geometry for ways. Use the center lon/lat as a point if
+            # no geometry, otherwise skip (road geometry needs `>;out geom;`).
+            # We rebuild the query to include geometry:
+            pass  # handled below in road-geometry requery
+
+        # --- Power infrastructure (nodes and way centres) ---
+        pwr = tags.get("power", "")
+        if pwr in POWER_TAGS:
             lat = el.get("lat") or el.get("center", {}).get("lat")
             lon = el.get("lon") or el.get("center", {}).get("lon")
+            if lat is not None and lon is not None:
+                infra_features.append(point_feature(
+                    lon=lon, lat=lat,
+                    properties={
+                        "osm_id": f"{etype}_{el['id']}",
+                        "name": tags.get("name", f"OSM {pwr.title()} {el['id']}"),
+                        "type": "substation",
+                        "power": pwr,
+                        "voltage": tags.get("voltage", ""),
+                        "operator": tags.get("operator", ""),
+                        "source": "OpenStreetMap",
+                    },
+                ))
 
-            if el["type"] == "way" and "highway" in tags:
-                coords = el.get("geometry", [])
-                if coords and len(coords) >= 2:
-                    coords_list = [[pt["lon"], pt["lat"]] for pt in coords]
-                    road_features.append(
-                        linestring_feature(
-                            coords_list,
-                            properties={
-                                "id": f"way_{el['id']}",
-                                "name": tags.get("name", tags.get("ref", "Unnamed Road")),
-                                "highway": tags.get("highway"),
-                                "ref": tags.get("ref", ""),
-                                "lanes": int(tags.get("lanes", 2)) if str(tags.get("lanes", "")).isdigit() else 2,
-                            },
-                        )
-                    )
-            elif lat is not None and lon is not None:
-                itype = None
-                if "power" in tags:
-                    itype = "substation"
-                elif tags.get("amenity") in ("hospital", "clinic", "health_post", "doctors"):
-                    itype = "hospital"
-                elif tags.get("amenity") in ("school", "community_centre"):
-                    itype = "shelter"
+        # --- Medical facilities (nodes and way centres) ---
+        amenity = tags.get("amenity", "")
+        if amenity in HOSPITAL_TAGS:
+            lat = el.get("lat") or el.get("center", {}).get("lat")
+            lon = el.get("lon") or el.get("center", {}).get("lon")
+            if lat is not None and lon is not None:
+                infra_features.append(point_feature(
+                    lon=lon, lat=lat,
+                    properties={
+                        "osm_id": f"{etype}_{el['id']}",
+                        "name": tags.get("name", f"OSM {amenity.title()} {el['id']}"),
+                        "type": "hospital",
+                        "amenity": amenity,
+                        "beds": tags.get("capacity", tags.get("beds", "")),
+                        "operator": tags.get("operator", ""),
+                        "source": "OpenStreetMap",
+                    },
+                ))
 
-                if itype:
-                    infra_features.append(
-                        point_feature(
-                            lon=lon,
-                            lat=lat,
-                            properties={
-                                "id": f"osm_{el['type']}_{el['id']}",
-                                "name": tags.get("name", f"Unnamed {itype.title()}"),
-                                "type": itype,
-                                "district": tags.get("addr:district", "Odisha Coast"),
-                                "criticality": "high" if itype in ("substation", "hospital") else "medium",
-                                "source": "OpenStreetMap Live",
-                            },
-                        )
-                    )
+        # --- Shelters / schools ---
+        if amenity in SHELTER_TAGS:
+            lat = el.get("lat") or el.get("center", {}).get("lat")
+            lon = el.get("lon") or el.get("center", {}).get("lon")
+            if lat is not None and lon is not None:
+                infra_features.append(point_feature(
+                    lon=lon, lat=lat,
+                    properties={
+                        "osm_id": f"{etype}_{el['id']}",
+                        "name": tags.get("name", f"OSM {amenity.title()} {el['id']}"),
+                        "type": "shelter",
+                        "amenity": amenity,
+                        "capacity": tags.get("capacity", ""),
+                        "operator": tags.get("operator", ""),
+                        "source": "OpenStreetMap",
+                    },
+                ))
 
-    # Ensure curated features are always included so critical facilities in scenario districts are present
-    existing_infra_ids = {f["properties"]["id"] for f in infra_features}
-    for item in CURATED_INFRASTRUCTURE:
-        if item["id"] not in existing_infra_ids:
-            props = {k: v for k, v in item.items() if k not in ("lat", "lon")}
-            props["source"] = "Curated / OpenStreetMap Verified"
-            infra_features.append(point_feature(lon=item["lon"], lat=item["lat"], properties=props))
+    # For roads we need geometry — re-fetch with `out geom;`
+    log.info("Fetching road geometry (Overpass out geom)...")
+    road_data = _fetch_roads_with_geometry(bbox)
+    total_road_km = 0.0
+    if road_data:
+        for el in road_data.get("elements", []):
+            tags = el.get("tags", {})
+            hw = tags.get("highway", "")
+            if hw not in ROAD_TAGS:
+                continue
+            geom = el.get("geometry", [])
+            if len(geom) < 2:
+                continue
+            coords = [[pt["lon"], pt["lat"]] for pt in geom]
+            seg_km = linestring_length_km(coords)
+            total_road_km += seg_km
+            road_features.append(linestring_feature(
+                coords,
+                properties={
+                    "osm_id": f"way_{el['id']}",
+                    "name": tags.get("name", tags.get("ref", f"OSM way {el['id']}")),
+                    "highway": hw,
+                    "ref": tags.get("ref", ""),
+                    "lanes": tags.get("lanes", ""),
+                    "length_km": round(seg_km, 3),
+                    "source": "OpenStreetMap",
+                },
+            ))
 
-    existing_road_ids = {f["properties"]["id"] for f in road_features}
-    for r in CURATED_ARTERIAL_ROADS:
-        if r["id"] not in existing_road_ids:
-            props = {k: v for k, v in r.items() if k != "coords"}
-            props["source"] = "Curated / National Highways Authority of India"
-            road_features.append(linestring_feature(r["coords"], properties=props))
+    # --- Summary ---
+    n_sub = sum(1 for f in infra_features if f["properties"]["type"] == "substation")
+    n_hosp = sum(1 for f in infra_features if f["properties"]["type"] == "hospital")
+    n_shelt = sum(1 for f in infra_features if f["properties"]["type"] == "shelter")
+    n_roads = len(road_features)
 
-    # Save infra.geojson
+    log.info(
+        f"Parsed: {n_sub} substations, {n_hosp} hospitals/clinics, "
+        f"{n_shelt} shelters/schools, {n_roads} road segments "
+        f"({total_road_km:.1f} km total)"
+    )
+
+    # --- Write outputs ---
     infra_fc = feature_collection(infra_features)
     with open(infra_out, "w") as f:
-        json.dump(infra_fc, f, indent=2)
-    log.info(f"Saved {len(infra_features)} critical infrastructure points to {infra_out}")
+        json.dump(infra_fc, f)
+    log.info(f"Saved {len(infra_features)} infra points -> {infra_out}")
 
-    # Save roads.geojson
     roads_fc = feature_collection(road_features)
     with open(roads_out, "w") as f:
-        json.dump(roads_fc, f, indent=2)
-    log.info(f"Saved {len(road_features)} arterial road segments to {roads_out}")
+        json.dump(roads_fc, f)
+    log.info(f"Saved {n_roads} road segments -> {roads_out}")
 
-    # Save metadata
-    counts = {
-        "total_infra": len(infra_features),
-        "substations": sum(1 for f in infra_features if f["properties"].get("type") == "substation"),
-        "hospitals": sum(1 for f in infra_features if f["properties"].get("type") == "hospital"),
-        "shelters": sum(1 for f in infra_features if f["properties"].get("type") == "shelter"),
-        "arterial_roads": len(road_features),
-        "aoi_bbox": bbox,
-        "source": "OpenStreetMap + Verified District Admin Catalog",
+    osm_ts = osm_data.get("osm3s", {}).get("timestamp_osm_base", "unknown")
+    meta = {
+        "source": "OpenStreetMap contributors via Overpass API",
+        "license": "ODbL 1.0 — https://www.openstreetmap.org/copyright",
+        "overpass_timestamp_osm_base": osm_ts,
+        "query_bbox_lonlat": bbox,
+        "infra_tags_queried": {
+            "power": ["substation", "transformer"],
+            "amenity_hospital": ["hospital", "clinic", "health_post", "doctors"],
+            "amenity_shelter": ["school", "community_centre", "shelter"],
+            "highway": ["trunk", "primary", "secondary"],
+        },
+        "counts": {
+            "substations": n_sub,
+            "hospitals_clinics": n_hosp,
+            "shelters_schools": n_shelt,
+            "road_segments": n_roads,
+            "total_road_km": round(total_road_km, 2),
+            "total_infra_points": len(infra_features),
+        },
+        "synthetic": False,
+        "scenario": scenario,
     }
     with open(meta_out, "w") as f:
-        json.dump(counts, f, indent=2)
-    log.info(f"Saved infrastructure metadata to {meta_out}: {counts}")
+        json.dump(meta, f, indent=2)
+    log.info(f"Saved infra metadata -> {meta_out}")
 
     return True
 
 
+def _fetch_roads_with_geometry(bbox: list[float]) -> dict[str, Any] | None:
+    """Separate Overpass query for road ways with full node geometry."""
+    lon_min, lat_min, lon_max, lat_max = bbox
+    query = f"""[out:json][timeout:{OVERPASS_TIMEOUT}];
+(
+  way["highway"~"^(trunk|primary|secondary)$"]({lat_min},{lon_min},{lat_max},{lon_max});
+);
+out geom qt;
+"""
+    for url in OVERPASS_URLS:
+        try:
+            resp = requests.post(
+                url,
+                data={"data": query},
+                timeout=REQUEST_TIMEOUT,
+                headers={"User-Agent": "CycloneShield-hackathon/1.0 (educational)"},
+            )
+            if resp.status_code == 200:
+                data = resp.json()
+                n = len(data.get("elements", []))
+                if n > 0:
+                    log.info(f"  Road geometry: {n} ways from {url}")
+                    return data
+        except Exception as exc:
+            log.warning(f"  Road geometry fetch failed at {url}: {exc}")
+        time.sleep(1)
+    return None
+
+
+def _write_empty(
+    infra_out: Path,
+    roads_out: Path,
+    meta_out: Path,
+    bbox: list[float],
+    synthetic: bool = True,
+) -> None:
+    """Write empty GeoJSONs labelled SYNTHETIC for offline testing."""
+    label = "SYNTHETIC — no real data; --allow-synthetic was passed"
+    for path in (infra_out, roads_out):
+        with open(path, "w") as f:
+            json.dump({"type": "FeatureCollection", "features": [], "_synthetic": label}, f)
+    meta = {
+        "source": label,
+        "query_bbox_lonlat": bbox,
+        "counts": {
+            "substations": 0, "hospitals_clinics": 0, "shelters_schools": 0,
+            "road_segments": 0, "total_road_km": 0.0, "total_infra_points": 0,
+        },
+        "synthetic": True,
+    }
+    with open(meta_out, "w") as f:
+        json.dump(meta, f, indent=2)
+
+
 if __name__ == "__main__":
+    try:
+        from dotenv import load_dotenv
+        load_dotenv()
+    except ImportError:
+        pass
+
     parser = argparse.ArgumentParser(description="Step 06: OSM Infrastructure Extract")
-    parser.add_argument("--scenario", default="fani_2019", help="Scenario name")
-    parser.add_argument("--force", action="store_true", help="Force regenerate")
+    parser.add_argument("--scenario", default="fani_2019")
+    parser.add_argument("--force", action="store_true", help="Delete cache and re-fetch")
+    parser.add_argument(
+        "--allow-synthetic",
+        action="store_true",
+        help="If Overpass returns 0 elements, write empty SYNTHETIC outputs instead of failing",
+    )
     args = parser.parse_args()
 
-    ok = run(scenario=args.scenario, force=args.force)
+    ok = run(
+        scenario=args.scenario,
+        force=args.force,
+        allow_synthetic=args.allow_synthetic,
+    )
     sys.exit(0 if ok else 1)
